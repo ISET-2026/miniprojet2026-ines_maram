@@ -1,0 +1,101 @@
+<!-- Navbar Area -->
+<div class="navbar-area fixed-top">
+
+    <!-- Mobile Navbar -->
+    <div class="mobile-nav">
+
+        <a href="{{ path('home') }}" class="logo">
+            <img src="{{ asset('assets/img/logo-two.png') }}" alt="Logo">
+        </a>
+
+    </div>
+
+    <!-- Desktop Navbar -->
+    <div class="main-nav">
+        <div class="container">
+
+            <nav class="navbar navbar-expand-md navbar-light">
+
+                <a class="navbar-brand" href="{{ path('home') }}">
+
+                    <img src="{{ asset('assets/img/logo.png') }}"
+                        class="logo-one"
+                        alt="Logo">
+
+                    <img src="{{ asset('assets/img/logo-two.png') }}"
+                        class="logo-two"
+                        alt="Logo">
+
+                </a>
+
+                <div class="collapse navbar-collapse mean-menu">
+
+                    <ul class="navbar-nav">
+
+                        <li class="nav-item">
+                            <a href="{{ path('home') }}"
+                            class="nav-link active">
+                                Home
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#"
+                            class="nav-link">
+                                About
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#"
+                            class="nav-link">
+                                Categories
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#"
+                            class="nav-link">
+                                Services
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#"
+                            class="nav-link">
+                                Blog
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#"
+                                class="nav-link">
+                                Contact
+                            </a>
+                        </li>
+
+                    </ul>
+
+                    <div class="side-nav">
+
+                        <a class="nav-cart" href="#">
+                            <i class='bx bxs-cart'></i>
+                            <span>1</span>
+                        </a>
+
+                        <a class="nav-tel" href="tel:+1123456789">
+                            <i class='bx bxs-phone-call'></i>
+                            +1 123 456 789
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </nav>
+
+        </div>
+    </div>
+
+</div>
+<!-- End Navbar Area -->

@@ -1,0 +1,3 @@
+<?php //c5bdf4ea441a02a248acb97ca9971cf2
+
+return [PHP_INT_MAX, 'assets/css/boxicons.min.css'];

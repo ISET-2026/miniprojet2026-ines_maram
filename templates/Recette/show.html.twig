@@ -1,0 +1,100 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ recette.titre }}{% endblock %}
+
+{% block body %}
+
+<!-- Page Title -->
+<div class="page-title-area page-title-img-two">
+    <div class="container">
+        <div class="page-title-item">
+            <h2>{{ recette.titre }}</h2>
+            <ul>
+                <li><a href="{{ path('recette_index') }}">Recipes</a></li>
+                <li><i class='bx bx-chevron-right'></i></li>
+                <li>{{ recette.titre }}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Recipe Details -->
+<div class="service-details-area pt-100 pb-70">
+    <div class="container">
+        <div class="row justify-content-center">
+
+            <!-- LEFT SIDE: INGREDIENTS -->
+            <div class="col-lg-4">
+                <div class="service-details-item">
+
+                    <h3>Ingredients</h3>
+
+                    <ul>
+                        {% for ingredient in recette.ingredients %}
+                            <li>
+                                {{ ingredient.quantite }} - {{ ingredient.nom }}
+                            </li>
+                        {% else %}
+                            <li>No ingredients</li>
+                        {% endfor %}
+                    </ul>
+
+                    <hr>
+
+                    <p><strong>Category:</strong> {{ recette.categorie.nom }}</p>
+                    <p><strong>Difficulty:</strong> {{ recette.difficulte }}</p>
+                    <p><strong>Preparation:</strong> {{ recette.tempsPreparation }} min</p>
+                    {% if recette.tempsCuisson %}
+                        <p><strong>Cooking:</strong> {{ recette.tempsCuisson }} min</p>
+                    {% endif %}
+                    <p><strong>People:</strong> {{ recette.nbPersonnes }}</p>
+
+                    <!-- Tags -->
+                    <h4>Tags</h4>
+                    {% for tag in recette.tags %}
+                        <span class="badge bg-secondary">{{ tag.nom }}</span>
+                    {% endfor %}
+
+                </div>
+            </div>
+
+            <!-- RIGHT SIDE: RECIPE CONTENT -->
+            <div class="col-lg-8">
+                <div class="service-details-item">
+
+                    <!-- Image -->
+                    {% if recette.imageName %}
+                        <img src="{{ asset('uploads/recettes/' ~ recette.imageName) }}" class="img-fluid mb-3">
+                    {% endif %}
+
+                    <h2>{{ recette.titre }}</h2>
+
+                    <p>{{ recette.description }}</p>
+
+                    <hr>
+
+                    <h3>Instructions</h3>
+                    <p style="white-space: pre-line;">
+                        {{ recette.instructions }}
+                    </p>
+
+                    <hr>
+
+                    <p>
+                        <strong>Created by:</strong>
+                        {{ recette.auteur.pseudo ?? 'Unknown' }}
+                    </p>
+
+                    <p>
+                        <strong>Date:</strong>
+                        {{ recette.dateCreation|date('Y-m-d') }}
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

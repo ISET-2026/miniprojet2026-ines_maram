@@ -1,0 +1,135 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Checkout{% endblock %}
+
+{% block body %}
+
+<!-- Page Title -->
+<div class="page-title-area page-title-img-one">
+    <div class="container">
+        <div class="page-title-item">
+            <h2>Checkout</h2>
+
+            <ul>
+                <li>
+                    <a href="{{ path('home') }}">Home</a>
+                </li>
+
+                <li>
+                    <i class='bx bx-chevron-right'></i>
+                </li>
+
+                <li>Checkout</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Checkout Area -->
+<section class="checkout-area ptb-100">
+    <div class="container">
+
+        <div class="row justify-content-center">
+
+            <!-- Customer Details -->
+            <div class="col-lg-6">
+                <div class="checkout-item">
+
+                    <h2>Customer Details</h2>
+
+                    <div class="checkout-one">
+
+                        {{ form_start(form) }}
+
+                            <div class="form-group">
+                                {{ form_label(form.firstName) }}
+                                {{ form_widget(form.firstName, {
+                                    'attr': {'class': 'form-control'}
+                                }) }}
+                                {{ form_errors(form.firstName) }}
+                            </div>
+
+                            <div class="form-group">
+                                {{ form_label(form.lastName) }}
+                                {{ form_widget(form.lastName, {
+                                    'attr': {'class': 'form-control'}
+                                }) }}
+                                {{ form_errors(form.lastName) }}
+                            </div>
+
+                            <div class="form-group">
+                                {{ form_label(form.address) }}
+                                {{ form_widget(form.address, {
+                                    'attr': {'class': 'form-control'}
+                                }) }}
+                                {{ form_errors(form.address) }}
+                            </div>
+
+                            <div class="form-group">
+                                {{ form_label(form.city) }}
+                                {{ form_widget(form.city, {
+                                    'attr': {'class': 'form-control'}
+                                }) }}
+                                {{ form_errors(form.city) }}
+                            </div>
+
+                            <div class="form-group">
+                                {{ form_label(form.postalCode) }}
+                                {{ form_widget(form.postalCode, {
+                                    'attr': {'class': 'form-control'}
+                                }) }}
+                                {{ form_errors(form.postalCode) }}
+                            </div>
+
+                            <div class="form-group">
+                                {{ form_label(form.country) }}
+                                {{ form_widget(form.country, {
+                                    'attr': {'class': 'form-control'}
+                                }) }}
+                                {{ form_errors(form.country) }}
+                            </div>
+
+                            <button type="submit" class="btn btn-primary mt-3">
+                                Place Order
+                            </button>
+
+                        {{ form_end(form) }}
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Order Summary -->
+            <div class="col-lg-6">
+                <div class="checkout-item">
+
+                    <h2>Order Summary</h2>
+
+                    <div class="checkout-order">
+                        <ul>
+                            <li>
+                                Product 1
+                                <span>$50</span>
+                            </li>
+
+                            <li>
+                                Product 2
+                                <span>$30</span>
+                            </li>
+
+                            <li>
+                                Total
+                                <span>$80</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}
