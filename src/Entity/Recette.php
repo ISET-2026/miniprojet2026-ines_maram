@@ -56,7 +56,7 @@ class Recette
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $imageName = null;
 
-    // --- Relations ---
+
 
     #[ORM\ManyToOne(inversedBy: 'recettes')]
     #[ORM\JoinColumn(nullable: false)]
@@ -79,7 +79,7 @@ class Recette
         $this->tags = new ArrayCollection();
     }
 
-    // Getters & Setters
+
     public function getId(): ?int { return $this->id; }
 
     public function getTitre(): ?string { return $this->titre; }

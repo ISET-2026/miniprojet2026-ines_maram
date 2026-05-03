@@ -22,7 +22,7 @@ class CategorieRecette
     #[Assert\NotBlank]
     private ?string $nom = null;
 
-    #[ORM\Column(length: 10, nullable: true)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $icone = null;
 
     #[ORM\Column(type: 'text', nullable: true)]
