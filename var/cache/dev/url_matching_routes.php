@@ -20,9 +20,9 @@ return [
         '/home' => [[['_route' => 'home', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, true, false, null]],
         '/recettes' => [[['_route' => 'recette_index', '_controller' => 'App\\Controller\\RecetteController::index'], null, null, null, false, false, null]],
         '/register' => [[['_route' => 'app_register', '_controller' => 'App\\Controller\\RegistrationController::register'], null, null, null, false, false, null]],
-        '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
-        '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'tag_index', '_controller' => 'App\\Controller\\TagController::index'], null, null, null, false, false, null]],
+        '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\loginController::login'], null, null, null, false, false, null]],
+        '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\loginController::logout'], null, null, null, false, false, null]],
         '/addRecette' => [[['_route' => 'addRecette', '_controller' => 'App\\Controller\\newRecetteController::index'], null, null, null, true, false, null]],
     ],
     [ // $regexpList
@@ -60,6 +60,10 @@ return [
                         .')'
                     .')'
                 .')'
+                .'|/favoris/(?'
+                    .'|ajouter/([^/]++)(*:494)'
+                    .'|supprimer/([^/]++)(*:520)'
+                .')'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -82,8 +86,10 @@ return [
         412 => [[['_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'], ['token'], null, null, false, false, null]],
         432 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         445 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
-        455 => [
-            [['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null],
+        455 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
+        494 => [[['_route' => 'favoris_add', '_controller' => 'App\\Controller\\FavorisController::addFavorite'], ['id'], null, null, false, true, null]],
+        520 => [
+            [['_route' => 'favoris_remove', '_controller' => 'App\\Controller\\FavorisController::removeFavorite'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],
