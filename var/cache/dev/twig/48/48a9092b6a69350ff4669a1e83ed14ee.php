@@ -146,30 +146,30 @@ class __TwigTemplate_30330a83a6931ff15b7134bce2246055 extends Template
                     <div class=\"mb-3\">
                         <label class=\"form-label\">Email</label>
                         <input type=\"email\"
-                               value=\"";
+                            value=\"";
         // line 36
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 36, $this->source); })()), "html", null, true);
         yield "\"
-                               name=\"email\"
-                               class=\"form-control p-2\"
-                               placeholder=\"Enter your email\"
-                               required autofocus>
+                            name=\"email\"
+                            class=\"form-control p-2\"
+                            placeholder=\"Enter your email\"
+                            required autofocus>
                     </div>
 
                     <!-- PASSWORD -->
                     <div class=\"mb-3\">
                         <label class=\"form-label\">Password</label>
                         <input type=\"password\"
-                               name=\"password\"
-                               class=\"form-control p-2\"
-                               placeholder=\"Enter your password\"
-                               required>
+                            name=\"password\"
+                            class=\"form-control p-2\"
+                            placeholder=\"Enter your password\"
+                            required>
                     </div>
 
                     <!-- CSRF -->
                     <input type=\"hidden\"
-                           name=\"_csrf_token\"
-                           value=\"";
+                        name=\"_csrf_token\"
+                        value=\"";
         // line 56
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken("authenticate"), "html", null, true);
         yield "\">
@@ -270,27 +270,27 @@ class __TwigTemplate_30330a83a6931ff15b7134bce2246055 extends Template
                     <div class=\"mb-3\">
                         <label class=\"form-label\">Email</label>
                         <input type=\"email\"
-                               value=\"{{ last_username }}\"
-                               name=\"email\"
-                               class=\"form-control p-2\"
-                               placeholder=\"Enter your email\"
-                               required autofocus>
+                            value=\"{{ last_username }}\"
+                            name=\"email\"
+                            class=\"form-control p-2\"
+                            placeholder=\"Enter your email\"
+                            required autofocus>
                     </div>
 
                     <!-- PASSWORD -->
                     <div class=\"mb-3\">
                         <label class=\"form-label\">Password</label>
                         <input type=\"password\"
-                               name=\"password\"
-                               class=\"form-control p-2\"
-                               placeholder=\"Enter your password\"
-                               required>
+                            name=\"password\"
+                            class=\"form-control p-2\"
+                            placeholder=\"Enter your password\"
+                            required>
                     </div>
 
                     <!-- CSRF -->
                     <input type=\"hidden\"
-                           name=\"_csrf_token\"
-                           value=\"{{ csrf_token('authenticate') }}\">
+                        name=\"_csrf_token\"
+                        value=\"{{ csrf_token('authenticate') }}\">
 
                     <!-- BUTTON -->
                     <button class=\"btn w-100 py-2 mt-3\"

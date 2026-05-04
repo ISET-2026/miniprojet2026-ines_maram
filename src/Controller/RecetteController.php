@@ -10,18 +10,10 @@ use Symfony\Component\Security\Http\Attribute\IsGranted;
 #[IsGranted('ROLE_CUISINIER')]
 #[Route('/recettes')]
 final class RecetteController extends AbstractController
-
 {
     #[Route('', name: 'recette_index')]
-    
-    
     public function index(): Response
     {
-        
         return $this->render('Recette/index.html.twig');
-        
-        
-
     }
-    
 }

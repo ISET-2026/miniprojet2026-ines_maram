@@ -20,10 +20,10 @@ return [
         '/home' => [[['_route' => 'home', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, true, false, null]],
         '/recettes' => [[['_route' => 'recette_index', '_controller' => 'App\\Controller\\RecetteController::index'], null, null, null, false, false, null]],
         '/register' => [[['_route' => 'app_register', '_controller' => 'App\\Controller\\RegistrationController::register'], null, null, null, false, false, null]],
-        '/' => [[['_route' => 'tag_index', '_controller' => 'App\\Controller\\TagController::index'], null, null, null, false, false, null]],
+        '/tag' => [[['_route' => 'tag_index', '_controller' => 'App\\Controller\\TagController::index'], null, null, null, true, false, null]],
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\loginController::login'], null, null, null, false, false, null]],
         '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\loginController::logout'], null, null, null, false, false, null]],
-        '/addRecette' => [[['_route' => 'addRecette', '_controller' => 'App\\Controller\\newRecetteController::index'], null, null, null, true, false, null]],
+        '/editR' => [[['_route' => 'editR', '_controller' => 'App\\Controller\\newRecetteController::index'], null, null, null, true, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'

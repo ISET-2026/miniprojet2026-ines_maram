@@ -648,6 +648,9 @@
         <argument type="service" id=".service_locator.TJNRSaV.App\Controller\TagController"/>
       </call>
     </service>
+    <service id="App\Controller\editRecetteController" class="App\Controller\editRecetteController" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="The autoloader expected class &quot;App\Controller\editRecetteController&quot; to be defined in file &quot;/home/vboxuser/projet_recettes/vendor/composer/../../src/Controller/editRecetteController.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+    </service>
     <service id="App\Controller\loginController" class="App\Controller\loginController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="routing.controller"/>

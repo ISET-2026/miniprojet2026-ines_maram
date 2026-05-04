@@ -4,8 +4,7 @@ namespace App\Entity;
 
 use App\Repository\IngredientRepository;
 use Doctrine\ORM\Mapping as ORM;
-use App\Entity\Recette;
-
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: IngredientRepository::class)]
 class Ingredient
@@ -16,14 +15,12 @@ class Ingredient
     private ?int $id = null;
 
     #[ORM\Column(length: 100)]
+    #[Assert\NotBlank]
     private ?string $nom = null;
 
-    #[ORM\Column(length: 10, nullable: true)]
-    private ?string $icone = null;
-
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $description = null;
-
+    #[ORM\Column(length: 50)]
+    #[Assert\NotBlank]
+    private ?string $quantite = null;
 
     #[ORM\ManyToOne(inversedBy: 'ingredients')]
     #[ORM\JoinColumn(nullable: false)]
@@ -42,41 +39,28 @@ class Ingredient
     public function setNom(string $nom): static
     {
         $this->nom = $nom;
-
         return $this;
     }
 
-    public function getIcone(): ?string
+    public function getQuantite(): ?string
     {
-        return $this->icone;
+        return $this->quantite;
     }
 
-    public function setIcone(?string $icone): static
+    public function setQuantite(string $quantite): static
     {
-        $this->icone = $icone;
-
+        $this->quantite = $quantite;
         return $this;
     }
 
-    public function getDescription(): ?string
-    {
-        return $this->description;
-    }
-
-    public function setDescription(?string $description): static
-    {
-        $this->description = $description;
-
-        return $this;
-    }
     public function getRecette(): ?Recette
-{
-    return $this->recette;
-}
+    {
+        return $this->recette;
+    }
 
-public function setRecette(?Recette $recette): self
-{
-    $this->recette = $recette;
-    return $this;
-}
+    public function setRecette(?Recette $recette): static
+    {
+        $this->recette = $recette;
+        return $this;
+    }
 }

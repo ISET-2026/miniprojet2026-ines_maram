@@ -12,6 +12,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Attribute\Route;
+use App\Service\MailerService;
 
 class RegistrationController extends AbstractController
 {
@@ -20,35 +21,42 @@ class RegistrationController extends AbstractController
         Request $request,
         UserPasswordHasherInterface $userPasswordHasher,
         Security $security,
-        EntityManagerInterface $entityManager
+        EntityManagerInterface $entityManager,
+        MailerService $mailer
     ): Response {
 
         $user = new User();
+
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            // ✅ PSEUDO (VERY IMPORTANT)
+            // pseudo
             $user->setPseudo($form->get('pseudo')->getData());
 
-            // ✅ DEFAULT ROLE (for your project: chef)
+            // default role
             $user->setRoles(['ROLE_CUISINIER']);
 
-            // password
+            // password hashing
             $plainPassword = $form->get('plainPassword')->getData();
             $user->setPassword(
                 $userPasswordHasher->hashPassword($user, $plainPassword)
             );
 
+            // save user
             $entityManager->persist($user);
             $entityManager->flush();
 
+            // 📩 SEND WELCOME EMAIL
+            $mailer->sendWelcomeEmail($user->getEmail());
+
+            // auto login after register
             return $security->login($user, AppAuthenticator::class, 'main');
         }
 
         return $this->render('registration/index.html.twig', [
-            'registrationForm' => $form,
+            'registrationForm' => $form->createView(),
         ]);
     }
 }
