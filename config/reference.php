@@ -638,7 +638,10 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         }>,
  *     },
  *     uid?: bool|array{ // Uid configuration
+
  *         enabled?: bool|Param, // Default: true
+
+
  *         default_uuid_version?: 7|6|4|1|Param, // Default: 7
  *         name_based_uuid_version?: 5|3|Param, // Default: 5
  *         name_based_uuid_namespace?: scalar|Param|null,
@@ -682,7 +685,8 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *     json_streamer?: bool|array{ // JSON streamer configuration
  *         enabled?: bool|Param, // Default: false
  *     },
- * }
+
+
  * @psalm-type DoctrineConfig = array{
  *     dbal?: array{
  *         default_connection?: scalar|Param|null,
@@ -1450,6 +1454,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         },
  *     }>,
  * }
+<<<<<<< HEAD
  * @psalm-type MakerConfig = array{
  *     root_namespace?: scalar|Param|null, // Default: "App"
  *     generate_final_classes?: bool|Param, // Default: true
@@ -1801,6 +1806,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *     convert_exception?: bool|Param, // Default: false
  *     remove_first_page_param?: bool|Param, // Default: false
  * }
+
  * @psalm-type ConfigType = array{
  *     imports?: ImportsConfig,
  *     parameters?: ParametersConfig,
@@ -1814,14 +1820,20 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *     twig_extra?: TwigExtraConfig,
  *     security?: SecurityConfig,
  *     monolog?: MonologConfig,
+
  *     nelmio_cors?: NelmioCorsConfig,
  *     api_platform?: ApiPlatformConfig,
  *     knp_paginator?: KnpPaginatorConfig,
+
  *     "when@dev"?: array{
  *         imports?: ImportsConfig,
  *         parameters?: ParametersConfig,
  *         services?: ServicesConfig,
  *         framework?: FrameworkConfig,
+
+
+ *         maker?: MakerConfig,
+
  *         doctrine?: DoctrineConfig,
  *         doctrine_migrations?: DoctrineMigrationsConfig,
  *         debug?: DebugConfig,
@@ -1832,10 +1844,12 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         twig_extra?: TwigExtraConfig,
  *         security?: SecurityConfig,
  *         monolog?: MonologConfig,
+
  *         maker?: MakerConfig,
  *         nelmio_cors?: NelmioCorsConfig,
  *         api_platform?: ApiPlatformConfig,
  *         knp_paginator?: KnpPaginatorConfig,
+
  *     },
  *     "when@prod"?: array{
  *         imports?: ImportsConfig,
@@ -1850,9 +1864,11 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         twig_extra?: TwigExtraConfig,
  *         security?: SecurityConfig,
  *         monolog?: MonologConfig,
+
  *         nelmio_cors?: NelmioCorsConfig,
  *         api_platform?: ApiPlatformConfig,
  *         knp_paginator?: KnpPaginatorConfig,
+
  *     },
  *     "when@test"?: array{
  *         imports?: ImportsConfig,
@@ -1868,9 +1884,11 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         twig_extra?: TwigExtraConfig,
  *         security?: SecurityConfig,
  *         monolog?: MonologConfig,
+
  *         nelmio_cors?: NelmioCorsConfig,
  *         api_platform?: ApiPlatformConfig,
  *         knp_paginator?: KnpPaginatorConfig,
+
  *     },
  *     ...<string, ExtensionType|array{ // extra keys must follow the when@%env% pattern or match an extension alias
  *         imports?: ImportsConfig,
