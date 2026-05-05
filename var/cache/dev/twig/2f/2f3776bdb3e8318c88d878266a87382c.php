@@ -53,7 +53,7 @@ class __TwigTemplate_6445d510c93ee61cecc20bc550d6198e extends Template
 
         <a href=\"";
         // line 7
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_accueil");
         yield "\" class=\"logo\">
             <img src=\"";
         // line 8
@@ -71,7 +71,7 @@ class __TwigTemplate_6445d510c93ee61cecc20bc550d6198e extends Template
 
                 <a class=\"navbar-brand\" href=\"";
         // line 19
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_accueil");
         yield "\">
 
                     <img src=\"";
@@ -97,7 +97,7 @@ class __TwigTemplate_6445d510c93ee61cecc20bc550d6198e extends Template
                         <li class=\"nav-item\">
                             <a href=\"";
         // line 36
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_accueil");
         yield "\"
                             class=\"nav-link active\">
                                 Home
@@ -111,11 +111,22 @@ class __TwigTemplate_6445d510c93ee61cecc20bc550d6198e extends Template
                             </a>
                         </li>
 
+
+       <li>
+            <a  href=\"";
+        // line 51
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_recettes");
+        yield "\" class=\"nav-item nav-link\">Recette</a>
+    
+          </li>
                         <li class=\"nav-item\">
-                            <a href=\"#\"
-                            class=\"nav-link\">
-                                Categories
-                            </a>
+                                <a href=\"";
+        // line 55
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_categories");
+        yield "\"
+    class=\"nav-item nav-link\">
+CategorieRecette
+</a>
                         </li>
 
                         <li class=\"nav-item\">
@@ -194,7 +205,7 @@ class __TwigTemplate_6445d510c93ee61cecc20bc550d6198e extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  100 => 36,  86 => 25,  79 => 21,  74 => 19,  60 => 8,  56 => 7,  48 => 1,);
+        return array (  125 => 55,  118 => 51,  100 => 36,  86 => 25,  79 => 21,  74 => 19,  60 => 8,  56 => 7,  48 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -205,7 +216,7 @@ class __TwigTemplate_6445d510c93ee61cecc20bc550d6198e extends Template
     <!-- Mobile Navbar -->
     <div class=\"mobile-nav\">
 
-        <a href=\"{{ path('home') }}\" class=\"logo\">
+        <a href=\"{{ path('app_accueil') }}\" class=\"logo\">
             <img src=\"{{ asset('assets/img/logo-two.png') }}\" alt=\"Logo\">
         </a>
 
@@ -217,7 +228,7 @@ class __TwigTemplate_6445d510c93ee61cecc20bc550d6198e extends Template
 
             <nav class=\"navbar navbar-expand-md navbar-light\">
 
-                <a class=\"navbar-brand\" href=\"{{ path('home') }}\">
+                <a class=\"navbar-brand\" href=\"{{ path('app_accueil') }}\">
 
                     <img src=\"{{ asset('assets/img/logo.png') }}\"
                         class=\"logo-one\"
@@ -234,7 +245,7 @@ class __TwigTemplate_6445d510c93ee61cecc20bc550d6198e extends Template
                     <ul class=\"navbar-nav\">
 
                         <li class=\"nav-item\">
-                            <a href=\"{{ path('home') }}\"
+                            <a href=\"{{ path('app_accueil') }}\"
                             class=\"nav-link active\">
                                 Home
                             </a>
@@ -247,11 +258,16 @@ class __TwigTemplate_6445d510c93ee61cecc20bc550d6198e extends Template
                             </a>
                         </li>
 
+
+       <li>
+            <a  href=\"{{ path('app_recettes') }}\" class=\"nav-item nav-link\">Recette</a>
+    
+          </li>
                         <li class=\"nav-item\">
-                            <a href=\"#\"
-                            class=\"nav-link\">
-                                Categories
-                            </a>
+                                <a href=\"{{ path('app_categories') }}\"
+    class=\"nav-item nav-link\">
+CategorieRecette
+</a>
                         </li>
 
                         <li class=\"nav-item\">
@@ -299,6 +315,6 @@ class __TwigTemplate_6445d510c93ee61cecc20bc550d6198e extends Template
     </div>
 
 </div>
-<!-- End Navbar Area -->", "partials/navbar.html.twig", "/home/vboxuser/projet_recettes/templates/partials/navbar.html.twig");
+<!-- End Navbar Area -->", "partials/navbar.html.twig", "/home/useradm/projet-recettes/templates/partials/navbar.html.twig");
     }
 }

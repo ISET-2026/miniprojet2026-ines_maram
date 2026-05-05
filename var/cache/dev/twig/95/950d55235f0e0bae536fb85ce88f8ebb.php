@@ -365,6 +365,6 @@ class __TwigTemplate_077e3eaa47ed49bd48e5d5d1a5dc0f51 extends Template
         </div>
     </form>
 </div>
-", "@WebProfiler/Profiler/search.html.twig", "/home/vboxuser/projet_recettes/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/search.html.twig");
+", "@WebProfiler/Profiler/search.html.twig", "/home/useradm/projet-recettes/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/search.html.twig");
     }
 }

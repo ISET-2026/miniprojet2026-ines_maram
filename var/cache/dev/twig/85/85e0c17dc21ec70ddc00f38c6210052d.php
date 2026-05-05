@@ -60,7 +60,7 @@ class __TwigTemplate_ab313c39ab3c128d4c53ff2c3ff01e3a extends Template
 
                         <a href=\"";
         // line 14
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_accueil");
         yield "\">
 
                             <img src=\"";
@@ -257,7 +257,7 @@ class __TwigTemplate_ab313c39ab3c128d4c53ff2c3ff01e3a extends Template
 
                     <div class=\"footer-logo\">
 
-                        <a href=\"{{ path('home') }}\">
+                        <a href=\"{{ path('app_accueil') }}\">
 
                             <img src=\"{{ asset('assets/img/logo.png') }}\"
                                 class=\"footer-logo1\"
@@ -398,6 +398,6 @@ class __TwigTemplate_ab313c39ab3c128d4c53ff2c3ff01e3a extends Template
     </div>
 
 </div>
-<!-- End Copyright -->", "partials/footer.html.twig", "/home/vboxuser/projet_recettes/templates/partials/footer.html.twig");
+<!-- End Copyright -->", "partials/footer.html.twig", "/home/useradm/projet-recettes/templates/partials/footer.html.twig");
     }
 }

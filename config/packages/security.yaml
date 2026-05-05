@@ -17,9 +17,9 @@ security:
             provider: users_in_memory
 
     access_control:
-        - { path: ^/admin, roles: ROLE_ADMIN }
-        - { path: ^/recettes/nouvelle, roles: ROLE_CUISINIER }
-        - { path: ^/recettes/.+/modifier, roles: ROLE_CUISINIER }
+      #  - { path: ^/admin, roles: ROLE_ADMIN }
+      #  - { path: ^/recettes/nouvelle, roles: ROLE_CUISINIER }
+       # - { path: ^/recettes/.+/modifier, roles: ROLE_CUISINIER }
 
 
 when@test:

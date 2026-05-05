@@ -728,6 +728,6 @@ class __TwigTemplate_8b97d61ccd7abdbb79c1bb5a88f077ca extends Template
 {% block form_group_class -%}
     col-sm-10
 {%- endblock form_group_class %}
-", "bootstrap_5_horizontal_layout.html.twig", "/home/vboxuser/projet_recettes/vendor/symfony/twig-bridge/Resources/views/Form/bootstrap_5_horizontal_layout.html.twig");
+", "bootstrap_5_horizontal_layout.html.twig", "/home/useradm/projet-recettes/vendor/symfony/twig-bridge/Resources/views/Form/bootstrap_5_horizontal_layout.html.twig");
     }
 }

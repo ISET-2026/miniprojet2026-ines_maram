@@ -607,6 +607,6 @@ class __TwigTemplate_40486d50cdc8f8cde8beb6a1ddeccb76 extends Template
 
 </body>
 </html>
-", "@ApiPlatform/SwaggerUi/index.html.twig", "/home/vboxuser/projet_recettes/vendor/api-platform/symfony/Bundle/Resources/views/SwaggerUi/index.html.twig");
+", "@ApiPlatform/SwaggerUi/index.html.twig", "/home/useradm/projet-recettes/vendor/api-platform/symfony/Bundle/Resources/views/SwaggerUi/index.html.twig");
     }
 }

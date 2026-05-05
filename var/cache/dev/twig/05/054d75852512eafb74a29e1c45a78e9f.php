@@ -300,6 +300,6 @@ class __TwigTemplate_149a3bea29366565c716198eb383740f extends Template
 
 </body>
 </html>
-", "@ApiPlatform/Graphiql/index.html.twig", "/home/vboxuser/projet_recettes/vendor/api-platform/symfony/Bundle/Resources/views/Graphiql/index.html.twig");
+", "@ApiPlatform/Graphiql/index.html.twig", "/home/useradm/projet-recettes/vendor/api-platform/symfony/Bundle/Resources/views/Graphiql/index.html.twig");
     }
 }

@@ -106,7 +106,7 @@ class __TwigTemplate_cf1f86dd4d0697ddd72dfbbaae083cbc extends Template
             <ul>
                 <li><a href=\"";
         // line 13
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_accueil");
         yield "\">Home</a></li>
                 <li>Categories</li>
             </ul>
@@ -243,7 +243,7 @@ class __TwigTemplate_cf1f86dd4d0697ddd72dfbbaae083cbc extends Template
         <div class=\"page-title-item\">
             <h2>Categories</h2>
             <ul>
-                <li><a href=\"{{ path('home') }}\">Home</a></li>
+                <li><a href=\"{{ path('app_accueil') }}\">Home</a></li>
                 <li>Categories</li>
             </ul>
         </div>
@@ -313,6 +313,6 @@ class __TwigTemplate_cf1f86dd4d0697ddd72dfbbaae083cbc extends Template
     </div>
 </div>
 
-{% endblock %}", "Categorie/index.html.twig", "/home/vboxuser/projet_recettes/templates/Categorie/index.html.twig");
+{% endblock %}", "Categorie/index.html.twig", "/home/useradm/projet-recettes/templates/Categorie/index.html.twig");
     }
 }

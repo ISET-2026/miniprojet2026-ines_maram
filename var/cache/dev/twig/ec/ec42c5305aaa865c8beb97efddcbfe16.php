@@ -167,6 +167,6 @@ class __TwigTemplate_091fec359d2bd160af4b399c488d9289 extends Template
 
     {{ include('@WebProfiler/Profiler/toolbar_item.html.twig', {link: profiler_url}) }}
 {% endblock %}
-", "@WebProfiler/Profiler/cancel.html.twig", "/home/vboxuser/projet_recettes/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/cancel.html.twig");
+", "@WebProfiler/Profiler/cancel.html.twig", "/home/useradm/projet-recettes/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/cancel.html.twig");
     }
 }

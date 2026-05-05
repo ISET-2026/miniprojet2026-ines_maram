@@ -23,10 +23,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $nom = null;
-
-    #[ORM\Column(length: 255)]
-    private ?string $prenom = null;
+    private ?string $pseudo = null;
 
     #[ORM\Column(length: 180)]
     #[Assert\NotBlank]
@@ -52,25 +49,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     return $this->id;
 }
 
-    public function getNom(): ?string
+    public function getpseudo(): ?string
     {
-        return $this->nom;
+        return $this->pseudo;
     }
 
-    public function setNom(string $nom): static
+    public function setPseudo(string $pseudo): static
     {
-        $this->nom = $nom;
-        return $this;
-    }
-
-    public function getPrenom(): ?string
-    {
-        return $this->prenom;
-    }
-
-    public function setPrenom(string $prenom): static
-    {
-        $this->prenom = $prenom;
+        $this->pseudo = $pseudo;
         return $this;
     }
 

@@ -22,12 +22,6 @@ class Ingredient
     #[Assert\NotBlank]
     private ?string $quantite = null;
 
-    #[ORM\Column(length: 10, nullable: true)]
-    private ?string $icone = null;
-
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $description = null;
-
     #[ORM\ManyToOne(inversedBy: 'ingredients')]
     #[ORM\JoinColumn(nullable: false)]
     private ?Recette $recette = null;

@@ -71,6 +71,6 @@ class __TwigTemplate_d42c2d90539b02997454b5d1f4afd180 extends Template
 
     public function getSourceContext(): Source
     {
-        return new Source("", "Favoris/index.html.twig", "/home/vboxuser/projet_recettes/templates/Favoris/index.html.twig");
+        return new Source("", "Favoris/index.html.twig", "/home/useradm/projet-recettes/templates/Favoris/index.html.twig");
     }
 }

@@ -708,6 +708,6 @@ class __TwigTemplate_ccc6c6f96b5bbf04ba1ad09634503eec extends Template
         {% endif %}
     </div>
 {% endblock %}
-", "@WebProfiler/Collector/http_client.html.twig", "/home/vboxuser/projet_recettes/vendor/symfony/web-profiler-bundle/Resources/views/Collector/http_client.html.twig");
+", "@WebProfiler/Collector/http_client.html.twig", "/home/useradm/projet-recettes/vendor/symfony/web-profiler-bundle/Resources/views/Collector/http_client.html.twig");
     }
 }

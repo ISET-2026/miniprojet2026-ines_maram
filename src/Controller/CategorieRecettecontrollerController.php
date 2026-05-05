@@ -25,7 +25,7 @@ final class CategorieRecettecontrollerController extends AbstractController
     {
         $categories = $categorieRepository->findAll();
 
-        return $this->render('categorie_recettecontroller/index.html.twig', [
+        return $this->render('Categorie/index.html.twig', [
             'categories' => $categories,
         ]);
     }
@@ -46,7 +46,7 @@ final class CategorieRecettecontrollerController extends AbstractController
             return $this->redirectToRoute('app_categories');
         }
 
-        return $this->render('categorie_recettecontroller/nouvelle.html.twig', [
+        return $this->render('Categorie/nouvelle.html.twig', [
             'formulaire' => $form,
         ]);
     }
