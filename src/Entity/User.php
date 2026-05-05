@@ -37,6 +37,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'auteur', targetEntity: Recette::class)]
     private Collection $recettes;
 
+    #[ORM\Column(type: 'string', length: 50, nullable: true)]
+    private ?string $requestedRole = null;
+
     public function __construct()
     {
         $this->recettes = new ArrayCollection();
@@ -93,6 +96,16 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->pseudo = $pseudo;
         return $this;
     }
+    public function getRequestedRole(): ?string
+{
+    return $this->requestedRole;
+}
+
+public function setRequestedRole(?string $requestedRole): self
+{
+    $this->requestedRole = $requestedRole;
+    return $this;
+}
 
     
 

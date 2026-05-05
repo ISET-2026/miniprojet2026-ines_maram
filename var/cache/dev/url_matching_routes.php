@@ -16,6 +16,7 @@ return [
         '/_profiler/xdebug' => [[['_route' => '_profiler_xdebug', '_controller' => 'web_profiler.controller.profiler::xdebugAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
         '/categories' => [[['_route' => 'categorie_index', '_controller' => 'App\\Controller\\CategoriesController::index'], null, ['GET' => 0], null, false, false, null]],
+        '/editR' => [[['_route' => 'editR', '_controller' => 'App\\Controller\\EditRecetteController::index'], null, null, null, true, false, null]],
         '/favoris' => [[['_route' => 'favoris_index', '_controller' => 'App\\Controller\\FavorisController::index'], null, ['GET' => 0], null, false, false, null]],
         '/home' => [[['_route' => 'home', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, true, false, null]],
         '/recettes' => [[['_route' => 'recette_index', '_controller' => 'App\\Controller\\RecetteController::index'], null, null, null, false, false, null]],
@@ -23,7 +24,7 @@ return [
         '/tag' => [[['_route' => 'tag_index', '_controller' => 'App\\Controller\\TagController::index'], null, null, null, true, false, null]],
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\loginController::login'], null, null, null, false, false, null]],
         '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\loginController::logout'], null, null, null, false, false, null]],
-        '/editR' => [[['_route' => 'editR', '_controller' => 'App\\Controller\\newRecetteController::index'], null, null, null, true, false, null]],
+        '/addRecette' => [[['_route' => 'addRecette', '_controller' => 'App\\Controller\\newRecetteController::index'], null, null, null, true, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'

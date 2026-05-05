@@ -11,6 +11,8 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\IsTrue;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+
 
 class RegistrationFormType extends AbstractType
 {
@@ -27,6 +29,17 @@ class RegistrationFormType extends AbstractType
                     ),
                 ],
             ])
+        
+        ->add('requestedRole', ChoiceType::class, [
+        'choices' => [
+            'Simple User' => null,
+            'Chef' => 'ROLE_CUISINIER',
+            'Admin' => 'ROLE_ADMIN',
+        ],
+        'required' => false,
+        'placeholder' => 'Choose role (optional)',
+        ])
+            
             ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,
                 // this is read and encoded in the controller
@@ -45,6 +58,7 @@ class RegistrationFormType extends AbstractType
                 ],
             ])
         ;
+        
     }
 
     public function configureOptions(OptionsResolver $resolver): void
@@ -53,4 +67,5 @@ class RegistrationFormType extends AbstractType
             'data_class' => User::class,
         ]);
     }
+    
 }
