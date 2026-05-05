@@ -2,9 +2,13 @@
 
 
 parameters:
-    upload_directory: '%kernel.project_dir%/public/uploads/recettes'
+# Hna t7ot el path mta3 el dossier win bech t-sauvi el tsawer
+    images_directory: '%kernel.project_dir%/public/img/uploads'
 
 services:
+
+    
+    # default configuration for services in *this* file
     _defaults:
         autowire: true
         autoconfigure: true

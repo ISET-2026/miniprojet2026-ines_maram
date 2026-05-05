@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
     "api-platform/symfony": {
         "version": "4.3",
         "recipe": {
@@ -14,8 +13,6 @@
             "src/ApiResource/.gitignore"
         ]
     },
-=======
->>>>>>> 1056446cbb35853e2b0c46f92514fd70f660b97b
     "doctrine/deprecations": {
         "version": "1.1",
         "recipe": {
@@ -67,10 +64,6 @@
             "migrations/.gitignore"
         ]
     },
-<<<<<<< HEAD
-    "knplabs/knp-paginator-bundle": {
-        "version": "v6.10.0"
-    },
     "nelmio/cors-bundle": {
         "version": "2.6",
         "recipe": {
@@ -83,8 +76,6 @@
             "config/packages/nelmio_cors.yaml"
         ]
     },
-=======
->>>>>>> 1056446cbb35853e2b0c46f92514fd70f660b97b
     "phpunit/phpunit": {
         "version": "13.1",
         "recipe": {
@@ -320,7 +311,6 @@
             "templates/base.html.twig"
         ]
     },
-<<<<<<< HEAD
     "symfony/uid": {
         "version": "8.0",
         "recipe": {
@@ -330,8 +320,6 @@
             "ref": "0df5844274d871b37fc3816c57a768ffc60a43a5"
         }
     },
-=======
->>>>>>> 1056446cbb35853e2b0c46f92514fd70f660b97b
     "symfony/ux-turbo": {
         "version": "3.0",
         "recipe": {
@@ -383,5 +371,14 @@
     },
     "twig/extra-bundle": {
         "version": "v3.24.0"
+    },
+    "vich/uploader-bundle": {
+        "version": "2.9",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "main",
+            "version": "1.13",
+            "ref": "1b3064c2f6b255c2bc2f56461aaeb76b11e07e36"
+        }
     }
 }

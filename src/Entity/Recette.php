@@ -12,6 +12,13 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use ApiPlatform\Metadata\ApiResource;
+use Symfony\Component\Serializer\Annotation\Groups;
+
+#[ApiResource(
+    normalizationContext: ['groups' => ['recette:read']],
+    denormalizationContext: ['groups' => ['recette:write']]
+)]
 
 #[ORM\Entity(repositoryClass: RecetteRepository::class)]
 class Recette
@@ -19,66 +26,76 @@ class Recette
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+       #[Groups(['recette:read'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
     #[Assert\NotBlank]
     #[Assert\Length(min: 5)]
+    #[Groups(['recette:read', 'recette:write'])]
     private ?string $titre = null;
 
     #[ORM\Column(type: Types::TEXT)]
     #[Assert\NotBlank]
     #[Assert\Length(min: 30)]
+    #[Groups(['recette:read', 'recette:write'])]
     private ?string $description = null;
 
     #[ORM\Column(type: Types::TEXT)]
     #[Assert\NotBlank]
+    #[Groups(['recette:read', 'recette:write'])]
     private ?string $instructions = null;
 
     #[ORM\Column]
     #[Assert\NotBlank]
     #[Assert\Range(min: 1)]
+    #[Groups(['recette:read', 'recette:write'])]
     private ?int $tempsPreparation = null;
 
     #[ORM\Column(nullable: true)]
+    #[Groups(['recette:read', 'recette:write'])]
     private ?int $tempsCuisson = null;
 
     #[ORM\Column(length: 20)]
     #[Assert\Choice(choices: ['facile', 'moyen', 'difficile'])]
+    #[Groups(['recette:read', 'recette:write'])]
     private ?string $difficulte = null;
 
     #[ORM\Column]
     #[Assert\Range(min: 1, max: 50)]
+    #[Groups(['recette:read', 'recette:write'])]
     private ?int $nbPersonnes = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+        #[Groups(['recette:read'])]
     private ?\DateTimeInterface $dateCreation = null;
 
     #[ORM\Column]
+       #[Groups(['recette:read', 'recette:write'])]
     private ?bool $publiee = false;
 
     #[ORM\Column(length: 255, nullable: true)]
+       #[Groups(['recette:read', 'recette:write'])]
     private ?string $imageName = null;
 
 
 
     #[ORM\ManyToOne(inversedBy: 'recettes')]
     #[ORM\JoinColumn(nullable: false)]
-
-    private ?CategoriesController $categorie = null;
-
-
+        #[Groups(['article:read'])]
+    private ?CategorieRecette $categorie = null;
 
     #[ORM\OneToMany(mappedBy: 'recette', targetEntity: Ingredient::class, orphanRemoval: true)]
+        #[Groups(['article:read'])]
     private Collection $ingredients;
 
     #[ORM\ManyToOne(inversedBy: 'recettes')]
     #[ORM\JoinColumn(nullable: false)]
+        #[Groups(['article:read'])]
     private ?User $auteur = null;
 
-
-    #[ORM\ManyToMany(targetEntity: TagController::class, inversedBy: 'recettes')]
-
+    #[ORM\ManyToMany(targetEntity: TagRecette::class, inversedBy: 'recettes')]
+        #[Groups(['article:read'])]
     private Collection $tags;
 
     public function __construct()

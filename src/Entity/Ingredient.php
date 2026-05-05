@@ -85,4 +85,3 @@ class Ingredient
         return $this;
     }
 }
->>>>>>> 1056446cbb35853e2b0c46f92514fd70f660b97b
