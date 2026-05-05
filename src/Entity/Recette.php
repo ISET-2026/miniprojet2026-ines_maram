@@ -78,21 +78,19 @@ class Recette
        #[Groups(['recette:read', 'recette:write'])]
     private ?string $imageName = null;
 
-
-
+    // Relations
     #[ORM\ManyToOne(inversedBy: 'recettes')]
     #[ORM\JoinColumn(nullable: false)]
         #[Groups(['article:read'])]
     private ?CategorieRecette $categorie = null;
 
-    #[ORM\OneToMany(mappedBy: 'recette', targetEntity: Ingredient::class, orphanRemoval: true)]
-        #[Groups(['article:read'])]
-    private Collection $ingredients;
-
     #[ORM\ManyToOne(inversedBy: 'recettes')]
     #[ORM\JoinColumn(nullable: false)]
         #[Groups(['article:read'])]
     private ?User $auteur = null;
+
+    #[ORM\OneToMany(mappedBy: 'recette', targetEntity: Ingredient::class, orphanRemoval: true, cascade: ['persist'])]
+    private Collection $ingredients;
 
     #[ORM\ManyToMany(targetEntity: TagRecette::class, inversedBy: 'recettes')]
         #[Groups(['article:read'])]
@@ -104,7 +102,6 @@ class Recette
         $this->ingredients = new ArrayCollection();
         $this->tags = new ArrayCollection();
     }
-
 
     public function getId(): ?int { return $this->id; }
 
@@ -146,27 +143,43 @@ class Recette
     public function setCategorie(?CategorieRecette $categorie): static { $this->categorie = $categorie; return $this; }
 >>>>>>> 1056446cbb35853e2b0c46f92514fd70f660b97b
 
-    public function getIngredients(): Collection { return $this->ingredients; }
-    public function addIngredient(Ingredient $ingredient): static {
-        if (!$this->ingredients->contains($ingredient)) { $this->ingredients->add($ingredient); $ingredient->setRecette($this); }
-        return $this;
-    }
-
     public function getAuteur(): ?User { return $this->auteur; }
     public function setAuteur(?User $auteur): static { $this->auteur = $auteur; return $this; }
 
+    public function getIngredients(): Collection { return $this->ingredients; }
+
+    public function addIngredient(Ingredient $ingredient): static
+    {
+        if (!$this->ingredients->contains($ingredient)) {
+            $this->ingredients->add($ingredient);
+            $ingredient->setRecette($this);
+        }
+        return $this;
+    }
+
+    public function removeIngredient(Ingredient $ingredient): static
+    {
+        if ($this->ingredients->removeElement($ingredient)) {
+            if ($ingredient->getRecette() === $this) {
+                $ingredient->setRecette(null);
+            }
+        }
+        return $this;
+    }
+
     public function getTags(): Collection { return $this->tags; }
-<<<<<<< HEAD
-    public function addTag(TagController $tag): static {
-        if (!$this->tags->contains($tag)) { $this->tags->add($tag); }
+
+    public function addTag(TagRecette $tag): static
+    {
+        if (!$this->tags->contains($tag)) {
+            $this->tags->add($tag);
+        }
         return $this;
     }
-    public function removeTag(TagController $tag): static { $this->tags->removeElement($tag); return $this; }
-=======
-    public function addTag(TagRecette $tag): static {
-        if (!$this->tags->contains($tag)) { $this->tags->add($tag); }
+
+    public function removeTag(TagRecette $tag): static
+    {
+        $this->tags->removeElement($tag);
         return $this;
     }
-    public function removeTag(TagRecette $tag): static { $this->tags->removeElement($tag); return $this; }
->>>>>>> 1056446cbb35853e2b0c46f92514fd70f660b97b
 }

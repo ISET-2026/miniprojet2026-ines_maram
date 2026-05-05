@@ -13,21 +13,20 @@ class Ingredient
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
-<<<<<<< HEAD
 
     #[ORM\Column(length: 100)]
     #[Assert\NotBlank]
-=======
-  
-   
-    #[ORM\Column(length: 100)]
-     #[Assert\NotBlank]
->>>>>>> 1056446cbb35853e2b0c46f92514fd70f660b97b
     private ?string $nom = null;
 
     #[ORM\Column(length: 50)]
     #[Assert\NotBlank]
     private ?string $quantite = null;
+
+    #[ORM\Column(length: 10, nullable: true)]
+    private ?string $icone = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $description = null;
 
     #[ORM\ManyToOne(inversedBy: 'ingredients')]
     #[ORM\JoinColumn(nullable: false)]
@@ -46,10 +45,6 @@ class Ingredient
     public function setNom(string $nom): static
     {
         $this->nom = $nom;
-<<<<<<< HEAD
-=======
-
->>>>>>> 1056446cbb35853e2b0c46f92514fd70f660b97b
         return $this;
     }
 
@@ -61,10 +56,28 @@ class Ingredient
     public function setQuantite(string $quantite): static
     {
         $this->quantite = $quantite;
-<<<<<<< HEAD
-=======
+        return $this;
+    }
 
->>>>>>> 1056446cbb35853e2b0c46f92514fd70f660b97b
+    public function getIcone(): ?string
+    {
+        return $this->icone;
+    }
+
+    public function setIcone(?string $icone): static
+    {
+        $this->icone = $icone;
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(?string $description): static
+    {
+        $this->description = $description;
         return $this;
     }
 
@@ -76,12 +89,6 @@ class Ingredient
     public function setRecette(?Recette $recette): static
     {
         $this->recette = $recette;
-<<<<<<< HEAD
-        return $this;
-    }
-}
-=======
-
         return $this;
     }
 }
