@@ -8,6 +8,7 @@ use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Ingredient;
 use App\Entity\R;
+use App\Entity\Recette;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Repository\IngredientRepository ;
 use App\Repository\RecetteRepository ;
