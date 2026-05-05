@@ -3523,18 +3523,7 @@
         },
         {
             "name": "symfony/form",
-<<<<<<< HEAD
-            "version": "v8.0.8",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/form.git",
-                "reference": "c163f5db2f1ffecb3d5b33a2e662d13115323b20"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/form/zipball/c163f5db2f1ffecb3d5b33a2e662d13115323b20",
-                "reference": "c163f5db2f1ffecb3d5b33a2e662d13115323b20",
-=======
+
             "version": "v8.0.9",
             "source": {
                 "type": "git",
@@ -3544,8 +3533,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/form/zipball/dd9f73dd3b92e657c97aeeca1f47e981c635ea91",
-                "reference": "dd9f73dd3b92e657c97aeeca1f47e981c635ea91",
->>>>>>> 1056446cbb35853e2b0c46f92514fd70f660b97b
+
                 "shasum": ""
             },
             "require": {
@@ -3607,11 +3595,8 @@
             "description": "Allows to easily create, process and reuse HTML forms",
             "homepage": "https://symfony.com",
             "support": {
-<<<<<<< HEAD
-                "source": "https://github.com/symfony/form/tree/v8.0.8"
-=======
+
                 "source": "https://github.com/symfony/form/tree/v8.0.9"
->>>>>>> 1056446cbb35853e2b0c46f92514fd70f660b97b
             },
             "funding": [
                 {
@@ -3631,11 +3616,9 @@
                     "type": "tidelift"
                 }
             ],
-<<<<<<< HEAD
-            "time": "2026-03-30T15:14:47+00:00"
-=======
+
             "time": "2026-04-29T15:02:55+00:00"
->>>>>>> 1056446cbb35853e2b0c46f92514fd70f660b97b
+
         },
         {
             "name": "symfony/framework-bundle",
@@ -7173,18 +7156,7 @@
         },
         {
             "name": "symfony/validator",
-<<<<<<< HEAD
-            "version": "v8.0.8",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/validator.git",
-                "reference": "1a559eecc841a6fd3dabdcbff9401a0b8951be90"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/validator/zipball/1a559eecc841a6fd3dabdcbff9401a0b8951be90",
-                "reference": "1a559eecc841a6fd3dabdcbff9401a0b8951be90",
-=======
+
             "version": "v8.0.9",
             "source": {
                 "type": "git",
@@ -7195,7 +7167,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/validator/zipball/131dc8322c06595a6c98185787fa756deada20df",
                 "reference": "131dc8322c06595a6c98185787fa756deada20df",
->>>>>>> 1056446cbb35853e2b0c46f92514fd70f660b97b
                 "shasum": ""
             },
             "require": {
@@ -7257,11 +7228,8 @@
             "description": "Provides tools to validate values",
             "homepage": "https://symfony.com",
             "support": {
-<<<<<<< HEAD
-                "source": "https://github.com/symfony/validator/tree/v8.0.8"
-=======
+
                 "source": "https://github.com/symfony/validator/tree/v8.0.9"
->>>>>>> 1056446cbb35853e2b0c46f92514fd70f660b97b
             },
             "funding": [
                 {
@@ -7281,11 +7249,9 @@
                     "type": "tidelift"
                 }
             ],
-<<<<<<< HEAD
-            "time": "2026-03-30T15:14:47+00:00"
-=======
+
             "time": "2026-04-30T16:10:06+00:00"
->>>>>>> 1056446cbb35853e2b0c46f92514fd70f660b97b
+
         },
         {
             "name": "symfony/var-dumper",
