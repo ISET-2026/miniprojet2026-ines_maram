@@ -369,6 +369,6 @@ class __TwigTemplate_cafbdc8bdbbd5ba389cfe51eaae60b99 extends Template
     </div>
 </div>
 
-{% endblock %}", "Recette/new.html.twig", "/home/vboxuser/projet_recettes/templates/Recette/new.html.twig");
+{% endblock %}", "Recette/new.html.twig", "/home/vboxuser/projet_recettes/projet_recette/templates/Recette/new.html.twig");
     }
 }

@@ -2,10 +2,6 @@
 
 namespace App\Entity;
 
-
-use App\Controller\CategoriesController;
-use App\Controller\TagController;
-
 use App\Repository\RecetteRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -13,13 +9,12 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use ApiPlatform\Metadata\ApiResource;
-use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Serializer\Attribute\Groups;
 
 #[ApiResource(
     normalizationContext: ['groups' => ['recette:read']],
     denormalizationContext: ['groups' => ['recette:write']]
 )]
-
 #[ORM\Entity(repositoryClass: RecetteRepository::class)]
 class Recette
 {
@@ -67,7 +62,7 @@ class Recette
     private ?int $nbPersonnes = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-        #[Groups(['recette:read'])]
+    #[Groups(['recette:read'])]
     private ?\DateTimeInterface $dateCreation = null;
 
     #[ORM\Column]
@@ -78,23 +73,32 @@ class Recette
     #[Groups(['recette:read', 'recette:write'])]
     private ?string $imageName = null;
 
-    // Relations
+    // ===================== RELATIONS =====================
+
     #[ORM\ManyToOne(inversedBy: 'recettes')]
     #[ORM\JoinColumn(nullable: false)]
-        #[Groups(['article:read'])]
+    #[Groups(['recette:read', 'recette:write'])]
     private ?CategorieRecette $categorie = null;
 
     #[ORM\ManyToOne(inversedBy: 'recettes')]
     #[ORM\JoinColumn(nullable: false)]
-        #[Groups(['article:read'])]
+    #[Groups(['recette:read'])]
     private ?User $auteur = null;
 
-    #[ORM\OneToMany(mappedBy: 'recette', targetEntity: Ingredient::class, orphanRemoval: true, cascade: ['persist'])]
+    #[ORM\OneToMany(
+        mappedBy: 'recette',
+        targetEntity: Ingredient::class,
+        orphanRemoval: true,
+        cascade: ['persist']
+    )]
+    #[Groups(['recette:read', 'recette:write'])]
     private Collection $ingredients;
 
     #[ORM\ManyToMany(targetEntity: TagRecette::class, inversedBy: 'recettes')]
-        #[Groups(['article:read'])]
+    #[Groups(['recette:read', 'recette:write'])]
     private Collection $tags;
+
+    // ===================== CONSTRUCTOR =====================
 
     public function __construct()
     {
@@ -102,6 +106,8 @@ class Recette
         $this->ingredients = new ArrayCollection();
         $this->tags = new ArrayCollection();
     }
+
+    // ===================== GETTERS / SETTERS =====================
 
     public function getId(): ?int { return $this->id; }
 
@@ -135,10 +141,8 @@ class Recette
     public function getImageName(): ?string { return $this->imageName; }
     public function setImageName(?string $imageName): static { $this->imageName = $imageName; return $this; }
 
-
     public function getCategorie(): ?CategorieRecette { return $this->categorie; }
     public function setCategorie(?CategorieRecette $categorie): static { $this->categorie = $categorie; return $this; }
-
 
     public function getAuteur(): ?User { return $this->auteur; }
     public function setAuteur(?User $auteur): static { $this->auteur = $auteur; return $this; }
@@ -180,4 +184,3 @@ class Recette
         return $this;
     }
 }
-    

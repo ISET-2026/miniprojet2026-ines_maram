@@ -299,6 +299,6 @@ class __TwigTemplate_6445d510c93ee61cecc20bc550d6198e extends Template
     </div>
 
 </div>
-<!-- End Navbar Area -->", "partials/navbar.html.twig", "/home/vboxuser/projet_recettes/templates/partials/navbar.html.twig");
+<!-- End Navbar Area -->", "partials/navbar.html.twig", "/home/vboxuser/projet_recettes/projet_recette/templates/partials/navbar.html.twig");
     }
 }

@@ -98,13 +98,13 @@ class __TwigTemplate_88b6a755bb8cf943a7689d074f03688e extends Template
 
         // line 6
         yield "
-<div style=\"min-height: 100vh; background: #f8f9fa; display: flex; align-items: center; justify-content: center;\">
+<div style=\"min-height:100vh; background:#f8f9fa; display:flex; align-items:center; justify-content:center;\">
 
-    <div style=\"width: 200%; max-width: 700px; height:700px\">
+    <div style=\"width:400%; max-width:800px; height:400px\">
 
         <div class=\"card shadow-lg border-0 rounded-4\">
 
-            <div class=\"card-body\" style=\"padding: 3rem;\">
+            <div class=\"card-body p-4\">
 
                 <h3 class=\"text-center mb-4\">Welcome Back 👋</h3>
 
@@ -127,7 +127,7 @@ class __TwigTemplate_88b6a755bb8cf943a7689d074f03688e extends Template
         if ((($tmp = CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 23, $this->source); })()), "user", [], "any", false, false, false, 23)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
             // line 24
             yield "                    <div class=\"alert alert-success text-center\">
-                        Logged in as <strong>";
+                        You are logged in as <strong>";
             // line 25
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 25, $this->source); })()), "user", [], "any", false, false, false, 25), "userIdentifier", [], "any", false, false, false, 25), "html", null, true);
             yield "</strong><br>
@@ -146,14 +146,14 @@ class __TwigTemplate_88b6a755bb8cf943a7689d074f03688e extends Template
                     <div class=\"mb-3\">
                         <label class=\"form-label\">Email</label>
                         <input type=\"email\"
-                        value=\"";
+                            value=\"";
         // line 36
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 36, $this->source); })()), "html", null, true);
         yield "\"
-                        name=\"email\"
-                        class=\"form-control border rounded-3 p-2\"
-                        placeholder=\"Enter your email\"
-                        required autofocus>
+                            name=\"email\"
+                            class=\"form-control p-2\"
+                            placeholder=\"Enter your email\"
+                            required autofocus>
                     </div>
 
                     <!-- PASSWORD -->
@@ -161,7 +161,7 @@ class __TwigTemplate_88b6a755bb8cf943a7689d074f03688e extends Template
                         <label class=\"form-label\">Password</label>
                         <input type=\"password\"
                             name=\"password\"
-                            class=\"form-control border rounded-3 p-2\"
+                            class=\"form-control p-2\"
                             placeholder=\"Enter your password\"
                             required>
                     </div>
@@ -175,9 +175,9 @@ class __TwigTemplate_88b6a755bb8cf943a7689d074f03688e extends Template
         yield "\">
 
                     <!-- BUTTON -->
-                    <button type=\"submit\"
-                            class=\"btn w-100 py-2 mt-3\"
-                            style=\"background-color: #FFC107; border: none; color: black; font-weight: bold;\">
+                    <button class=\"btn w-100 py-2 mt-3\"
+                            type=\"submit\"
+                            style=\"background-color:#FFC107; border:none; font-weight:bold; color:black;\">
                         Sign in
                     </button>
 
@@ -241,13 +241,13 @@ class __TwigTemplate_88b6a755bb8cf943a7689d074f03688e extends Template
 
 {% block body %}
 
-<div style=\"min-height: 100vh; background: #f8f9fa; display: flex; align-items: center; justify-content: center;\">
+<div style=\"min-height:100vh; background:#f8f9fa; display:flex; align-items:center; justify-content:center;\">
 
-    <div style=\"width: 200%; max-width: 700px; height:700px\">
+    <div style=\"width:400%; max-width:800px; height:400px\">
 
         <div class=\"card shadow-lg border-0 rounded-4\">
 
-            <div class=\"card-body\" style=\"padding: 3rem;\">
+            <div class=\"card-body p-4\">
 
                 <h3 class=\"text-center mb-4\">Welcome Back 👋</h3>
 
@@ -259,7 +259,7 @@ class __TwigTemplate_88b6a755bb8cf943a7689d074f03688e extends Template
 
                 {% if app.user %}
                     <div class=\"alert alert-success text-center\">
-                        Logged in as <strong>{{ app.user.userIdentifier }}</strong><br>
+                        You are logged in as <strong>{{ app.user.userIdentifier }}</strong><br>
                         <a href=\"{{ path('app_logout') }}\">Logout</a>
                     </div>
                 {% endif %}
@@ -270,11 +270,11 @@ class __TwigTemplate_88b6a755bb8cf943a7689d074f03688e extends Template
                     <div class=\"mb-3\">
                         <label class=\"form-label\">Email</label>
                         <input type=\"email\"
-                        value=\"{{ last_username }}\"
-                        name=\"email\"
-                        class=\"form-control border rounded-3 p-2\"
-                        placeholder=\"Enter your email\"
-                        required autofocus>
+                            value=\"{{ last_username }}\"
+                            name=\"email\"
+                            class=\"form-control p-2\"
+                            placeholder=\"Enter your email\"
+                            required autofocus>
                     </div>
 
                     <!-- PASSWORD -->
@@ -282,7 +282,7 @@ class __TwigTemplate_88b6a755bb8cf943a7689d074f03688e extends Template
                         <label class=\"form-label\">Password</label>
                         <input type=\"password\"
                             name=\"password\"
-                            class=\"form-control border rounded-3 p-2\"
+                            class=\"form-control p-2\"
                             placeholder=\"Enter your password\"
                             required>
                     </div>
@@ -293,9 +293,9 @@ class __TwigTemplate_88b6a755bb8cf943a7689d074f03688e extends Template
                         value=\"{{ csrf_token('authenticate') }}\">
 
                     <!-- BUTTON -->
-                    <button type=\"submit\"
-                            class=\"btn w-100 py-2 mt-3\"
-                            style=\"background-color: #FFC107; border: none; color: black; font-weight: bold;\">
+                    <button class=\"btn w-100 py-2 mt-3\"
+                            type=\"submit\"
+                            style=\"background-color:#FFC107; border:none; font-weight:bold; color:black;\">
                         Sign in
                     </button>
 
@@ -314,6 +314,6 @@ class __TwigTemplate_88b6a755bb8cf943a7689d074f03688e extends Template
 
 </div>
 
-{% endblock %}", "login/index.html.twig", "/home/vboxuser/projet_recettes/templates/login/index.html.twig");
+{% endblock %}", "login/index.html.twig", "/home/vboxuser/projet_recettes/projet_recette/templates/login/index.html.twig");
     }
 }

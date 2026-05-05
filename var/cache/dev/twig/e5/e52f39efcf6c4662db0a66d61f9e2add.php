@@ -34,9 +34,8 @@ class __TwigTemplate_3b555f1ce3624b96a2c1a74340b406f9 extends Template
         $this->blocks = [
             'title' => [$this, 'block_title'],
             'stylesheets' => [$this, 'block_stylesheets'],
-            'javascripts' => [$this, 'block_javascripts'],
-            'importmap' => [$this, 'block_importmap'],
             'body' => [$this, 'block_body'],
+            'javascripts' => [$this, 'block_javascripts'],
         ];
     }
 
@@ -51,48 +50,147 @@ class __TwigTemplate_3b555f1ce3624b96a2c1a74340b406f9 extends Template
 
         // line 1
         yield "<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset=\"UTF-8\">
-        <title>";
-        // line 5
+<html lang=\"zxx\">
+
+<head>
+    <meta charset=\"UTF-8\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+
+    <title>";
+        // line 8
         yield from $this->unwrap()->yieldBlock('title', $context, $blocks);
         yield "</title>
-        <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>\">
-        ";
-        // line 7
-        yield from $this->unwrap()->yieldBlock('stylesheets', $context, $blocks);
-        // line 9
-        yield "
-        ";
-        // line 10
-        yield from $this->unwrap()->yieldBlock('javascripts', $context, $blocks);
+
+    <!-- CSS -->
+    <link rel=\"stylesheet\" href=\"";
+        // line 11
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/bootstrap.min.css"), "html", null, true);
+        yield "\">
+    <link rel=\"stylesheet\" href=\"";
+        // line 12
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/meanmenu.css"), "html", null, true);
+        yield "\">
+    <link rel=\"stylesheet\" href=\"";
         // line 13
-        yield "
-        ";
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/boxicons.min.css"), "html", null, true);
+        yield "\">
+    <link rel=\"stylesheet\" href=\"";
         // line 14
-        $context["frankenphpHotReload"] = CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 14, $this->source); })()), "request", [], "any", false, false, false, 14), "server", [], "any", false, false, false, 14), "get", ["FRANKENPHP_HOT_RELOAD"], "method", false, false, false, 14);
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/owl.carousel.min.css"), "html", null, true);
+        yield "\">
+    <link rel=\"stylesheet\" href=\"";
         // line 15
-        yield "        ";
-        if ((($tmp = (isset($context["frankenphpHotReload"]) || array_key_exists("frankenphpHotReload", $context) ? $context["frankenphpHotReload"] : (function () { throw new RuntimeError('Variable "frankenphpHotReload" does not exist.', 15, $this->source); })())) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
-            // line 16
-            yield "        <meta name=\"frankenphp-hot-reload:url\" content=\"";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["frankenphpHotReload"]) || array_key_exists("frankenphpHotReload", $context) ? $context["frankenphpHotReload"] : (function () { throw new RuntimeError('Variable "frankenphpHotReload" does not exist.', 16, $this->source); })()), "html", null, true);
-            yield "\">
-        <script src=\"https://cdn.jsdelivr.net/npm/idiomorph\"></script>
-        <script src=\"https://cdn.jsdelivr.net/npm/frankenphp-hot-reload/+esm\" type=\"module\"></script>
-        ";
-        }
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/owl.theme.default.min.css"), "html", null, true);
+        yield "\">
+    <link rel=\"stylesheet\" href=\"";
+        // line 16
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/slick.min.css"), "html", null, true);
+        yield "\">
+    <link rel=\"stylesheet\" href=\"";
+        // line 17
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/slick-theme.min.css"), "html", null, true);
+        yield "\">
+    <link rel=\"stylesheet\" href=\"";
+        // line 18
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/magnific-popup.min.css"), "html", null, true);
+        yield "\">
+    <link rel=\"stylesheet\" href=\"";
+        // line 19
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/style.css"), "html", null, true);
+        yield "\">
+    <link rel=\"stylesheet\" href=\"";
         // line 20
-        yield "    </head>
-    <body>
-        ";
-        // line 22
-        yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/responsive.css"), "html", null, true);
+        yield "\">
+    <link rel=\"stylesheet\" href=\"";
+        // line 21
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/theme-dark.css"), "html", null, true);
+        yield "\">
+
+    <link rel=\"icon\" type=\"image/png\" href=\"";
         // line 23
-        yield "    </body>
-</html>
-";
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/favicon.png"), "html", null, true);
+        yield "\">
+
+    ";
+        // line 25
+        yield from $this->unwrap()->yieldBlock('stylesheets', $context, $blocks);
+        // line 26
+        yield "</head>
+
+<body>
+
+    <!-- ✅ NAVBAR -->
+    ";
+        // line 31
+        yield from $this->load("partials/navbar.html.twig", 31)->unwrap()->yield($context);
+        // line 32
+        yield "
+    <!-- PAGE CONTENT -->
+    ";
+        // line 34
+        yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
+        // line 35
+        yield "
+    <!-- ✅ FOOTER -->
+    ";
+        // line 37
+        yield from $this->load("partials/footer.html.twig", 37)->unwrap()->yield($context);
+        // line 38
+        yield "
+    <!-- JS -->
+    <script src=\"";
+        // line 40
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/jquery.min.js"), "html", null, true);
+        yield "\"></script>
+    <script src=\"";
+        // line 41
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/bootstrap.bundle.min.js"), "html", null, true);
+        yield "\"></script>
+    <script src=\"";
+        // line 42
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/jquery.meanmenu.js"), "html", null, true);
+        yield "\"></script>
+    <script src=\"";
+        // line 43
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/owl.carousel.min.js"), "html", null, true);
+        yield "\"></script>
+    <script src=\"";
+        // line 44
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/jquery.mixitup.min.js"), "html", null, true);
+        yield "\"></script>
+    <script src=\"";
+        // line 45
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/slick.min.js"), "html", null, true);
+        yield "\"></script>
+    <script src=\"";
+        // line 46
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/jquery.ajaxchimp.min.js"), "html", null, true);
+        yield "\"></script>
+    <script src=\"";
+        // line 47
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/form-validator.min.js"), "html", null, true);
+        yield "\"></script>
+    <script src=\"";
+        // line 48
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/contact-form-script.js"), "html", null, true);
+        yield "\"></script>
+    <script src=\"";
+        // line 49
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/jquery.magnific-popup.min.js"), "html", null, true);
+        yield "\"></script>
+    <script src=\"";
+        // line 50
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/custom.js"), "html", null, true);
+        yield "\"></script>
+
+    ";
+        // line 52
+        yield from $this->unwrap()->yieldBlock('javascripts', $context, $blocks);
+        // line 53
+        yield "
+</body>
+</html>";
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
 
@@ -102,7 +200,7 @@ class __TwigTemplate_3b555f1ce3624b96a2c1a74340b406f9 extends Template
         yield from [];
     }
 
-    // line 5
+    // line 8
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -115,7 +213,7 @@ class __TwigTemplate_3b555f1ce3624b96a2c1a74340b406f9 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        yield "Welcome!";
+        yield "Restant - Takeway & Restaurant Cafe";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -125,7 +223,7 @@ class __TwigTemplate_3b555f1ce3624b96a2c1a74340b406f9 extends Template
         yield from [];
     }
 
-    // line 7
+    // line 25
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -138,8 +236,6 @@ class __TwigTemplate_3b555f1ce3624b96a2c1a74340b406f9 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 8
-        yield "        ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -149,57 +245,7 @@ class __TwigTemplate_3b555f1ce3624b96a2c1a74340b406f9 extends Template
         yield from [];
     }
 
-    // line 10
-    /**
-     * @return iterable<null|scalar|\Stringable>
-     */
-    public function block_javascripts(array $context, array $blocks = []): iterable
-    {
-        $macros = $this->macros;
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
-
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
-
-        // line 11
-        yield "            ";
-        yield from $this->unwrap()->yieldBlock('importmap', $context, $blocks);
-        // line 12
-        yield "        ";
-        
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
-
-        
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
-
-        yield from [];
-    }
-
-    // line 11
-    /**
-     * @return iterable<null|scalar|\Stringable>
-     */
-    public function block_importmap(array $context, array $blocks = []): iterable
-    {
-        $macros = $this->macros;
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "importmap"));
-
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "importmap"));
-
-        yield $this->env->getRuntime('Symfony\Bridge\Twig\Extension\ImportMapRuntime')->importmap("app");
-        
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
-
-        
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
-
-        yield from [];
-    }
-
-    // line 22
+    // line 34
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -211,6 +257,28 @@ class __TwigTemplate_3b555f1ce3624b96a2c1a74340b406f9 extends Template
 
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
+
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+        yield from [];
+    }
+
+    // line 52
+    /**
+     * @return iterable<null|scalar|\Stringable>
+     */
+    public function block_javascripts(array $context, array $blocks = []): iterable
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -242,35 +310,65 @@ class __TwigTemplate_3b555f1ce3624b96a2c1a74340b406f9 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  203 => 22,  180 => 11,  169 => 12,  166 => 11,  153 => 10,  142 => 8,  129 => 7,  106 => 5,  93 => 23,  91 => 22,  87 => 20,  79 => 16,  76 => 15,  74 => 14,  71 => 13,  69 => 10,  66 => 9,  64 => 7,  59 => 5,  53 => 1,);
+        return array (  271 => 52,  249 => 34,  227 => 25,  204 => 8,  191 => 53,  189 => 52,  184 => 50,  180 => 49,  176 => 48,  172 => 47,  168 => 46,  164 => 45,  160 => 44,  156 => 43,  152 => 42,  148 => 41,  144 => 40,  140 => 38,  138 => 37,  134 => 35,  132 => 34,  128 => 32,  126 => 31,  119 => 26,  117 => 25,  112 => 23,  107 => 21,  103 => 20,  99 => 19,  95 => 18,  91 => 17,  87 => 16,  83 => 15,  79 => 14,  75 => 13,  71 => 12,  67 => 11,  61 => 8,  52 => 1,);
     }
 
     public function getSourceContext(): Source
     {
         return new Source("<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset=\"UTF-8\">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>\">
-        {% block stylesheets %}
-        {% endblock %}
+<html lang=\"zxx\">
 
-        {% block javascripts %}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
-        {% endblock %}
+<head>
+    <meta charset=\"UTF-8\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
 
-        {% set frankenphpHotReload = app.request.server.get('FRANKENPHP_HOT_RELOAD') %}
-        {% if frankenphpHotReload %}
-        <meta name=\"frankenphp-hot-reload:url\" content=\"{{ frankenphpHotReload }}\">
-        <script src=\"https://cdn.jsdelivr.net/npm/idiomorph\"></script>
-        <script src=\"https://cdn.jsdelivr.net/npm/frankenphp-hot-reload/+esm\" type=\"module\"></script>
-        {% endif %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
-</html>
-", "base.html.twig", "/home/vboxuser/projet_recettes/templates/base.html.twig");
+    <title>{% block title %}Restant - Takeway & Restaurant Cafe{% endblock %}</title>
+
+    <!-- CSS -->
+    <link rel=\"stylesheet\" href=\"{{ asset('assets/css/bootstrap.min.css') }}\">
+    <link rel=\"stylesheet\" href=\"{{ asset('assets/css/meanmenu.css') }}\">
+    <link rel=\"stylesheet\" href=\"{{ asset('assets/css/boxicons.min.css') }}\">
+    <link rel=\"stylesheet\" href=\"{{ asset('assets/css/owl.carousel.min.css') }}\">
+    <link rel=\"stylesheet\" href=\"{{ asset('assets/css/owl.theme.default.min.css') }}\">
+    <link rel=\"stylesheet\" href=\"{{ asset('assets/css/slick.min.css') }}\">
+    <link rel=\"stylesheet\" href=\"{{ asset('assets/css/slick-theme.min.css') }}\">
+    <link rel=\"stylesheet\" href=\"{{ asset('assets/css/magnific-popup.min.css') }}\">
+    <link rel=\"stylesheet\" href=\"{{ asset('assets/css/style.css') }}\">
+    <link rel=\"stylesheet\" href=\"{{ asset('assets/css/responsive.css') }}\">
+    <link rel=\"stylesheet\" href=\"{{ asset('assets/css/theme-dark.css') }}\">
+
+    <link rel=\"icon\" type=\"image/png\" href=\"{{ asset('assets/img/favicon.png') }}\">
+
+    {% block stylesheets %}{% endblock %}
+</head>
+
+<body>
+
+    <!-- ✅ NAVBAR -->
+    {% include 'partials/navbar.html.twig' %}
+
+    <!-- PAGE CONTENT -->
+    {% block body %}{% endblock %}
+
+    <!-- ✅ FOOTER -->
+    {% include 'partials/footer.html.twig' %}
+
+    <!-- JS -->
+    <script src=\"{{ asset('assets/js/jquery.min.js') }}\"></script>
+    <script src=\"{{ asset('assets/js/bootstrap.bundle.min.js') }}\"></script>
+    <script src=\"{{ asset('assets/js/jquery.meanmenu.js') }}\"></script>
+    <script src=\"{{ asset('assets/js/owl.carousel.min.js') }}\"></script>
+    <script src=\"{{ asset('assets/js/jquery.mixitup.min.js') }}\"></script>
+    <script src=\"{{ asset('assets/js/slick.min.js') }}\"></script>
+    <script src=\"{{ asset('assets/js/jquery.ajaxchimp.min.js') }}\"></script>
+    <script src=\"{{ asset('assets/js/form-validator.min.js') }}\"></script>
+    <script src=\"{{ asset('assets/js/contact-form-script.js') }}\"></script>
+    <script src=\"{{ asset('assets/js/jquery.magnific-popup.min.js') }}\"></script>
+    <script src=\"{{ asset('assets/js/custom.js') }}\"></script>
+
+    {% block javascripts %}{% endblock %}
+
+</body>
+</html>", "base.html.twig", "/home/vboxuser/projet_recettes/projet_recette/templates/base.html.twig");
     }
 }

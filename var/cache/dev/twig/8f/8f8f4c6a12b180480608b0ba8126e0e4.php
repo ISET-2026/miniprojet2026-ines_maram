@@ -181,6 +181,6 @@ class __TwigTemplate_ceeb508f8b1c8e0e4eeb6874c4af36d9 extends Template
 {% block panel %}
     {{ render(controller('web_profiler.controller.router::panelAction', {token: token})) }}
 {% endblock %}
-", "@WebProfiler/Collector/router.html.twig", "/home/vboxuser/projet_recettes/vendor/symfony/web-profiler-bundle/Resources/views/Collector/router.html.twig");
+", "@WebProfiler/Collector/router.html.twig", "/home/vboxuser/projet_recettes/projet_recette/vendor/symfony/web-profiler-bundle/Resources/views/Collector/router.html.twig");
     }
 }

@@ -990,6 +990,6 @@ class __TwigTemplate_2e5adf5556f9bfc6fd94c7cba6117e1b extends Template
         </tbody>
     </table>
 {% endmacro %}
-", "@WebProfiler/Collector/translation.html.twig", "/home/vboxuser/projet_recettes/vendor/symfony/web-profiler-bundle/Resources/views/Collector/translation.html.twig");
+", "@WebProfiler/Collector/translation.html.twig", "/home/vboxuser/projet_recettes/projet_recette/vendor/symfony/web-profiler-bundle/Resources/views/Collector/translation.html.twig");
     }
 }

@@ -8,6 +8,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
@@ -46,9 +47,10 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->recettes = new ArrayCollection();
     }
 
+    // ✅ FIXED
     public function getId(): ?int
     {
-        $this->recettes = new ArrayCollection();
+        return $this->id;
     }
 
     public function getNom(): ?string
@@ -84,15 +86,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
+    // 🔐 Symfony uses this for login
     public function getUserIdentifier(): string
     {
         return (string) $this->email;
     }
 
+    // ✅ Always ensures ROLE_USER exists
     public function getRoles(): array
     {
         $roles = $this->roles;
         $roles[] = 'ROLE_USER';
+
         return array_unique($roles);
     }
 
@@ -111,6 +116,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         $this->password = $password;
         return $this;
+    }
+
+    // ✅ REQUIRED by Symfony security
+    public function eraseCredentials(): void
+    {
+        // If you store temporary sensitive data, clear it here
     }
 
     public function getRecettes(): Collection

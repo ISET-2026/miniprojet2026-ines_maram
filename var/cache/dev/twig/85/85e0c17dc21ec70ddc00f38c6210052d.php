@@ -398,6 +398,6 @@ class __TwigTemplate_ab313c39ab3c128d4c53ff2c3ff01e3a extends Template
     </div>
 
 </div>
-<!-- End Copyright -->", "partials/footer.html.twig", "/home/vboxuser/projet_recettes/templates/partials/footer.html.twig");
+<!-- End Copyright -->", "partials/footer.html.twig", "/home/vboxuser/projet_recettes/projet_recette/templates/partials/footer.html.twig");
     }
 }

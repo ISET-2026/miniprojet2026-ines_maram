@@ -1081,6 +1081,6 @@ $context["used"] === false)) {
         {% endif %}
     {% endfor %}
 {% endblock %}
-", "@ApiPlatform/DataCollector/request.html.twig", "/home/vboxuser/projet_recettes/vendor/api-platform/symfony/Bundle/Resources/views/DataCollector/request.html.twig");
+", "@ApiPlatform/DataCollector/request.html.twig", "/home/vboxuser/projet_recettes/projet_recette/vendor/api-platform/symfony/Bundle/Resources/views/DataCollector/request.html.twig");
     }
 }

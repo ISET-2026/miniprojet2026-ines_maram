@@ -472,6 +472,6 @@ class __TwigTemplate_38faf6c87e41cf65c3c8603bda642142 extends Template
         </div>
     {% endfor %}
 {% endblock %}
-", "@Debug/Profiler/dump.html.twig", "/home/vboxuser/projet_recettes/vendor/symfony/debug-bundle/Resources/views/Profiler/dump.html.twig");
+", "@Debug/Profiler/dump.html.twig", "/home/vboxuser/projet_recettes/projet_recette/vendor/symfony/debug-bundle/Resources/views/Profiler/dump.html.twig");
     }
 }

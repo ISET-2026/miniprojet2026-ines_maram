@@ -8,6 +8,7 @@ use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Ingredient;
 use App\Entity\R;
+use App\Entity\Recette;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Repository\IngredientRepository ;
 use App\Repository\RecetteRepository ;
@@ -21,7 +22,7 @@ final class IngredientController extends AbstractController
             'controller_name' => 'IngredientController',
         ]);
     }
-  
+
 #[Route('/recettes/{recette_id}/ingredients/nouveau', name: 'app_ingredient_nouveau')]
 public function nouveau( $recette_id, Request $request, EntityManagerInterface $em, RecetteRepository $recR): Response
 {
@@ -57,7 +58,7 @@ public function supprimer(Recette $recette, Request $request, EntityManagerInter
         $em->remove($recette);
         $em->flush();
 
-   
+
         $this->addFlash('success', 'La recette a été supprimée avec succès !');
     } else {
 

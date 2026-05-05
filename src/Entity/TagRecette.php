@@ -32,8 +32,8 @@ class TagRecette
         }
 
     public function getId(): ?int {
-         return $this->id; 
-         }
+        return $this->id; 
+        }
     public function getNom(): ?string { 
         return $this->nom; }
     public function setNom(string $nom): static { $this->nom = $nom; return $this; }

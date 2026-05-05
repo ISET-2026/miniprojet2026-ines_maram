@@ -313,6 +313,6 @@ class __TwigTemplate_cf1f86dd4d0697ddd72dfbbaae083cbc extends Template
     </div>
 </div>
 
-{% endblock %}", "Categorie/index.html.twig", "/home/vboxuser/projet_recettes/templates/Categorie/index.html.twig");
+{% endblock %}", "Categorie/index.html.twig", "/home/vboxuser/projet_recettes/projet_recette/templates/Categorie/index.html.twig");
     }
 }

@@ -19,10 +19,40 @@ class RecetteRepository extends ServiceEntityRepository
         parent::__construct($registry, Recette::class);
     }
     
-// RecetteRepository
+
 public function findByFilters(?string $titre, ?CategorieRecette $cat, ?string $diff, ?TagRecette $tag): array
-{
-    $qb = $this->createQueryBuilder('r');
+    {
+        $qb = $this->createQueryBuilder('r');
+
+        if ($titre) {
+            $qb->andWhere('r.titre LIKE :titre')
+            ->setParameter('titre', '%' . $titre . '%');
+        }
+
+
+        if ($cat) {
+            $qb->andWhere('r.categorie = :cat')
+            ->setParameter('cat', $cat);
+        }
+
+        
+        if ($diff) {
+            $qb->andWhere('r.difficulte = :diff')
+            ->setParameter('diff', $diff);
+        }
+
+    
+        if ($tag) {
+            $qb->join('r.tags', 't')
+            ->andWhere('t.id = :tagId')
+            ->setParameter('tagId', $tag->getId());
+        }
+
+        $qb->orderBy('r.dateCreation', 'DESC');
+
+        return $qb->getQuery()->getResult();
+    }
+}
 
     //    /**
     //     * @return Recette[] Returns an array of Recette objects
@@ -48,5 +78,6 @@ public function findByFilters(?string $titre, ?CategorieRecette $cat, ?string $d
     //            ->getOneOrNullResult()
     //        ;
     //    }
-}
-}
+
+
+
