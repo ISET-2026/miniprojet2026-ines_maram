@@ -16,7 +16,6 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
-use Symfony\Component\Validator\Constraints\File;
 class RecetteType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
@@ -87,6 +86,7 @@ class RecetteType extends AbstractType
             ->add('publiee', CheckboxType::class, [
     'label' => 'Publier cette recette ?',
     'required' => false, 
+      
     'attr' => [
         'class' => 'form-check-input', 
     ],
@@ -99,22 +99,12 @@ class RecetteType extends AbstractType
 ])
   
 
-
 ->add('imageName', FileType::class, [
-    'label' => 'Image de la recette (JPG, PNG)',
-    'mapped' => false, 
+    'label' => 'Lien de l\'image (URL)',
+    'mapped' => false,
     'required' => false,
-    'constraints' => [
-        new File(
-            maxSize: '2M', 
-            mimeTypes: [
-                'image/jpeg',
-                'image/png',
-            ],
-            mimeTypesMessage: 'Veuillez uploader une image valide (JPG, PNG)'
-        ),
-    ],
     'attr' => [
+     
         'class' => 'form-control',
     ]
 ])
@@ -135,7 +125,9 @@ class RecetteType extends AbstractType
                 'choice_label' => 'nom',
                 'multiple' => true,
                 'expanded' => true, 
-                'label' => 'Tags'
+                'label' => 'Tags',
+             
+         'by_reference' => false,
             ]);
         
     }
