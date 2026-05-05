@@ -18,8 +18,3 @@
 /public/assets/
 /assets/vendor/
 ###< symfony/asset-mapper ###
-templates /
-public /
-templates/
-public/
-assets/
