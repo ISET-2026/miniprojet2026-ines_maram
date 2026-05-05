@@ -26,7 +26,7 @@ class Recette
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-       #[Groups(['recette:read'])]
+    #[Groups(['recette:read'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
@@ -71,11 +71,11 @@ class Recette
     private ?\DateTimeInterface $dateCreation = null;
 
     #[ORM\Column]
-       #[Groups(['recette:read', 'recette:write'])]
+    #[Groups(['recette:read', 'recette:write'])]
     private ?bool $publiee = false;
 
     #[ORM\Column(length: 255, nullable: true)]
-       #[Groups(['recette:read', 'recette:write'])]
+    #[Groups(['recette:read', 'recette:write'])]
     private ?string $imageName = null;
 
     // Relations
@@ -135,13 +135,10 @@ class Recette
     public function getImageName(): ?string { return $this->imageName; }
     public function setImageName(?string $imageName): static { $this->imageName = $imageName; return $this; }
 
-<<<<<<< HEAD
-    public function getCategorie(): ?CategoriesController { return $this->categorie; }
-    public function setCategorie(?CategoriesController $categorie): static { $this->categorie = $categorie; return $this; }
-=======
+
     public function getCategorie(): ?CategorieRecette { return $this->categorie; }
     public function setCategorie(?CategorieRecette $categorie): static { $this->categorie = $categorie; return $this; }
->>>>>>> 1056446cbb35853e2b0c46f92514fd70f660b97b
+
 
     public function getAuteur(): ?User { return $this->auteur; }
     public function setAuteur(?User $auteur): static { $this->auteur = $auteur; return $this; }
@@ -183,3 +180,4 @@ class Recette
         return $this;
     }
 }
+    
