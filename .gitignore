@@ -1,0 +1,7 @@
+.env
+.env.dev
+.composer.lock
+.composer.json
+.security.yaml
+.services.yaml
+symfony.lock
