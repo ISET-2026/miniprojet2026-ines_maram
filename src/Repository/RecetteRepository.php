@@ -26,26 +26,26 @@ public function findByFilters(?string $titre, ?CategorieRecette $cat, ?string $d
 
         if ($titre) {
             $qb->andWhere('r.titre LIKE :titre')
-               ->setParameter('titre', '%' . $titre . '%');
+            ->setParameter('titre', '%' . $titre . '%');
         }
 
-      
+
         if ($cat) {
             $qb->andWhere('r.categorie = :cat')
-               ->setParameter('cat', $cat);
+            ->setParameter('cat', $cat);
         }
 
         
         if ($diff) {
             $qb->andWhere('r.difficulte = :diff')
-               ->setParameter('diff', $diff);
+            ->setParameter('diff', $diff);
         }
 
     
         if ($tag) {
             $qb->join('r.tags', 't')
-               ->andWhere('t.id = :tagId')
-               ->setParameter('tagId', $tag->getId());
+            ->andWhere('t.id = :tagId')
+            ->setParameter('tagId', $tag->getId());
         }
 
         $qb->orderBy('r.dateCreation', 'DESC');
@@ -78,3 +78,6 @@ public function findByFilters(?string $titre, ?CategorieRecette $cat, ?string $d
     //            ->getOneOrNullResult()
     //        ;
     //    }
+
+
+

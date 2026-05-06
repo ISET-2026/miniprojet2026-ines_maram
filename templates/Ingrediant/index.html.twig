@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un ingrédient{% endblock %}
+
+{% block body %}
+
+<div class="container mt-5">
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <div class="card shadow-lg p-4">
+
+                <h3 class="text-center mb-4">➕ Ajouter un ingrédient</h3>
+
+                {{ form_start(form) }}
+
+                <div class="mb-3">
+                    {{ form_label(form.name, 'Nom de l’ingrédient') }}
+                    {{ form_widget(form.name, {
+                        'attr': {'class': 'form-control', 'placeholder': 'Ex: Farine'}
+                    }) }}
+                    {{ form_errors(form.name) }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form_label(form.quantity, 'Quantité') }}
+                    {{ form_widget(form.quantity, {
+                        'attr': {'class': 'form-control', 'placeholder': 'Ex: 200'}
+                    }) }}
+                    {{ form_errors(form.quantity) }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form_label(form.unit, 'Unité') }}
+                    {{ form_widget(form.unit, {
+                        'attr': {'class': 'form-control', 'placeholder': 'g, ml, kg...'}
+                    }) }}
+                    {{ form_errors(form.unit) }}
+                </div>
+
+                <button class="btn btn-success w-100">
+                    💾 Enregistrer
+                </button>
+
+                {{ form_end(form) }}
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

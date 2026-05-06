@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Form\FormInterface;
 final class CategorieRecettecontrollerController extends AbstractController
 {
-   /* #[Route('/categorie/recettecontroller', name: 'app_categorie_recettecontroller')]
+/* #[Route('/categorie/recettecontroller', name: 'app_categorie_recettecontroller')]
     public function index(): Response
     {
         return $this->render('categorie_recettecontroller/index.html.twig', [
@@ -20,7 +20,7 @@ final class CategorieRecettecontrollerController extends AbstractController
         ]);
     }
         */
-       #[Route('/categories', name: 'app_categories')]
+    #[Route('/categories', name: 'app_categories')]
     public function index(CategorieRecetteRepository $categorieRepository): Response
     {
         $categories = $categorieRepository->findAll();
@@ -29,13 +29,13 @@ final class CategorieRecettecontrollerController extends AbstractController
             'categories' => $categories,
         ]);
     }
-     #[Route('//nouvelle', name: 'app_categorie_nouvelle')]
+    #[Route('//nouvelle', name: 'app_categorie_nouvelle')]
     public function nouvelle(Request $request, EntityManagerInterface $em): Response
     {
-      
+    
         $categorie = new CategorieRecette();
 
-       $form = $this->createForm(CategorieType::class, $categorie);
+    $form = $this->createForm(CategorieType::class, $categorie);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

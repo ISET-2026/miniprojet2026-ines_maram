@@ -44,6 +44,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->recettes = new ArrayCollection();
     }
 
+
    public function getId(): ?int
 {
     return $this->id;
@@ -52,12 +53,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function getpseudo(): ?string
     {
         return $this->pseudo;
-    }
 
-    public function setPseudo(string $pseudo): static
-    {
-        $this->pseudo = $pseudo;
-        return $this;
+
     }
 
     public function getEmail(): ?string
@@ -71,15 +68,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
+    // 🔐 Symfony uses this for login
     public function getUserIdentifier(): string
     {
         return (string) $this->email;
     }
 
+    // ✅ Always ensures ROLE_USER exists
     public function getRoles(): array
     {
         $roles = $this->roles;
         $roles[] = 'ROLE_USER';
+
         return array_unique($roles);
     }
 
@@ -98,6 +98,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         $this->password = $password;
         return $this;
+    }
+
+    // ✅ REQUIRED by Symfony security
+    public function eraseCredentials(): void
+    {
+        // If you store temporary sensitive data, clear it here
     }
 
     public function getRecettes(): Collection
