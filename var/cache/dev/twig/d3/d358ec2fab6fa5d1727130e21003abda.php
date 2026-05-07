@@ -82,13 +82,19 @@ class __TwigTemplate_c277cafded03baefb50d11f88debe7d5 extends Template
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(Twig\Extension\CoreExtension::length($this->env->getCharset(), (isset($context["tagrecettes"]) || array_key_exists("tagrecettes", $context) ? $context["tagrecettes"] : (function () { throw new RuntimeError('Variable "tagrecettes" does not exist.', 8, $this->source); })())), "html", null, true);
         yield " tags</p>
         </div>
-        <a href=\"";
+        ";
         // line 10
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_tagrecettes_nouvelle");
-        yield "\" class=\"btn btn-outline-primary px-4 py-2 rounded-pill\">
-            + Nouveau tag
-        </a>
-    </div>
+        if (($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_CUISINIER") || $this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN"))) {
+            // line 11
+            yield "            <a href=\"";
+            yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_tagrecettes_nouvelle");
+            yield "\" class=\"btn btn-outline-primary px-4 py-2 rounded-pill\">
+                + Nouveau tag
+            </a>
+        ";
+        }
+        // line 15
+        yield "    </div>
 
     <div class=\"card shadow-sm border-0 rounded-3\">
         <div class=\"table-responsive\">
@@ -98,69 +104,82 @@ class __TwigTemplate_c277cafded03baefb50d11f88debe7d5 extends Template
                         <th class=\"ps-4 py-3\">Aperçu</th>
                         <th class=\"py-3\">Nom</th>
                         <th class=\"py-3\">Couleur</th>
-                        <th class=\"text-end pe-4 py-3\">Actions</th>
-                    </tr>
+                        ";
+        // line 25
+        if (($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN") || $this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_CUISINIER"))) {
+            // line 26
+            yield "                        <th class=\"text-end pe-4 py-3\">Actions</th>
+                        ";
+        }
+        // line 28
+        yield "                    </tr>
                 </thead>
                 <tbody>
                     ";
-        // line 27
+        // line 31
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["tagrecettes"]) || array_key_exists("tagrecettes", $context) ? $context["tagrecettes"] : (function () { throw new RuntimeError('Variable "tagrecettes" does not exist.', 27, $this->source); })()));
+        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["tagrecettes"]) || array_key_exists("tagrecettes", $context) ? $context["tagrecettes"] : (function () { throw new RuntimeError('Variable "tagrecettes" does not exist.', 31, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["tag"]) {
-            // line 28
+            // line 32
             yield "                        <tr style=\"height: 70px;\">
                             <td class=\"ps-4\">
                                 ";
-            // line 31
+            // line 35
             yield "                                <span class=\"badge rounded-pill px-3 py-2\" 
                                       style=\"background-color: ";
-            // line 32
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["tag"], "couleur", [], "any", false, false, false, 32), "html", null, true);
+            // line 36
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["tag"], "couleur", [], "any", false, false, false, 36), "html", null, true);
             yield "; color: white;\">
                                     ";
-            // line 33
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["tag"], "nom", [], "any", false, false, false, 33), "html", null, true);
+            // line 37
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["tag"], "nom", [], "any", false, false, false, 37), "html", null, true);
             yield "
                                 </span>
                             </td>
                             <td>
                                 <span class=\"fw-medium text-dark\">";
-            // line 37
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["tag"], "nom", [], "any", false, false, false, 37), "html", null, true);
+            // line 41
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["tag"], "nom", [], "any", false, false, false, 41), "html", null, true);
             yield "</span>
                             </td>
                             <td>
                                 <div class=\"d-flex align-items-center\">
                                     <div class=\"rounded-circle me-2\" 
                                          style=\"width: 15px; height: 15px; background-color: ";
-            // line 42
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["tag"], "couleur", [], "any", false, false, false, 42), "html", null, true);
+            // line 46
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["tag"], "couleur", [], "any", false, false, false, 46), "html", null, true);
             yield ";\"></div>
                                     <span class=\"text-muted font-monospace\">";
-            // line 43
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["tag"], "couleur", [], "any", false, false, false, 43), "html", null, true);
+            // line 47
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["tag"], "couleur", [], "any", false, false, false, 47), "html", null, true);
             yield "</span>
                                 </div>
                             </td>
                             
                       <td class=\"text-end pe-4\">
-    <a href=\"";
-            // line 48
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_tagrecettes_supprimer", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["tag"], "id", [], "any", false, false, false, 48)]), "html", null, true);
-            yield "\" 
-       class=\"btn btn-sm btn-outline-danger\" 
-       onclick=\"return confirm('Etes-vous sûr ?')\">
-        supprimer
-    </a>
-</td>
+                ";
+            // line 52
+            if (($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN") || $this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_CUISINIER"))) {
+                // line 53
+                yield "                <a href=\"";
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_tagrecettes_supprimer", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["tag"], "id", [], "any", false, false, false, 53)]), "html", null, true);
+                yield "\" 
+                class=\"btn btn-sm btn-outline-danger\" 
+                onclick=\"return confirm('Etes-vous sûr ?')\">
+                    supprimer
+                </a>
+            ";
+            }
+            // line 59
+            yield "</td>
                         </tr>
                     ";
             $context['_iterated'] = true;
         }
-        // line 55
+        // line 61
         if (!$context['_iterated']) {
-            // line 56
+            // line 62
             yield "                        <tr>
                             <td colspan=\"4\" class=\"text-center py-5 text-muted\">Aucun tag trouvé.</td>
                         </tr>
@@ -169,7 +188,7 @@ class __TwigTemplate_c277cafded03baefb50d11f88debe7d5 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['tag'], $context['_parent'], $context['_iterated']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 60
+        // line 66
         yield "                </tbody>
             </table>
         </div>
@@ -206,7 +225,7 @@ class __TwigTemplate_c277cafded03baefb50d11f88debe7d5 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  173 => 60,  164 => 56,  162 => 55,  150 => 48,  142 => 43,  138 => 42,  130 => 37,  123 => 33,  119 => 32,  116 => 31,  112 => 28,  107 => 27,  87 => 10,  82 => 8,  76 => 4,  63 => 3,  40 => 1,);
+        return array (  192 => 66,  183 => 62,  181 => 61,  175 => 59,  165 => 53,  163 => 52,  155 => 47,  151 => 46,  143 => 41,  136 => 37,  132 => 36,  129 => 35,  125 => 32,  120 => 31,  115 => 28,  111 => 26,  109 => 25,  97 => 15,  89 => 11,  87 => 10,  82 => 8,  76 => 4,  63 => 3,  40 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -220,9 +239,11 @@ class __TwigTemplate_c277cafded03baefb50d11f88debe7d5 extends Template
             <h1 class=\"display-5 fw-bold mb-0\">Tags</h1>
             <p class=\"text-muted\">{{ tagrecettes|length }} tags</p>
         </div>
-        <a href=\"{{ path('app_tagrecettes_nouvelle') }}\" class=\"btn btn-outline-primary px-4 py-2 rounded-pill\">
-            + Nouveau tag
-        </a>
+        {% if is_granted('ROLE_CUISINIER') or is_granted('ROLE_ADMIN') %}
+            <a href=\"{{ path('app_tagrecettes_nouvelle') }}\" class=\"btn btn-outline-primary px-4 py-2 rounded-pill\">
+                + Nouveau tag
+            </a>
+        {% endif %}
     </div>
 
     <div class=\"card shadow-sm border-0 rounded-3\">
@@ -233,7 +254,9 @@ class __TwigTemplate_c277cafded03baefb50d11f88debe7d5 extends Template
                         <th class=\"ps-4 py-3\">Aperçu</th>
                         <th class=\"py-3\">Nom</th>
                         <th class=\"py-3\">Couleur</th>
+                        {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_CUISINIER') %}
                         <th class=\"text-end pe-4 py-3\">Actions</th>
+                        {% endif %}
                     </tr>
                 </thead>
                 <tbody>
@@ -258,11 +281,13 @@ class __TwigTemplate_c277cafded03baefb50d11f88debe7d5 extends Template
                             </td>
                             
                       <td class=\"text-end pe-4\">
-    <a href=\"{{ path('app_tagrecettes_supprimer', {'id': tag.id}) }}\" 
-       class=\"btn btn-sm btn-outline-danger\" 
-       onclick=\"return confirm('Etes-vous sûr ?')\">
-        supprimer
-    </a>
+                {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_CUISINIER') %}
+                <a href=\"{{ path('app_tagrecettes_supprimer', {'id': tag.id}) }}\" 
+                class=\"btn btn-sm btn-outline-danger\" 
+                onclick=\"return confirm('Etes-vous sûr ?')\">
+                    supprimer
+                </a>
+            {% endif %}
 </td>
                         </tr>
                     {% else %}
@@ -275,6 +300,6 @@ class __TwigTemplate_c277cafded03baefb50d11f88debe7d5 extends Template
         </div>
     </div>
 </div>
-{% endblock %}", "tag_recette/index.html.twig", "/home/useradm/projet-recettes/templates/tag_recette/index.html.twig");
+{% endblock %}", "tag_recette/index.html.twig", "/home/vboxuser/projet_recettes_final/miniprojet2026-ines_maram/templates/tag_recette/index.html.twig");
     }
 }

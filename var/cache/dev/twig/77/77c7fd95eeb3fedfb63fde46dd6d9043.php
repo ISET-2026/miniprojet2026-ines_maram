@@ -159,23 +159,29 @@ class __TwigTemplate_9c5857a6dfec2731f400e8ea11278cb2 extends Template
             <h1 class=\"display-5 fw-bold\">Toutes les recettes</h1>
             <p class=\"text-muted\">Découvrez nos délices culinaires</p>
         </div>
-        <a href=\"";
+        ";
         // line 58
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_recettes_nouvelle");
-        yield "\" class=\"btn btn-success rounded-pill px-4 shadow-sm\">
-            <i class=\"fas fa-plus me-2\"></i>Nouvelle recette
-        </a>
-    </div>
+        if (($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_CUISINIER") || $this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN"))) {
+            // line 59
+            yield "            <a href=\"";
+            yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_recettes_nouvelle");
+            yield "\" class=\"btn btn-success rounded-pill px-4 shadow-sm\">
+                <i class=\"fas fa-plus me-2\"></i>Nouvelle recette
+            </a>
+        ";
+        }
+        // line 63
+        yield "    </div>
 
     ";
-        // line 64
+        // line 66
         yield "    <form method=\"get\" action=\"";
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_recettes");
         yield "\" class=\"row g-3 mb-4 p-3 bg-white rounded-4 shadow-sm border\">
         <div class=\"col-md-4\">
             <input type=\"text\" name=\"titre\" value=\"";
-        // line 66
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 66, $this->source); })()), "request", [], "any", false, false, false, 66), "query", [], "any", false, false, false, 66), "get", ["titre"], "method", false, false, false, 66), "html", null, true);
+        // line 68
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 68, $this->source); })()), "request", [], "any", false, false, false, 68), "query", [], "any", false, false, false, 68), "get", ["titre"], "method", false, false, false, 68), "html", null, true);
         yield "\" 
                    class=\"form-control rounded-pill border-light bg-light\" placeholder=\"🔍 Rechercher par titre...\">
         </div>
@@ -184,19 +190,19 @@ class __TwigTemplate_9c5857a6dfec2731f400e8ea11278cb2 extends Template
             <select name=\"categorie\" class=\"form-select rounded-pill border-light bg-light\">
                 <option value=\"\">Toutes les catégories</option>
                 ";
-        // line 73
+        // line 75
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 73, $this->source); })()));
+        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 75, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["cat"]) {
-            // line 74
+            // line 76
             yield "                    <option value=\"";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["cat"], "id", [], "any", false, false, false, 74), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["cat"], "id", [], "any", false, false, false, 76), "html", null, true);
             yield "\" ";
-            yield (((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 74, $this->source); })()), "request", [], "any", false, false, false, 74), "query", [], "any", false, false, false, 74), "get", ["categorie"], "method", false, false, false, 74) == CoreExtension::getAttribute($this->env, $this->source, $context["cat"], "id", [], "any", false, false, false, 74))) ? ("selected") : (""));
+            yield (((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 76, $this->source); })()), "request", [], "any", false, false, false, 76), "query", [], "any", false, false, false, 76), "get", ["categorie"], "method", false, false, false, 76) == CoreExtension::getAttribute($this->env, $this->source, $context["cat"], "id", [], "any", false, false, false, 76))) ? ("selected") : (""));
             yield ">
                         ";
-            // line 75
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["cat"], "nom", [], "any", false, false, false, 75), "html", null, true);
+            // line 77
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["cat"], "nom", [], "any", false, false, false, 77), "html", null, true);
             yield "
                     </option>
                 ";
@@ -204,7 +210,7 @@ class __TwigTemplate_9c5857a6dfec2731f400e8ea11278cb2 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['cat'], $context['_parent']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 78
+        // line 80
         yield "            </select>
         </div>
 
@@ -212,16 +218,16 @@ class __TwigTemplate_9c5857a6dfec2731f400e8ea11278cb2 extends Template
             <select name=\"difficulte\" class=\"form-select rounded-pill border-light bg-light\">
                 <option value=\"\">Difficulté</option>
                 <option value=\"1\" ";
-        // line 84
-        yield (((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 84, $this->source); })()), "request", [], "any", false, false, false, 84), "query", [], "any", false, false, false, 84), "get", ["difficulte"], "method", false, false, false, 84) == "1")) ? ("selected") : (""));
+        // line 86
+        yield (((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 86, $this->source); })()), "request", [], "any", false, false, false, 86), "query", [], "any", false, false, false, 86), "get", ["difficulte"], "method", false, false, false, 86) == "1")) ? ("selected") : (""));
         yield ">Facile</option>
                 <option value=\"3\" ";
-        // line 85
-        yield (((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 85, $this->source); })()), "request", [], "any", false, false, false, 85), "query", [], "any", false, false, false, 85), "get", ["difficulte"], "method", false, false, false, 85) == "3")) ? ("selected") : (""));
+        // line 87
+        yield (((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 87, $this->source); })()), "request", [], "any", false, false, false, 87), "query", [], "any", false, false, false, 87), "get", ["difficulte"], "method", false, false, false, 87) == "3")) ? ("selected") : (""));
         yield ">Moyen</option>
                 <option value=\"5\" ";
-        // line 86
-        yield (((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 86, $this->source); })()), "request", [], "any", false, false, false, 86), "query", [], "any", false, false, false, 86), "get", ["difficulte"], "method", false, false, false, 86) == "5")) ? ("selected") : (""));
+        // line 88
+        yield (((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 88, $this->source); })()), "request", [], "any", false, false, false, 88), "query", [], "any", false, false, false, 88), "get", ["difficulte"], "method", false, false, false, 88) == "5")) ? ("selected") : (""));
         yield ">Difficile</option>
             </select>
         </div>
@@ -229,7 +235,7 @@ class __TwigTemplate_9c5857a6dfec2731f400e8ea11278cb2 extends Template
         <div class=\"col-md-3 d-flex gap-2\">
             <button type=\"submit\" class=\"btn btn-success rounded-pill flex-grow-1 shadow-sm\">Filtrer</button>
             <a href=\"";
-        // line 92
+        // line 94
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_recettes");
         yield "\" class=\"btn btn-outline-secondary rounded-pill shadow-sm\">
                tous les recettes <i class=\"fas fa-undo\"></i>
@@ -238,12 +244,12 @@ class __TwigTemplate_9c5857a6dfec2731f400e8ea11278cb2 extends Template
     </form>
 
     ";
-        // line 99
+        // line 101
         yield "    <div class=\"d-flex justify-content-between align-items-center mb-4 px-2\">
         <div class=\"text-muted\">
             Total : <span class=\"fw-bold text-dark\">";
-        // line 101
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["recettes"]) || array_key_exists("recettes", $context) ? $context["recettes"] : (function () { throw new RuntimeError('Variable "recettes" does not exist.', 101, $this->source); })()), "getTotalItemCount", [], "any", false, false, false, 101), "html", null, true);
+        // line 103
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["recettes"]) || array_key_exists("recettes", $context) ? $context["recettes"] : (function () { throw new RuntimeError('Variable "recettes" does not exist.', 103, $this->source); })()), "getTotalItemCount", [], "any", false, false, false, 103), "html", null, true);
         yield "</span> résultats trouvés
         </div>
         <div class=\"d-flex align-items-center gap-3\">
@@ -251,20 +257,20 @@ class __TwigTemplate_9c5857a6dfec2731f400e8ea11278cb2 extends Template
             <div class=\"btn-group shadow-sm rounded-pill overflow-hidden\">
                 <span class=\"btn btn-sm btn-white border\">
                     ";
-        // line 107
-        yield $this->env->getRuntime('Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationRuntime')->sortable($this->env, (isset($context["recettes"]) || array_key_exists("recettes", $context) ? $context["recettes"] : (function () { throw new RuntimeError('Variable "recettes" does not exist.', 107, $this->source); })()), "Nom", "r.titre");
+        // line 109
+        yield $this->env->getRuntime('Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationRuntime')->sortable($this->env, (isset($context["recettes"]) || array_key_exists("recettes", $context) ? $context["recettes"] : (function () { throw new RuntimeError('Variable "recettes" does not exist.', 109, $this->source); })()), "Nom", "r.titre");
         yield "
                 </span>
                 <span class=\"btn btn-sm btn-white border\">
                     ";
-        // line 110
-        yield $this->env->getRuntime('Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationRuntime')->sortable($this->env, (isset($context["recettes"]) || array_key_exists("recettes", $context) ? $context["recettes"] : (function () { throw new RuntimeError('Variable "recettes" does not exist.', 110, $this->source); })()), "Date", "r.dateCreation");
+        // line 112
+        yield $this->env->getRuntime('Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationRuntime')->sortable($this->env, (isset($context["recettes"]) || array_key_exists("recettes", $context) ? $context["recettes"] : (function () { throw new RuntimeError('Variable "recettes" does not exist.', 112, $this->source); })()), "Date", "r.dateCreation");
         yield "
                 </span>
                 <span class=\"btn btn-sm btn-white border\">
                     ";
-        // line 113
-        yield $this->env->getRuntime('Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationRuntime')->sortable($this->env, (isset($context["recettes"]) || array_key_exists("recettes", $context) ? $context["recettes"] : (function () { throw new RuntimeError('Variable "recettes" does not exist.', 113, $this->source); })()), "Temps", "r.tempsPreparation");
+        // line 115
+        yield $this->env->getRuntime('Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationRuntime')->sortable($this->env, (isset($context["recettes"]) || array_key_exists("recettes", $context) ? $context["recettes"] : (function () { throw new RuntimeError('Variable "recettes" does not exist.', 115, $this->source); })()), "Temps", "r.tempsPreparation");
         yield "
                 </span>
             </div>
@@ -272,28 +278,28 @@ class __TwigTemplate_9c5857a6dfec2731f400e8ea11278cb2 extends Template
     </div>
 
     ";
-        // line 120
+        // line 122
         yield "    <div class=\"row g-4\">
         ";
-        // line 121
+        // line 123
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["recettes"]) || array_key_exists("recettes", $context) ? $context["recettes"] : (function () { throw new RuntimeError('Variable "recettes" does not exist.', 121, $this->source); })()));
+        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["recettes"]) || array_key_exists("recettes", $context) ? $context["recettes"] : (function () { throw new RuntimeError('Variable "recettes" does not exist.', 123, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["recette"]) {
-            // line 122
+            // line 124
             yield "            <div class=\"col-xl-4 col-lg-4 col-md-6\">
                 <div class=\"card h-100 border-0 shadow-sm rounded-4 overflow-hidden position-relative hover-shadow transition\">
                     
                     <div class=\"position-relative\">
                         <img src=\"";
-            // line 126
-            yield ((Twig\Extension\CoreExtension::trim(CoreExtension::getAttribute($this->env, $this->source, $context["recette"], "imageName", [], "any", false, false, false, 126))) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(Twig\Extension\CoreExtension::trim(CoreExtension::getAttribute($this->env, $this->source, $context["recette"], "imageName", [], "any", false, false, false, 126)), "html", null, true)) : ("https://via.placeholder.com/400x250?text=Recette"));
+            // line 128
+            yield ((Twig\Extension\CoreExtension::trim(CoreExtension::getAttribute($this->env, $this->source, $context["recette"], "imageName", [], "any", false, false, false, 128))) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(Twig\Extension\CoreExtension::trim(CoreExtension::getAttribute($this->env, $this->source, $context["recette"], "imageName", [], "any", false, false, false, 128)), "html", null, true)) : ("https://via.placeholder.com/400x250?text=Recette"));
             yield "\"
                              class=\"card-img-top\" 
                              style=\"height: 220px; object-fit: cover;\" 
                              alt=\"";
-            // line 129
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["recette"], "titre", [], "any", false, false, false, 129), "html", null, true);
+            // line 131
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["recette"], "titre", [], "any", false, false, false, 131), "html", null, true);
             yield "\">
                         
                         <div class=\"position-absolute top-0 end-0 m-2\">
@@ -306,114 +312,125 @@ class __TwigTemplate_9c5857a6dfec2731f400e8ea11278cb2 extends Template
                     <div class=\"card-body d-flex flex-column\">
                         <div class=\"mb-2\">
                             ";
-            // line 140
+            // line 142
             $context['_parent'] = $context;
-            $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, $context["recette"], "tags", [], "any", false, false, false, 140));
+            $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, $context["recette"], "tags", [], "any", false, false, false, 142));
             $context['_iterated'] = false;
             foreach ($context['_seq'] as $context["_key"] => $context["tag"]) {
-                // line 141
+                // line 143
                 yield "                                <span class=\"badge bg-primary-subtle text-primary rounded-pill me-1\" style=\"font-size: 0.7rem;\">#";
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["tag"], "nom", [], "any", false, false, false, 141), "html", null, true);
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["tag"], "nom", [], "any", false, false, false, 143), "html", null, true);
                 yield "</span>
                             ";
                 $context['_iterated'] = true;
             }
-            // line 142
+            // line 144
             if (!$context['_iterated']) {
-                // line 143
+                // line 145
                 yield "                                <span class=\"badge bg-light text-muted rounded-pill\" style=\"font-size: 0.7rem;\">#Cuisine</span>
                             ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_key'], $context['tag'], $context['_parent'], $context['_iterated']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 145
+            // line 147
             yield "                        </div>
 
                     
 
 
 <h5 class=\"card-title\">";
-            // line 150
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["recette"], "titre", [], "any", false, false, false, 150), "html", null, true);
+            // line 152
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["recette"], "titre", [], "any", false, false, false, 152), "html", null, true);
             yield " ";
-            yield $this->extensions['App\Twig\RecipeHubExtension']->getStars(CoreExtension::getAttribute($this->env, $this->source, $context["recette"], "difficulte", [], "any", false, false, false, 150));
+            yield $this->extensions['App\Twig\RecipeHubExtension']->getStars(CoreExtension::getAttribute($this->env, $this->source, $context["recette"], "difficulte", [], "any", false, false, false, 152));
             yield "</h5>
 
                         <div class=\"mb-3\">
                             ";
-            // line 153
-            if ((CoreExtension::getAttribute($this->env, $this->source, $context["recette"], "difficulte", [], "any", false, false, false, 153) <= 2)) {
-                // line 154
+            // line 155
+            if ((CoreExtension::getAttribute($this->env, $this->source, $context["recette"], "difficulte", [], "any", false, false, false, 155) <= 2)) {
+                // line 156
                 yield "                                <span class=\"badge bg-success-subtle text-success border border-success rounded-pill\">🟢 Facile</span>
                             ";
-            } elseif ((CoreExtension::getAttribute($this->env, $this->source,             // line 155
-$context["recette"], "difficulte", [], "any", false, false, false, 155) <= 4)) {
-                // line 156
+            } elseif ((CoreExtension::getAttribute($this->env, $this->source,             // line 157
+$context["recette"], "difficulte", [], "any", false, false, false, 157) <= 4)) {
+                // line 158
                 yield "                                <span class=\"badge bg-warning-subtle text-warning border border-warning rounded-pill\">🟡 Moyen</span>
                             ";
             } else {
-                // line 158
+                // line 160
                 yield "                                <span class=\"badge bg-danger-subtle text-danger border border-danger rounded-pill\">🔴 Difficile</span>
                             ";
             }
-            // line 160
+            // line 162
             yield "                        </div>
 
                         <div class=\"mt-auto pt-3 border-top d-flex justify-content-between text-muted small\">
                         <span><i class=\"far fa-clock\"></i> ";
-            // line 163
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['App\Twig\RecipeHubExtension']->formatCookingTime((CoreExtension::getAttribute($this->env, $this->source, $context["recette"], "tempsPreparation", [], "any", false, false, false, 163) + CoreExtension::getAttribute($this->env, $this->source, $context["recette"], "tempsCuisson", [], "any", false, false, false, 163))), "html", null, true);
-            yield "</span>
-                      
-                            <span><i class=\"fas fa-users me-1 text-success\"></i> ";
             // line 165
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["recette"], "nbPersonnes", [], "any", false, false, false, 165), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['App\Twig\RecipeHubExtension']->formatCookingTime((CoreExtension::getAttribute($this->env, $this->source, $context["recette"], "tempsPreparation", [], "any", false, false, false, 165) + CoreExtension::getAttribute($this->env, $this->source, $context["recette"], "tempsCuisson", [], "any", false, false, false, 165))), "html", null, true);
+            yield "</span>
+                        
+                            <span><i class=\"fas fa-users me-1 text-success\"></i> ";
+            // line 167
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["recette"], "nbPersonnes", [], "any", false, false, false, 167), "html", null, true);
             yield " pers.</span>
                         </div>
 
                         <div class=\"mt-3 d-flex gap-2 position-relative\" style=\"z-index: 5;\">
-                            <a href=\"";
-            // line 169
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_recettes_modifier", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["recette"], "id", [], "any", false, false, false, 169)]), "html", null, true);
+                        ";
+            // line 171
+            if (($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN") || ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_CUISINIER") && (CoreExtension::getAttribute($this->env, $this->source, $context["recette"], "user", [], "any", false, false, false, 171) == CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 171, $this->source); })()), "user", [], "any", false, false, false, 171))))) {
+                // line 172
+                yield "                        <a href=\"";
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_recettes_modifier", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["recette"], "id", [], "any", false, false, false, 172)]), "html", null, true);
+                yield "\" 
+                        class=\"btn btn-sm btn-outline-info rounded-pill flex-grow-1\">
+                            modifier <i class=\"fas fa-edit\"></i>
+                        </a>
+                        ";
+            }
+            // line 177
+            yield "                            <form method=\"post\" action=\"";
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_recettes_supprimer", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["recette"], "id", [], "any", false, false, false, 177)]), "html", null, true);
             yield "\" 
-                               class=\"btn btn-sm btn-outline-info rounded-pill flex-grow-1\">
-                                modifier <i class=\"fas fa-edit\"></i>
-                            </a>
-
-                            <form method=\"post\" action=\"";
-            // line 174
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_recettes_supprimer", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["recette"], "id", [], "any", false, false, false, 174)]), "html", null, true);
-            yield "\" 
-                                  onsubmit=\"return confirm('Voulez-vous vraiment supprimer cette recette ?');\" class=\"flex-grow-1\">
+                                onsubmit=\"return confirm('Voulez-vous vraiment supprimer cette recette ?');\" class=\"flex-grow-1\">
                                 <input type=\"hidden\" name=\"_token\" value=\"";
-            // line 176
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . CoreExtension::getAttribute($this->env, $this->source, $context["recette"], "id", [], "any", false, false, false, 176))), "html", null, true);
+            // line 179
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete" . CoreExtension::getAttribute($this->env, $this->source, $context["recette"], "id", [], "any", false, false, false, 179))), "html", null, true);
             yield "\">
-                                <button class=\"btn btn-sm btn-outline-danger rounded-pill w-100\">
-                                   suprimer <i class=\"fas fa-trash\"></i>
-                                </button>
-                            </form>
+                                ";
+            // line 180
+            if (($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN") || ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_CUISINIER") && (CoreExtension::getAttribute($this->env, $this->source, $context["recette"], "user", [], "any", false, false, false, 180) == CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 180, $this->source); })()), "user", [], "any", false, false, false, 180))))) {
+                // line 181
+                yield "                            <button class=\"btn btn-sm btn-outline-danger rounded-pill w-100\">
+                                suprimer <i class=\"fas fa-trash\"></i>
+                            </button>
+                            ";
+            }
+            // line 185
+            yield "                            </form>
                         </div>
                     </div>
                     
                     <a href=\"";
-            // line 184
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_recette_detail", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["recette"], "id", [], "any", false, false, false, 184)]), "html", null, true);
+            // line 189
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_recette_detail", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["recette"], "id", [], "any", false, false, false, 189)]), "html", null, true);
             yield "\" class=\"stretched-link\" style=\"z-index: 2;\"></a>
                 </div>
             </div>
         ";
             $context['_iterated'] = true;
         }
-        // line 187
+        // line 192
         if (!$context['_iterated']) {
-            // line 188
+            // line 193
             yield "            <div class=\"col-12 text-center py-5\">
                 <div class=\"mb-3\"><i class=\"fas fa-search fa-3x text-muted\"></i></div>
                 <p class=\"text-muted fs-4\">Aucune recette ne correspond à votre recherche.</p>
                 <a href=\"";
-            // line 191
+            // line 196
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_recettes");
             yield "\" class=\"btn btn-success rounded-pill\">Voir toutes les recettes</a>
             </div>
@@ -422,15 +439,15 @@ $context["recette"], "difficulte", [], "any", false, false, false, 155) <= 4)) {
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['recette'], $context['_parent'], $context['_iterated']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 194
+        // line 199
         yield "    </div>
 
     ";
-        // line 197
+        // line 202
         yield "    <div class=\"navigation d-flex justify-content-center mt-5\">
         ";
-        // line 198
-        yield $this->env->getRuntime('Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationRuntime')->render($this->env, (isset($context["recettes"]) || array_key_exists("recettes", $context) ? $context["recettes"] : (function () { throw new RuntimeError('Variable "recettes" does not exist.', 198, $this->source); })()));
+        // line 203
+        yield $this->env->getRuntime('Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationRuntime')->render($this->env, (isset($context["recettes"]) || array_key_exists("recettes", $context) ? $context["recettes"] : (function () { throw new RuntimeError('Variable "recettes" does not exist.', 203, $this->source); })()));
         yield "
     </div>
 </div>
@@ -480,7 +497,7 @@ $context["recette"], "difficulte", [], "any", false, false, false, 155) <= 4)) {
      */
     public function getDebugInfo(): array
     {
-        return array (  433 => 198,  430 => 197,  426 => 194,  417 => 191,  412 => 188,  410 => 187,  402 => 184,  391 => 176,  386 => 174,  378 => 169,  371 => 165,  366 => 163,  361 => 160,  357 => 158,  353 => 156,  351 => 155,  348 => 154,  346 => 153,  338 => 150,  331 => 145,  324 => 143,  322 => 142,  315 => 141,  310 => 140,  296 => 129,  290 => 126,  284 => 122,  279 => 121,  276 => 120,  267 => 113,  261 => 110,  255 => 107,  246 => 101,  242 => 99,  233 => 92,  224 => 86,  220 => 85,  216 => 84,  208 => 78,  199 => 75,  192 => 74,  188 => 73,  178 => 66,  172 => 64,  164 => 58,  157 => 53,  151 => 49,  144 => 44,  137 => 42,  135 => 41,  126 => 39,  123 => 38,  118 => 37,  105 => 27,  96 => 20,  83 => 9,  76 => 4,  63 => 3,  40 => 1,);
+        return array (  450 => 203,  447 => 202,  443 => 199,  434 => 196,  429 => 193,  427 => 192,  419 => 189,  413 => 185,  407 => 181,  405 => 180,  401 => 179,  395 => 177,  386 => 172,  384 => 171,  377 => 167,  372 => 165,  367 => 162,  363 => 160,  359 => 158,  357 => 157,  354 => 156,  352 => 155,  344 => 152,  337 => 147,  330 => 145,  328 => 144,  321 => 143,  316 => 142,  302 => 131,  296 => 128,  290 => 124,  285 => 123,  282 => 122,  273 => 115,  267 => 112,  261 => 109,  252 => 103,  248 => 101,  239 => 94,  230 => 88,  226 => 87,  222 => 86,  214 => 80,  205 => 77,  198 => 76,  194 => 75,  184 => 68,  178 => 66,  174 => 63,  166 => 59,  164 => 58,  157 => 53,  151 => 49,  144 => 44,  137 => 42,  135 => 41,  126 => 39,  123 => 38,  118 => 37,  105 => 27,  96 => 20,  83 => 9,  76 => 4,  63 => 3,  40 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -542,9 +559,11 @@ $context["recette"], "difficulte", [], "any", false, false, false, 155) <= 4)) {
             <h1 class=\"display-5 fw-bold\">Toutes les recettes</h1>
             <p class=\"text-muted\">Découvrez nos délices culinaires</p>
         </div>
-        <a href=\"{{ path('app_recettes_nouvelle') }}\" class=\"btn btn-success rounded-pill px-4 shadow-sm\">
-            <i class=\"fas fa-plus me-2\"></i>Nouvelle recette
-        </a>
+        {% if is_granted('ROLE_CUISINIER') or is_granted('ROLE_ADMIN') %}
+            <a href=\"{{ path('app_recettes_nouvelle') }}\" class=\"btn btn-success rounded-pill px-4 shadow-sm\">
+                <i class=\"fas fa-plus me-2\"></i>Nouvelle recette
+            </a>
+        {% endif %}
     </div>
 
     {# --- SECTION 3: FILTRES --- #}
@@ -648,22 +667,25 @@ $context["recette"], "difficulte", [], "any", false, false, false, 155) <= 4)) {
 
                         <div class=\"mt-auto pt-3 border-top d-flex justify-content-between text-muted small\">
                         <span><i class=\"far fa-clock\"></i> {{ (recette.tempsPreparation + recette.tempsCuisson)|cooking_time_format }}</span>
-                      
+                        
                             <span><i class=\"fas fa-users me-1 text-success\"></i> {{ recette.nbPersonnes }} pers.</span>
                         </div>
 
                         <div class=\"mt-3 d-flex gap-2 position-relative\" style=\"z-index: 5;\">
-                            <a href=\"{{ path('app_recettes_modifier', {id: recette.id}) }}\" 
-                               class=\"btn btn-sm btn-outline-info rounded-pill flex-grow-1\">
-                                modifier <i class=\"fas fa-edit\"></i>
-                            </a>
-
+                        {% if is_granted('ROLE_ADMIN') or (is_granted('ROLE_CUISINIER') and recette.user == app.user) %}
+                        <a href=\"{{ path('app_recettes_modifier', {id: recette.id}) }}\" 
+                        class=\"btn btn-sm btn-outline-info rounded-pill flex-grow-1\">
+                            modifier <i class=\"fas fa-edit\"></i>
+                        </a>
+                        {% endif %}
                             <form method=\"post\" action=\"{{ path('app_recettes_supprimer', {id: recette.id}) }}\" 
-                                  onsubmit=\"return confirm('Voulez-vous vraiment supprimer cette recette ?');\" class=\"flex-grow-1\">
+                                onsubmit=\"return confirm('Voulez-vous vraiment supprimer cette recette ?');\" class=\"flex-grow-1\">
                                 <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ recette.id) }}\">
-                                <button class=\"btn btn-sm btn-outline-danger rounded-pill w-100\">
-                                   suprimer <i class=\"fas fa-trash\"></i>
-                                </button>
+                                {% if is_granted('ROLE_ADMIN') or (is_granted('ROLE_CUISINIER') and recette.user == app.user) %}
+                            <button class=\"btn btn-sm btn-outline-danger rounded-pill w-100\">
+                                suprimer <i class=\"fas fa-trash\"></i>
+                            </button>
+                            {% endif %}
                             </form>
                         </div>
                     </div>
@@ -700,6 +722,6 @@ $context["recette"], "difficulte", [], "any", false, false, false, 155) <= 4)) {
     .btn-white:hover { background: #f8f9fa; }
     .sorting a { text-decoration: none; color: inherit; display: block; padding: 0 5px; }
 </style>
-{% endblock %}", "recettes/index.html.twig", "/home/useradm/Bureau/projet-recettes/templates/recettes/index.html.twig");
+{% endblock %}", "recettes/index.html.twig", "/home/vboxuser/projet_recettes_final/miniprojet2026-ines_maram/templates/recettes/index.html.twig");
     }
 }

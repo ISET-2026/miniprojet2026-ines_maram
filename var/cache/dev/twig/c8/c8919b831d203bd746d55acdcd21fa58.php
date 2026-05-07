@@ -269,6 +269,6 @@ class __TwigTemplate_6cc35cc707c1e0f5447addfde4183da4 extends Template
         </div>
     {% endif %}
 {% endblock %}
-", "@WebProfiler/Collector/exception.html.twig", "/home/useradm/projet-recettes/vendor/symfony/web-profiler-bundle/Resources/views/Collector/exception.html.twig");
+", "@WebProfiler/Collector/exception.html.twig", "/home/vboxuser/projet_recettes_final/miniprojet2026-ines_maram/vendor/symfony/web-profiler-bundle/Resources/views/Collector/exception.html.twig");
     }
 }

@@ -50,9 +50,9 @@ class AppAuthenticator extends AbstractLoginFormAuthenticator
         }
 
         // ✅ default redirect after login
-        return new RedirectResponse(
-            $this->urlGenerator->generate('recette_index')
-        );
+        return new RedirectResponse('/accueil  ');
+            //$this->urlGenerator->generate('accueil')
+        
     }
 
     protected function getLoginUrl(Request $request): string

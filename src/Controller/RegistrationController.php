@@ -27,31 +27,43 @@ class RegistrationController extends AbstractController
 
         $user = new User();
 
+        // DEFAULT SAFE ROLE
+        $user->setRoles(['ROLE_USER']);
+        $user->setRoleRequestStatus('NONE');
+
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            // pseudo
+            // PSEUDO
             $user->setPseudo($form->get('pseudo')->getData());
 
-            // default role
-           // $user->setRequestedRole($form->get('requestedRole')->getData());
-
-            // password hashing
+            // PASSWORD HASHING
             $plainPassword = $form->get('plainPassword')->getData();
             $user->setPassword(
                 $userPasswordHasher->hashPassword($user, $plainPassword)
             );
 
-            // save user
+            // ROLE REQUEST
+            $requestedRole = $form->get('requestedRole')->getData();
+
+            if (!empty($requestedRole)) {
+                $user->setRequestedRole($requestedRole);
+                $user->setRoleRequestStatus('PENDING');
+            } else {
+                $user->setRequestedRole(null);
+                $user->setRoleRequestStatus('NONE');
+            }
+
+            // SAVE USER
             $entityManager->persist($user);
             $entityManager->flush();
 
-            // 📩 SEND WELCOME EMAIL
+            // SEND EMAIL
             $mailer->sendWelcomeEmail($user->getEmail());
 
-            // auto login after register
+            // AUTO LOGIN
             return $security->login($user, AppAuthenticator::class, 'main');
         }
 

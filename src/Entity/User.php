@@ -35,6 +35,13 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column]
     private ?string $password = null;
+    #[ORM\Column(length: 50, nullable: true)]
+    private ?string $requestedRole = null;
+
+    #[ORM\Column(length: 20)]
+    private string $roleRequestStatus = 'NONE'; 
+    // NONE | PENDING | APPROVED | REJECTED
+
 
     #[ORM\OneToMany(mappedBy: 'auteur', targetEntity: Recette::class)]
     private Collection $recettes;
@@ -46,7 +53,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     }
 
 
-   public function getId(): ?int
+public function getId(): ?int
 {
     return $this->id;
 }
@@ -116,4 +123,24 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         return $this->recettes;
     }
+    public function getRequestedRole(): ?string
+{
+    return $this->requestedRole;
+}
+
+public function setRequestedRole(?string $requestedRole): self
+{
+    $this->requestedRole = $requestedRole;
+    return $this;
+}
+public function getRoleRequestStatus(): string
+{
+    return $this->roleRequestStatus;
+}
+
+public function setRoleRequestStatus(string $roleRequestStatus): self
+{
+    $this->roleRequestStatus = $roleRequestStatus;
+    return $this;
+}
 }

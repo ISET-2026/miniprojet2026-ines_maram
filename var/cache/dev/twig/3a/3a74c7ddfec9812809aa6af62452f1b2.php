@@ -528,6 +528,6 @@ class __TwigTemplate_bc9f9ed9b0fe08a5d4c6c1e5f3103d76 extends Template
         {% endfor %}
     </table>
 {% endmacro %}
-", "@WebProfiler/Collector/events.html.twig", "/home/useradm/projet-recettes/vendor/symfony/web-profiler-bundle/Resources/views/Collector/events.html.twig");
+", "@WebProfiler/Collector/events.html.twig", "/home/vboxuser/projet_recettes_final/miniprojet2026-ines_maram/vendor/symfony/web-profiler-bundle/Resources/views/Collector/events.html.twig");
     }
 }

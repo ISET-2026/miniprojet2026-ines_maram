@@ -1003,6 +1003,6 @@ class __TwigTemplate_f2ee4a9e9249be269bf4422ea409c803 extends Template
         {% endautoescape %}</script>
     </div>
 {% endmacro %}
-", "@WebProfiler/Collector/time.html.twig", "/home/useradm/projet-recettes/vendor/symfony/web-profiler-bundle/Resources/views/Collector/time.html.twig");
+", "@WebProfiler/Collector/time.html.twig", "/home/vboxuser/projet_recettes_final/miniprojet2026-ines_maram/vendor/symfony/web-profiler-bundle/Resources/views/Collector/time.html.twig");
     }
 }

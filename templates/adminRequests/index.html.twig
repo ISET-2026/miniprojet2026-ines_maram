@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Role Requests{% endblock %}
+
+{% block body %}
+
+<div class="container mt-5">
+
+    <h2 class="mb-4">Pending Role Requests</h2>
+
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">{{ message }}</div>
+    {% endfor %}
+
+    {% for message in app.flashes('error') %}
+        <div class="alert alert-danger">{{ message }}</div>
+    {% endfor %}
+
+    {% for message in app.flashes('warning') %}
+        <div class="alert alert-warning">{{ message }}</div>
+    {% endfor %}
+
+    <table class="table table-bordered table-striped">
+
+        <thead>
+            <tr>
+                <th>User</th>
+                <th>Email</th>
+                <th>Requested Role</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.pseudo }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.requestedRole }}</td>
+                <td>
+
+                    <a href="{{ path('admin_role_request_approve', {id: user.id}) }}"
+                       class="btn btn-success btn-sm">
+                        Approve
+                    </a>
+
+                    <a href="{{ path('admin_role_request_reject', {id: user.id}) }}"
+                       class="btn btn-danger btn-sm">
+                        Reject
+                    </a>
+
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+
+</div>
+
+{% endblock %}

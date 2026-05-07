@@ -2219,6 +2219,6 @@ class __TwigTemplate_2702cfbf2ec097100e6c9e8bed13d9e7 extends Template
         </tbody>
     </table>
 {% endmacro %}
-", "@WebProfiler/Collector/form.html.twig", "/home/useradm/projet-recettes/vendor/symfony/web-profiler-bundle/Resources/views/Collector/form.html.twig");
+", "@WebProfiler/Collector/form.html.twig", "/home/vboxuser/projet_recettes_final/miniprojet2026-ines_maram/vendor/symfony/web-profiler-bundle/Resources/views/Collector/form.html.twig");
     }
 }

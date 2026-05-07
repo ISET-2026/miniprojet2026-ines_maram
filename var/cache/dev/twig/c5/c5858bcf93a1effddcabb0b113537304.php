@@ -189,48 +189,49 @@ class __TwigTemplate_9d8b19c22540a6e73cdcfca51a3da33e extends Template
         // line 53
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["recette"]) || array_key_exists("recette", $context) ? $context["recette"] : (function () { throw new RuntimeError('Variable "recette" does not exist.', 53, $this->source); })()), "categorie", [], "any", false, false, false, 53), "nom", [], "any", false, false, false, 53), "html", null, true);
         yield "</p>
-                    <p><strong>Difficulty:</strong> ";
-        // line 54
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["recette"]) || array_key_exists("recette", $context) ? $context["recette"] : (function () { throw new RuntimeError('Variable "recette" does not exist.', 54, $this->source); })()), "difficulte", [], "any", false, false, false, 54), "html", null, true);
-        yield "</p>
-                    <p><strong>Preparation:</strong> ";
+                    <div class=\"difficulty\">
+        Niveau de difficulté : ";
         // line 55
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["recette"]) || array_key_exists("recette", $context) ? $context["recette"] : (function () { throw new RuntimeError('Variable "recette" does not exist.', 55, $this->source); })()), "tempsPreparation", [], "any", false, false, false, 55), "html", null, true);
-        yield " min</p>
-                    ";
-        // line 56
-        if ((($tmp = CoreExtension::getAttribute($this->env, $this->source, (isset($context["recette"]) || array_key_exists("recette", $context) ? $context["recette"] : (function () { throw new RuntimeError('Variable "recette" does not exist.', 56, $this->source); })()), "tempsCuisson", [], "any", false, false, false, 56)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
-            // line 57
-            yield "                        <p><strong>Cooking:</strong> ";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["recette"]) || array_key_exists("recette", $context) ? $context["recette"] : (function () { throw new RuntimeError('Variable "recette" does not exist.', 57, $this->source); })()), "tempsCuisson", [], "any", false, false, false, 57), "html", null, true);
-            yield " min</p>
-                    ";
-        }
+        yield $this->extensions['App\Twig\RecipeHubExtension']->getStars(CoreExtension::getAttribute($this->env, $this->source, (isset($context["recette"]) || array_key_exists("recette", $context) ? $context["recette"] : (function () { throw new RuntimeError('Variable "recette" does not exist.', 55, $this->source); })()), "difficulte", [], "any", false, false, false, 55));
+        yield "
+    </div>
+                  <div class=\"times\">
+        <strong>Temps de préparation :</strong> ";
+        // line 58
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['App\Twig\RecipeHubExtension']->formatCookingTime(CoreExtension::getAttribute($this->env, $this->source, (isset($context["recette"]) || array_key_exists("recette", $context) ? $context["recette"] : (function () { throw new RuntimeError('Variable "recette" does not exist.', 58, $this->source); })()), "tempsPreparation", [], "any", false, false, false, 58)), "html", null, true);
+        yield " <br>
+        <strong>Temps de cuisson :</strong> ";
         // line 59
-        yield "                    <p><strong>People:</strong> ";
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["recette"]) || array_key_exists("recette", $context) ? $context["recette"] : (function () { throw new RuntimeError('Variable "recette" does not exist.', 59, $this->source); })()), "nbPersonnes", [], "any", false, false, false, 59), "html", null, true);
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['App\Twig\RecipeHubExtension']->formatCookingTime(CoreExtension::getAttribute($this->env, $this->source, (isset($context["recette"]) || array_key_exists("recette", $context) ? $context["recette"] : (function () { throw new RuntimeError('Variable "recette" does not exist.', 59, $this->source); })()), "tempsCuisson", [], "any", false, false, false, 59)), "html", null, true);
+        yield "
+    </div>
+</div>
+                    <p><strong>People:</strong> ";
+        // line 62
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["recette"]) || array_key_exists("recette", $context) ? $context["recette"] : (function () { throw new RuntimeError('Variable "recette" does not exist.', 62, $this->source); })()), "nbPersonnes", [], "any", false, false, false, 62), "html", null, true);
         yield "</p>
 
                     <!-- Tags -->
                     <h4>Tags</h4>
                     ";
-        // line 63
+        // line 66
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, (isset($context["recette"]) || array_key_exists("recette", $context) ? $context["recette"] : (function () { throw new RuntimeError('Variable "recette" does not exist.', 63, $this->source); })()), "tags", [], "any", false, false, false, 63));
+        $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, (isset($context["recette"]) || array_key_exists("recette", $context) ? $context["recette"] : (function () { throw new RuntimeError('Variable "recette" does not exist.', 66, $this->source); })()), "tags", [], "any", false, false, false, 66));
         foreach ($context['_seq'] as $context["_key"] => $context["tag"]) {
-            // line 64
+            // line 67
             yield "                          <span class=\"badge bg-primary rounded-pill\">#";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["tag"], "nom", [], "any", false, false, false, 64), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["tag"], "nom", [], "any", false, false, false, 67), "html", null, true);
             yield "</span>
                     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['tag'], $context['_parent']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 66
+        // line 69
         yield "
                 </div>
             </div>
+            
 
             <!-- RIGHT SIDE: RECIPE CONTENT -->
             <div class=\"col-lg-8\">
@@ -238,20 +239,20 @@ class __TwigTemplate_9d8b19c22540a6e73cdcfca51a3da33e extends Template
 
                     <!-- Image -->
                     ";
-        // line 75
-        if ((($tmp = CoreExtension::getAttribute($this->env, $this->source, (isset($context["recette"]) || array_key_exists("recette", $context) ? $context["recette"] : (function () { throw new RuntimeError('Variable "recette" does not exist.', 75, $this->source); })()), "imageName", [], "any", false, false, false, 75)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
-            // line 76
+        // line 79
+        if ((($tmp = CoreExtension::getAttribute($this->env, $this->source, (isset($context["recette"]) || array_key_exists("recette", $context) ? $context["recette"] : (function () { throw new RuntimeError('Variable "recette" does not exist.', 79, $this->source); })()), "imageName", [], "any", false, false, false, 79)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
+            // line 80
             yield "                 
                     ";
         }
-        // line 78
+        // line 82
         yield "
 
                     <h3> description: </h3>
                   <p style=\"white-space: pre-line;\">
                         ";
-        // line 82
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["recette"]) || array_key_exists("recette", $context) ? $context["recette"] : (function () { throw new RuntimeError('Variable "recette" does not exist.', 82, $this->source); })()), "description", [], "any", false, false, false, 82), "html", null, true);
+        // line 86
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["recette"]) || array_key_exists("recette", $context) ? $context["recette"] : (function () { throw new RuntimeError('Variable "recette" does not exist.', 86, $this->source); })()), "description", [], "any", false, false, false, 86), "html", null, true);
         yield "
                     </p>
                     <hr>
@@ -259,8 +260,8 @@ class __TwigTemplate_9d8b19c22540a6e73cdcfca51a3da33e extends Template
                     <h3>Instructions</h3>
                     <p style=\"white-space: pre-line;\">
                         ";
-        // line 88
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["recette"]) || array_key_exists("recette", $context) ? $context["recette"] : (function () { throw new RuntimeError('Variable "recette" does not exist.', 88, $this->source); })()), "instructions", [], "any", false, false, false, 88), "html", null, true);
+        // line 92
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["recette"]) || array_key_exists("recette", $context) ? $context["recette"] : (function () { throw new RuntimeError('Variable "recette" does not exist.', 92, $this->source); })()), "instructions", [], "any", false, false, false, 92), "html", null, true);
         yield "
                     </p>
 
@@ -269,16 +270,16 @@ class __TwigTemplate_9d8b19c22540a6e73cdcfca51a3da33e extends Template
                     <p>
                         <strong>Created by:</strong>
                         ";
-        // line 95
-        yield (((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, ($context["recette"] ?? null), "user", [], "any", false, true, false, 95), "nom", [], "any", true, true, false, 95) &&  !(null === CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["recette"]) || array_key_exists("recette", $context) ? $context["recette"] : (function () { throw new RuntimeError('Variable "recette" does not exist.', 95, $this->source); })()), "user", [], "any", false, false, false, 95), "nom", [], "any", false, false, false, 95)))) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["recette"]) || array_key_exists("recette", $context) ? $context["recette"] : (function () { throw new RuntimeError('Variable "recette" does not exist.', 95, $this->source); })()), "user", [], "any", false, false, false, 95), "nom", [], "any", false, false, false, 95), "html", null, true)) : ("Unknown"));
+        // line 99
+        yield (((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, ($context["recette"] ?? null), "user", [], "any", false, true, false, 99), "nom", [], "any", true, true, false, 99) &&  !(null === CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["recette"]) || array_key_exists("recette", $context) ? $context["recette"] : (function () { throw new RuntimeError('Variable "recette" does not exist.', 99, $this->source); })()), "user", [], "any", false, false, false, 99), "nom", [], "any", false, false, false, 99)))) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["recette"]) || array_key_exists("recette", $context) ? $context["recette"] : (function () { throw new RuntimeError('Variable "recette" does not exist.', 99, $this->source); })()), "user", [], "any", false, false, false, 99), "nom", [], "any", false, false, false, 99), "html", null, true)) : ("Unknown"));
         yield "
                     </p>
 
                    
                 
 <p class=\"text-muted\">Date ";
-        // line 100
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['App\Twig\RecipeHubExtension']->formatTimeAgo(CoreExtension::getAttribute($this->env, $this->source, (isset($context["recette"]) || array_key_exists("recette", $context) ? $context["recette"] : (function () { throw new RuntimeError('Variable "recette" does not exist.', 100, $this->source); })()), "dateCreation", [], "any", false, false, false, 100)), "html", null, true);
+        // line 104
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['App\Twig\RecipeHubExtension']->formatTimeAgo(CoreExtension::getAttribute($this->env, $this->source, (isset($context["recette"]) || array_key_exists("recette", $context) ? $context["recette"] : (function () { throw new RuntimeError('Variable "recette" does not exist.', 104, $this->source); })()), "dateCreation", [], "any", false, false, false, 104)), "html", null, true);
         yield "</p>
 
                 </div>
@@ -289,7 +290,7 @@ class __TwigTemplate_9d8b19c22540a6e73cdcfca51a3da33e extends Template
 
     <div class=\"text-center mt-5 mb-5\">
         <a href=\"";
-        // line 109
+        // line 113
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_recettes");
         yield "\" class=\"btn btn-outline-secondary\">Retour à la liste</a>
     </div>
@@ -326,7 +327,7 @@ class __TwigTemplate_9d8b19c22540a6e73cdcfca51a3da33e extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  293 => 109,  281 => 100,  273 => 95,  263 => 88,  254 => 82,  248 => 78,  244 => 76,  242 => 75,  231 => 66,  222 => 64,  218 => 63,  210 => 59,  204 => 57,  202 => 56,  198 => 55,  194 => 54,  190 => 53,  183 => 49,  180 => 48,  173 => 46,  171 => 45,  162 => 43,  159 => 42,  154 => 41,  137 => 27,  127 => 20,  122 => 18,  117 => 16,  110 => 12,  106 => 10,  104 => 9,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  294 => 113,  282 => 104,  274 => 99,  264 => 92,  255 => 86,  249 => 82,  245 => 80,  243 => 79,  231 => 69,  222 => 67,  218 => 66,  211 => 62,  205 => 59,  201 => 58,  195 => 55,  190 => 53,  183 => 49,  180 => 48,  173 => 46,  171 => 45,  162 => 43,  159 => 42,  154 => 41,  137 => 27,  127 => 20,  122 => 18,  117 => 16,  110 => 12,  106 => 10,  104 => 9,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -384,11 +385,14 @@ class __TwigTemplate_9d8b19c22540a6e73cdcfca51a3da33e extends Template
                     <hr>
 
                     <p><strong>Category:</strong> {{ recette.categorie.nom }}</p>
-                    <p><strong>Difficulty:</strong> {{ recette.difficulte }}</p>
-                    <p><strong>Preparation:</strong> {{ recette.tempsPreparation }} min</p>
-                    {% if recette.tempsCuisson %}
-                        <p><strong>Cooking:</strong> {{ recette.tempsCuisson }} min</p>
-                    {% endif %}
+                    <div class=\"difficulty\">
+        Niveau de difficulté : {{ difficulty_stars(recette.difficulte) }}
+    </div>
+                  <div class=\"times\">
+        <strong>Temps de préparation :</strong> {{ recette.tempsPreparation|cooking_time_format }} <br>
+        <strong>Temps de cuisson :</strong> {{ recette.tempsCuisson|cooking_time_format }}
+    </div>
+</div>
                     <p><strong>People:</strong> {{ recette.nbPersonnes }}</p>
 
                     <!-- Tags -->
@@ -399,6 +403,7 @@ class __TwigTemplate_9d8b19c22540a6e73cdcfca51a3da33e extends Template
 
                 </div>
             </div>
+            
 
             <!-- RIGHT SIDE: RECIPE CONTENT -->
             <div class=\"col-lg-8\">
@@ -443,6 +448,6 @@ class __TwigTemplate_9d8b19c22540a6e73cdcfca51a3da33e extends Template
     </div>
 </div>
 
-{% endblock %}", "recettes/detail.html.twig", "/home/useradm/projet-recettes/templates/recettes/detail.html.twig");
+{% endblock %}", "recettes/detail.html.twig", "/home/vboxuser/projet_recettes_final/miniprojet2026-ines_maram/templates/recettes/detail.html.twig");
     }
 }

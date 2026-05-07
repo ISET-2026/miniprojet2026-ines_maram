@@ -85,6 +85,6 @@ class __TwigTemplate_71ebbe9d45de5552c9112bed60e4718b extends Template
     <path d=\"M4 6v6a8 3 0 0 0 16 0v-6\"></path>
     <path d=\"M4 12v6a8 3 0 0 0 16 0v-6\"></path>
 </svg>
-", "@Doctrine/Collector/database.svg", "/home/useradm/projet-recettes/vendor/doctrine/doctrine-bundle/templates/Collector/database.svg");
+", "@Doctrine/Collector/database.svg", "/home/vboxuser/projet_recettes_final/miniprojet2026-ines_maram/vendor/doctrine/doctrine-bundle/templates/Collector/database.svg");
     }
 }

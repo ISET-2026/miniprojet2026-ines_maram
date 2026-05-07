@@ -318,6 +318,6 @@ CategorieRecette
     </div>
 
 </div>
-<!-- End Navbar Area -->", "partials/navbar.html.twig", "/home/useradm/projet-recettes/templates/partials/navbar.html.twig");
+<!-- End Navbar Area -->", "partials/navbar.html.twig", "/home/vboxuser/projet_recettes_final/miniprojet2026-ines_maram/templates/partials/navbar.html.twig");
     }
 }

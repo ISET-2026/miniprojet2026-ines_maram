@@ -26,104 +26,113 @@ return [
         '/register' => [[['_route' => 'app_register', '_controller' => 'App\\Controller\\RegistrationController::register'], null, null, null, false, false, null]],
         '/tagrecette' => [[['_route' => 'app_tag_recette', '_controller' => 'App\\Controller\\TagRecettecontrollerController::index'], null, null, null, false, false, null]],
         '/tagrecette/nouvelle' => [[['_route' => 'app_tagrecettes_nouvelle', '_controller' => 'App\\Controller\\TagRecettecontrollerController::nouvelle'], null, null, null, false, false, null]],
+        '/requests' => [[['_route' => 'admin_role_requests', '_controller' => 'App\\Controller\\adminRequestsController::index'], null, null, null, false, false, null]],
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\loginController::login'], null, null, null, false, false, null]],
         '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\loginController::logout'], null, null, null, false, false, null]],
         '/addRecette' => [[['_route' => 'addRecette', '_controller' => 'App\\Controller\\newRecetteController::index'], null, null, null, true, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
-                .'|/api(?'
-                    .'|/(?'
-                        .'|docs(?:\\.([^/]++))?(*:37)'
-                        .'|\\.well\\-known/genid/([^/]++)(*:72)'
-                        .'|validation_errors/([^/]++)(*:105)'
+                .'|/a(?'
+                    .'|pi(?'
+                        .'|/(?'
+                            .'|docs(?:\\.([^/]++))?(*:40)'
+                            .'|\\.well\\-known/genid/([^/]++)(*:75)'
+                            .'|validation_errors/([^/]++)(*:108)'
+                        .')'
+                        .'|(?:/(index)(?:\\.([^/]++))?)?(*:145)'
+                        .'|/(?'
+                            .'|contexts/([^.]+)(?:\\.(jsonld))?(*:188)'
+                            .'|errors/(\\d+)(?:\\.([^/]++))?(*:223)'
+                            .'|validation_errors/([^/]++)(?'
+                                .'|(*:260)'
+                            .')'
+                            .'|recettes(?'
+                                .'|/([^/\\.]++)(?:\\.([^/]++))?(*:306)'
+                                .'|(?:\\.([^/]++))?(?'
+                                    .'|(*:332)'
+                                .')'
+                                .'|/([^/\\.]++)(?:\\.([^/]++))?(?'
+                                    .'|(*:370)'
+                                .')'
+                            .')'
+                        .')'
                     .')'
-                    .'|(?:/(index)(?:\\.([^/]++))?)?(*:142)'
-                    .'|/(?'
-                        .'|contexts/([^.]+)(?:\\.(jsonld))?(*:185)'
-                        .'|errors/(\\d+)(?:\\.([^/]++))?(*:220)'
-                        .'|validation_errors/([^/]++)(?'
-                            .'|(*:257)'
-                        .')'
-                        .'|recettes(?'
-                            .'|/([^/\\.]++)(?:\\.([^/]++))?(*:303)'
-                            .'|(?:\\.([^/]++))?(?'
-                                .'|(*:329)'
-                            .')'
-                            .'|/([^/\\.]++)(?:\\.([^/]++))?(?'
-                                .'|(*:367)'
-                            .')'
-                        .')'
+                    .'|dmin/role\\-requests/(?'
+                        .'|approve/([^/]++)(*:421)'
+                        .'|reject/([^/]++)(*:444)'
                     .')'
                 .')'
                 .'|/_(?'
-                    .'|error/(\\d+)(?:\\.([^/]++))?(*:410)'
-                    .'|wdt/([^/]++)(*:430)'
+                    .'|error/(\\d+)(?:\\.([^/]++))?(*:485)'
+                    .'|wdt/([^/]++)(*:505)'
                     .'|profiler/(?'
-                        .'|font/([^/\\.]++)\\.woff2(*:472)'
+                        .'|font/([^/\\.]++)\\.woff2(*:547)'
                         .'|([^/]++)(?'
                             .'|/(?'
-                                .'|search/results(*:509)'
-                                .'|router(*:523)'
+                                .'|search/results(*:584)'
+                                .'|router(*:598)'
                                 .'|exception(?'
-                                    .'|(*:543)'
-                                    .'|\\.css(*:556)'
+                                    .'|(*:618)'
+                                    .'|\\.css(*:631)'
                                 .')'
                             .')'
-                            .'|(*:566)'
+                            .'|(*:641)'
                         .')'
                     .')'
                 .')'
                 .'|/favoris/(?'
-                    .'|ajouter/([^/]++)(*:605)'
-                    .'|supprimer/([^/]++)(*:631)'
+                    .'|ajouter/([^/]++)(*:680)'
+                    .'|supprimer/([^/]++)(*:706)'
                 .')'
                 .'|/recettes/(?'
-                    .'|([^/]++)/ingredients/nouveau(*:681)'
-                    .'|(\\d+)(*:694)'
-                    .'|(\\d+)/modifier(*:716)'
+                    .'|([^/]++)/ingredients/nouveau(*:756)'
+                    .'|(\\d+)(*:769)'
+                    .'|(\\d+)/modifier(*:791)'
                     .'|(\\d+)/supprimer(?'
-                        .'|(*:742)'
+                        .'|(*:817)'
                     .')'
                 .')'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
-        37 => [[['_route' => 'api_doc', '_controller' => 'api_platform.action.documentation', '_format' => null, '_api_respond' => true], ['_format'], ['GET' => 0, 'HEAD' => 1], null, false, true, null]],
-        72 => [[['_route' => 'api_genid', '_controller' => 'api_platform.action.not_exposed', '_api_respond' => true], ['id'], ['GET' => 0, 'HEAD' => 1], null, false, true, null]],
-        105 => [[['_route' => 'api_validation_errors', '_controller' => 'api_platform.action.not_exposed'], ['id'], ['GET' => 0, 'HEAD' => 1], null, false, true, null]],
-        142 => [[['_route' => 'api_entrypoint', '_controller' => 'api_platform.action.entrypoint', '_format' => null, '_api_respond' => true, 'index' => 'index'], ['index', '_format'], ['GET' => 0, 'HEAD' => 1], null, false, true, null]],
-        185 => [[['_route' => 'api_jsonld_context', '_controller' => 'api_platform.jsonld.action.context', '_format' => 'jsonld', '_api_respond' => true], ['shortName', '_format'], ['GET' => 0, 'HEAD' => 1], null, false, true, null]],
-        220 => [[['_route' => '_api_errors', '_controller' => 'api_platform.symfony.main_controller', '_stateless' => null, '_api_resource_class' => 'ApiPlatform\\State\\ApiResource\\Error', '_api_operation_name' => '_api_errors', '_format' => null], ['status', '_format'], ['GET' => 0], null, false, true, null]],
-        257 => [
+        40 => [[['_route' => 'api_doc', '_controller' => 'api_platform.action.documentation', '_format' => null, '_api_respond' => true], ['_format'], ['GET' => 0, 'HEAD' => 1], null, false, true, null]],
+        75 => [[['_route' => 'api_genid', '_controller' => 'api_platform.action.not_exposed', '_api_respond' => true], ['id'], ['GET' => 0, 'HEAD' => 1], null, false, true, null]],
+        108 => [[['_route' => 'api_validation_errors', '_controller' => 'api_platform.action.not_exposed'], ['id'], ['GET' => 0, 'HEAD' => 1], null, false, true, null]],
+        145 => [[['_route' => 'api_entrypoint', '_controller' => 'api_platform.action.entrypoint', '_format' => null, '_api_respond' => true, 'index' => 'index'], ['index', '_format'], ['GET' => 0, 'HEAD' => 1], null, false, true, null]],
+        188 => [[['_route' => 'api_jsonld_context', '_controller' => 'api_platform.jsonld.action.context', '_format' => 'jsonld', '_api_respond' => true], ['shortName', '_format'], ['GET' => 0, 'HEAD' => 1], null, false, true, null]],
+        223 => [[['_route' => '_api_errors', '_controller' => 'api_platform.symfony.main_controller', '_stateless' => null, '_api_resource_class' => 'ApiPlatform\\State\\ApiResource\\Error', '_api_operation_name' => '_api_errors', '_format' => null], ['status', '_format'], ['GET' => 0], null, false, true, null]],
+        260 => [
             [['_route' => '_api_validation_errors_problem', '_controller' => 'api_platform.symfony.main_controller', '_stateless' => null, '_api_resource_class' => 'ApiPlatform\\Validator\\Exception\\ValidationException', '_api_operation_name' => '_api_validation_errors_problem', '_format' => null], ['id'], ['GET' => 0], null, false, true, null],
             [['_route' => '_api_validation_errors_hydra', '_controller' => 'api_platform.symfony.main_controller', '_stateless' => null, '_api_resource_class' => 'ApiPlatform\\Validator\\Exception\\ValidationException', '_api_operation_name' => '_api_validation_errors_hydra', '_format' => null], ['id'], ['GET' => 0], null, false, true, null],
             [['_route' => '_api_validation_errors_jsonapi', '_controller' => 'api_platform.symfony.main_controller', '_stateless' => null, '_api_resource_class' => 'ApiPlatform\\Validator\\Exception\\ValidationException', '_api_operation_name' => '_api_validation_errors_jsonapi', '_format' => null], ['id'], ['GET' => 0], null, false, true, null],
             [['_route' => '_api_validation_errors_xml', '_controller' => 'api_platform.symfony.main_controller', '_stateless' => null, '_api_resource_class' => 'ApiPlatform\\Validator\\Exception\\ValidationException', '_api_operation_name' => '_api_validation_errors_xml', '_format' => null], ['id'], ['GET' => 0], null, false, true, null],
         ],
-        303 => [[['_route' => '_api_/recettes/{id}{._format}_get', '_controller' => 'api_platform.symfony.main_controller', '_stateless' => true, '_api_resource_class' => 'App\\Entity\\Recette', '_api_operation_name' => '_api_/recettes/{id}{._format}_get', '_format' => null], ['id', '_format'], ['GET' => 0], null, false, true, null]],
-        329 => [
+        306 => [[['_route' => '_api_/recettes/{id}{._format}_get', '_controller' => 'api_platform.symfony.main_controller', '_stateless' => true, '_api_resource_class' => 'App\\Entity\\Recette', '_api_operation_name' => '_api_/recettes/{id}{._format}_get', '_format' => null], ['id', '_format'], ['GET' => 0], null, false, true, null]],
+        332 => [
             [['_route' => '_api_/recettes{._format}_get_collection', '_controller' => 'api_platform.symfony.main_controller', '_stateless' => true, '_api_resource_class' => 'App\\Entity\\Recette', '_api_operation_name' => '_api_/recettes{._format}_get_collection', '_format' => null], ['_format'], ['GET' => 0], null, false, true, null],
             [['_route' => '_api_/recettes{._format}_post', '_controller' => 'api_platform.symfony.main_controller', '_stateless' => true, '_api_resource_class' => 'App\\Entity\\Recette', '_api_operation_name' => '_api_/recettes{._format}_post', '_format' => null], ['_format'], ['POST' => 0], null, false, true, null],
         ],
-        367 => [
+        370 => [
             [['_route' => '_api_/recettes/{id}{._format}_patch', '_controller' => 'api_platform.symfony.main_controller', '_stateless' => true, '_api_resource_class' => 'App\\Entity\\Recette', '_api_operation_name' => '_api_/recettes/{id}{._format}_patch', '_format' => null], ['id', '_format'], ['PATCH' => 0], null, false, true, null],
             [['_route' => '_api_/recettes/{id}{._format}_delete', '_controller' => 'api_platform.symfony.main_controller', '_stateless' => true, '_api_resource_class' => 'App\\Entity\\Recette', '_api_operation_name' => '_api_/recettes/{id}{._format}_delete', '_format' => null], ['id', '_format'], ['DELETE' => 0], null, false, true, null],
         ],
-        410 => [[['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null]],
-        430 => [[['_route' => '_wdt', '_controller' => 'web_profiler.controller.profiler::toolbarAction'], ['token'], null, null, false, true, null]],
-        472 => [[['_route' => '_profiler_font', '_controller' => 'web_profiler.controller.profiler::fontAction'], ['fontName'], null, null, false, false, null]],
-        509 => [[['_route' => '_profiler_search_results', '_controller' => 'web_profiler.controller.profiler::searchResultsAction'], ['token'], null, null, false, false, null]],
-        523 => [[['_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'], ['token'], null, null, false, false, null]],
-        543 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
-        556 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
-        566 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        605 => [[['_route' => 'favoris_add', '_controller' => 'App\\Controller\\FavorisController::addFavorite'], ['id'], null, null, false, true, null]],
-        631 => [[['_route' => 'favoris_remove', '_controller' => 'App\\Controller\\FavorisController::removeFavorite'], ['id'], null, null, false, true, null]],
-        681 => [[['_route' => 'app_ingredient_nouveau', '_controller' => 'App\\Controller\\IngredientController::nouveau'], ['recette_id'], null, null, false, false, null]],
-        694 => [[['_route' => 'app_recette_detail', '_controller' => 'App\\Controller\\RecettesController::details'], ['id'], ['GET' => 0], null, false, true, null]],
-        716 => [[['_route' => 'app_recettes_modifier', '_controller' => 'App\\Controller\\RecettesController::modifier'], ['id'], null, null, false, false, null]],
-        742 => [
+        421 => [[['_route' => 'admin_role_request_approve', '_controller' => 'App\\Controller\\adminRequestsController::approve'], ['id'], null, null, false, true, null]],
+        444 => [[['_route' => 'admin_role_request_reject', '_controller' => 'App\\Controller\\adminRequestsController::reject'], ['id'], null, null, false, true, null]],
+        485 => [[['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null]],
+        505 => [[['_route' => '_wdt', '_controller' => 'web_profiler.controller.profiler::toolbarAction'], ['token'], null, null, false, true, null]],
+        547 => [[['_route' => '_profiler_font', '_controller' => 'web_profiler.controller.profiler::fontAction'], ['fontName'], null, null, false, false, null]],
+        584 => [[['_route' => '_profiler_search_results', '_controller' => 'web_profiler.controller.profiler::searchResultsAction'], ['token'], null, null, false, false, null]],
+        598 => [[['_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'], ['token'], null, null, false, false, null]],
+        618 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
+        631 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
+        641 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
+        680 => [[['_route' => 'favoris_add', '_controller' => 'App\\Controller\\FavorisController::addFavorite'], ['id'], null, null, false, true, null]],
+        706 => [[['_route' => 'favoris_remove', '_controller' => 'App\\Controller\\FavorisController::removeFavorite'], ['id'], null, null, false, true, null]],
+        756 => [[['_route' => 'app_ingredient_nouveau', '_controller' => 'App\\Controller\\IngredientController::nouveau'], ['recette_id'], null, null, false, false, null]],
+        769 => [[['_route' => 'app_recette_detail', '_controller' => 'App\\Controller\\RecettesController::details'], ['id'], ['GET' => 0], null, false, true, null]],
+        791 => [[['_route' => 'app_recettes_modifier', '_controller' => 'App\\Controller\\RecettesController::modifier'], ['id'], null, null, false, false, null]],
+        817 => [
             [['_route' => 'app_recettes_supprimer', '_controller' => 'App\\Controller\\RecettesController::supprimer'], ['id'], ['POST' => 0], null, false, false, null],
             [['_route' => 'app_tagrecettes_supprimer', '_controller' => 'App\\Controller\\TagRecettecontrollerController::supprimer'], ['id'], ['GET' => 0], null, false, false, null],
             [null, null, null, null, false, false, 0],

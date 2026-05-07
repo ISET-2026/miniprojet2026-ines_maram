@@ -187,6 +187,6 @@ class __TwigTemplate_195bcc03646cf33dda87ffb1c3fc8575 extends Template
 
     {{ include('@WebProfiler/Profiler/toolbar_item.html.twig', {link: false}) }}
 {% endblock %}
-", "@WebProfiler/Collector/ajax.html.twig", "/home/useradm/projet-recettes/vendor/symfony/web-profiler-bundle/Resources/views/Collector/ajax.html.twig");
+", "@WebProfiler/Collector/ajax.html.twig", "/home/vboxuser/projet_recettes_final/miniprojet2026-ines_maram/vendor/symfony/web-profiler-bundle/Resources/views/Collector/ajax.html.twig");
     }
 }
