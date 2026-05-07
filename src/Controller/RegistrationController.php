@@ -36,7 +36,7 @@ class RegistrationController extends AbstractController
             $user->setPseudo($form->get('pseudo')->getData());
 
             // default role
-            $user->setRequestedRole($form->get('requestedRole')->getData());
+           // $user->setRequestedRole($form->get('requestedRole')->getData());
 
             // password hashing
             $plainPassword = $form->get('plainPassword')->getData();

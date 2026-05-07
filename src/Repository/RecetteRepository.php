@@ -52,6 +52,14 @@ public function findByFilters(?string $titre, ?CategorieRecette $cat, ?string $d
 
         return $qb->getQuery()->getResult();
     }
+    public function findLastPublished(int $limit = 3): array
+{
+    return $this->createQueryBuilder('r')
+        ->orderBy('r.dateCreation', 'DESC')
+        ->setMaxResults($limit)
+        ->getQuery()
+        ->getResult();
+}
 }
 
     //    /**

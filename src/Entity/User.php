@@ -42,6 +42,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function __construct()
     {
         $this->recettes = new ArrayCollection();
+        $this->roles = ['ROLE_USER'];
     }
 
 
@@ -55,6 +56,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->pseudo;
 
 
+    }
+    public function setpseudo(string $pseudo): static
+    {
+        $this->pseudo = $pseudo;
+        return $this ;
     }
 
     public function getEmail(): ?string

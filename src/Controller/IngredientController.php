@@ -46,7 +46,7 @@ public function nouveau( $recette_id, Request $request, EntityManagerInterface $
     }
 
     return $this->render('ingredient/nouveau.html.twig', [
-        'formulaire' => $form->createView(),
+        'form' => $form->createView(),
         'recette' => $recette
     ]);
 }

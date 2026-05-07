@@ -14,12 +14,14 @@ use App\Entity\User;
 use App\Repository\CategorieRecetteRepository;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use App\Service\RecetteAnalyser;
+use Knp\Component\Pager\PaginatorInterface;
+
 
 
 final class RecettesController extends AbstractController
 {
     public function __construct(private RecetteAnalyser $analyser) {}
-   #[Route('/recettes', name: 'app_recettes')]
+ /*  #[Route('/recettes', name: 'app_recettes')]
    public function index(RecetteRepository $recR,CategorieRecetteRepository $catR): Response
     {
         $recettes = $recR->findAll();
@@ -33,8 +35,56 @@ final class RecettesController extends AbstractController
         ]);
         
     }
- 
-   #[Route('/recettes/nouvelle', name: 'app_recettes_nouvelle')]// src/Controller/RecettesController.php
+ */// src/Controller/RecetteController.php
+
+#[Route('/recettes', name: 'app_recettes')]
+public function index(
+    Request $request, 
+    RecetteRepository $repo, 
+    CategorieRecetteRepository $catRepo, 
+    PaginatorInterface $paginator,
+    RecetteAnalyser $analyser 
+): Response {
+    
+    $titre = $request->query->get('titre');
+    $catId = $request->query->get('categorie');
+    $diff = $request->query->get('difficulte');
+    
+    $queryBuilder = $repo->createQueryBuilder('r');
+
+    if ($titre) {
+        $queryBuilder->andWhere('r.titre LIKE :titre')
+                     ->setParameter('titre', '%' . $titre . '%');
+    }
+
+    if ($catId) {
+        $queryBuilder->andWhere('r.categorie = :catId')
+                     ->setParameter('catId', $catId);
+    }
+
+    if ($diff) {
+        $queryBuilder->andWhere('r.difficulte = :diff')
+                     ->setParameter('diff', $diff);
+    }
+
+    $queryBuilder->orderBy('r.dateCreation', 'DESC');
+
+   
+    $pagination = $paginator->paginate(
+        $queryBuilder->getQuery(),
+        $request->query->getInt('page', 1), 
+        9 
+    );
+
+    return $this->render('recettes/index.html.twig', [
+        'recettes' => $pagination,
+        'categories' => $catRepo->findAll(),
+        'total' => $analyser->getTotalRecettesPubliees(),
+        'statsCat' => $analyser->getRecettesParCategorie(),
+        'moyenne' => $analyser->getMoyenneIngredients(),
+    ]);
+}
+   #[Route('/recettes/nouvelle', name: 'app_recettes_nouvelle')]
 
 public function nouvelle(Request $request, EntityManagerInterface $em): Response
 {

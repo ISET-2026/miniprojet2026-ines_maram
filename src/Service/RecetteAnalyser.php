@@ -24,8 +24,11 @@ class RecetteAnalyser
         $stats = [];
         foreach ($recettes as $r) {
             $nomCat = $r->getCategorie()->getNom();
-            $stats[$nomCat] = ($stats[$nomCat] ?? 0) + 1;
-        }
+if (isset($stats[$nomCat])) {
+    $stats[$nomCat] = $stats[$nomCat] + 1;
+} else {
+    $stats[$nomCat] = 1;
+}        }
         return $stats;
     }
     public function getMoyenneIngredients(): float 
@@ -41,7 +44,6 @@ class RecetteAnalyser
     foreach ($recettes as $r) {
         $totalIngredients += count($r->getIngredients()); 
     }
-
     return $totalIngredients / $totalRecettes; 
 }
 }

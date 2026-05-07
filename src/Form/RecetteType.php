@@ -16,6 +16,7 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 class RecetteType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
@@ -29,14 +30,14 @@ class RecetteType extends AbstractType
                     'class' => 'form-control',
                 ]
                 ])
-            ->add('description',TextType::class, [
+            ->add('description',TextareaType::class, [
                   'label' => 'description',
                 'attr' => [
                     'placeholder' => 'description',
                     'class' => 'form-control',
                 ]
                 ])
-            ->add('instructions',TextType::class, [
+            ->add('instructions',TextareaType::class, [
                   'label' => 'instruction',
                 'attr' => [
                     'placeholder' => 'instruction',

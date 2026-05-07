@@ -27,7 +27,7 @@ class ResetFlowType extends AbstractButtonFlowType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'handler' => static fn (mixed $data, ButtonFlowInterface $button, FormFlowInterface $flow) => $flow->reset(),
+            'handler' => fn (mixed $data, ButtonFlowInterface $button, FormFlowInterface $flow) => $flow->reset(),
             'clear_submission' => true,
         ]);
     }

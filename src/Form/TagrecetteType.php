@@ -34,7 +34,7 @@ class TagrecetteType extends AbstractType
 
             ->add('enregistrer', SubmitType::class, [
                 'label' => '💾 Créer la catégorie',
-                'attr' => ['class' => 'btn btn-primary w-100 mt-3'],
+                'attr' => ['class' => 'btn  w-100 mt-3'],
             ])
             ->getForm();
         ;
