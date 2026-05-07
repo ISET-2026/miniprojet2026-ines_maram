@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Categories{% endblock %}
+
+{% block body %}
+
+<div class="container py-5 mt-5">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h1 class="display-5 fw-bold mb-0">Catégories</h1>
+            <p class="text-muted">{{ categories|length }} catégories</p>
+        </div>
+        <a href="{{ path('app_categorie_nouvelle') }}" class="btn btn-primary px-4 py-2 rounded-pill">
+            + Nouvelle catégorie
+        </a>
+    </div>
+
+    <hr class="mb-5">
+
+
+    <div class="card shadow-sm border-0 rounded-3">
+        <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+                <thead class="bg-light text-uppercase small fw-bold text-muted">
+                    <tr>
+                        <th class="ps-4 py-3">Icône</th>
+                        <th class="py-3">Nom</th>
+                        <th class="py-3">Description</th>
+                        <th class="text-end pe-4 py-3">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for cat in categories %}
+                        <tr style="height: 80px;">
+                            <td class="ps-4">
+                               <i class="{{ cat.icone }}"></i>
+            
+                            </td>
+                            <td>
+                                <span class="fw-bold text-dark">{{ cat.nom }}</span>
+                            </td>
+                            <td>
+                                <span class="text-muted">{{ cat.description|slice(0, 60) }}...</span>
+                            </td>
+                            <td class="text-end pe-4">
+                                <a href="#" class="btn btn-link text-decoration-none text-muted">
+                                    syprimer
+                                </a>
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td colspan="4" class="text-center py-5 text-muted">
+                                Aucune catégorie trouvée.
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            
+           
+        </div>
+    </div>
+    
+</div>
+{% endblock %}

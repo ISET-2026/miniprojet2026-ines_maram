@@ -1,0 +1,65 @@
+ {% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container py-5 mt-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h1 class="display-5 fw-bold mb-0">Tags</h1>
+            <p class="text-muted">{{ tagrecettes|length }} tags</p>
+        </div>
+        <a href="{{ path('app_tagrecettes_nouvelle') }}" class="btn btn-outline-primary px-4 py-2 rounded-pill">
+            + Nouveau tag
+        </a>
+    </div>
+
+    <div class="card shadow-sm border-0 rounded-3">
+        <div class="table-responsive">
+            <table class="table align-middle mb-0">
+                <thead class="bg-light text-uppercase small fw-bold text-muted">
+                    <tr>
+                        <th class="ps-4 py-3">Aperçu</th>
+                        <th class="py-3">Nom</th>
+                        <th class="py-3">Couleur</th>
+                        <th class="text-end pe-4 py-3">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for tag in tagrecettes %}
+                        <tr style="height: 70px;">
+                            <td class="ps-4">
+                                {# El badge elli yalma3 b-el couleur mte3ou #}
+                                <span class="badge rounded-pill px-3 py-2" 
+                                      style="background-color: {{ tag.couleur }}; color: white;">
+                                    {{ tag.nom }}
+                                </span>
+                            </td>
+                            <td>
+                                <span class="fw-medium text-dark">{{ tag.nom }}</span>
+                            </td>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <div class="rounded-circle me-2" 
+                                         style="width: 15px; height: 15px; background-color: {{ tag.couleur }};"></div>
+                                    <span class="text-muted font-monospace">{{ tag.couleur }}</span>
+                                </div>
+                            </td>
+                            
+                      <td class="text-end pe-4">
+    <a href="{{ path('app_tagrecettes_supprimer', {'id': tag.id}) }}" 
+       class="btn btn-sm btn-outline-danger" 
+       onclick="return confirm('Etes-vous sûr ?')">
+        supprimer
+    </a>
+</td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td colspan="4" class="text-center py-5 text-muted">Aucun tag trouvé.</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

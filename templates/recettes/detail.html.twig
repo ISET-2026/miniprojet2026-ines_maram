@@ -1,0 +1,117 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ recette.titre }}{% endblock %}
+
+{% block body %}
+
+<!-- Page Title -->
+{# Thabbet ken el-image imageName mawjouda #}
+{% set background_img = recette.imageName ? asset('img/' ~ recette.imageName) : asset('img/default-banner.jpg') %}
+
+<div class="page-title-area page-title-img-two" 
+     style="background-image: url('{{ background_img }}'); background-size: cover; background-position: center;">
+    
+    <div class="container">
+        <div class="page-title-item">
+            <h2>{{ recette.titre }}</h2>
+            <ul>
+                <li><a href="{{ path('app_recettes') }}">Recipes</a></li>
+                <li><i class='bx bx-chevron-right'></i></li>
+                <li>{{ recette.titre }}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+  
+</div>
+  <h1 class="display-4 mt-3 text_center">{{ recette.titre }}</h1>
+
+
+<div class="service-details-area pt-100 pb-70">
+    <div class="container">
+        <div class="row justify-content-center">
+
+            <!-- LEFT SIDE: INGREDIENTS -->
+            <div class="col-lg-4">
+                <div class="service-details-item">
+
+                    <h3 class="text-primary mb-4"><i class="fas fa-shopping-basket"></i> Ingrédients</h3>
+
+                    <ul>
+                        {% for ingredient in recette.ingredients %}
+                            <li>
+                                {{ ingredient.quantite }} - {{ ingredient.nom }}
+                            </li>
+                        {% else %}
+                            <li>No ingredients</li>
+                        {% endfor %}
+                    </ul>
+                     <a href="{{ path('app_ingredient_nouveau', {'recette_id': recette.id}) }}" class="btn btn-outline-secondary">ajouter un Ingrédients</a>
+
+                    <hr>
+
+                    <p><strong>Category:</strong> {{ recette.categorie.nom }}</p>
+                    <div class="difficulty">
+        Niveau de difficulté : {{ difficulty_stars(recette.difficulte) }}
+    </div>
+                  <div class="times">
+        <strong>Temps de préparation :</strong> {{ recette.tempsPreparation|cooking_time_format }} <br>
+        <strong>Temps de cuisson :</strong> {{ recette.tempsCuisson|cooking_time_format }}
+    </div>
+</div>
+                    <p><strong>People:</strong> {{ recette.nbPersonnes }}</p>
+
+                    <!-- Tags -->
+                    <h4>Tags</h4>
+                    {% for tag in recette.tags %}
+                          <span class="badge bg-primary rounded-pill">#{{ tag.nom }}</span>
+                    {% endfor %}
+
+                </div>
+            </div>
+            
+
+            <!-- RIGHT SIDE: RECIPE CONTENT -->
+            <div class="col-lg-8">
+                <div class="service-details-item">
+
+                    <!-- Image -->
+                    {% if recette.imageName %}
+                 
+                    {% endif %}
+
+
+                    <h3> description: </h3>
+                  <p style="white-space: pre-line;">
+                        {{ recette.description }}
+                    </p>
+                    <hr>
+
+                    <h3>Instructions</h3>
+                    <p style="white-space: pre-line;">
+                        {{ recette.instructions }}
+                    </p>
+
+                    <hr>
+
+                    <p>
+                        <strong>Created by:</strong>
+                        {{ recette.user.nom ?? 'Unknown' }}
+                    </p>
+
+                   
+                
+<p class="text-muted">Date {{ recette.dateCreation|time_ago }}</p>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="text-center mt-5 mb-5">
+        <a href="{{ path('app_recettes') }}" class="btn btn-outline-secondary">Retour à la liste</a>
+    </div>
+</div>
+
+{% endblock %}

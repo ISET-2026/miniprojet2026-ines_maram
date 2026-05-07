@@ -1,0 +1,44 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau Tag{% endblock %}
+
+{% block body %}
+<div class="container py-5 mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card border-0 shadow-sm p-4">
+                  <h1 class="mb-1">➕ Créer une tag</h1>
+<div class="book-table-area ptb-100">
+    <div class="container">
+
+        <div class="book-table-wrap">
+                {{ form_start(formulaire) }}
+                    <div class="row">
+                        <div class="col-md-8 mb-3">
+                            {{ form_label(formulaire.nom) }}
+                            {{ form_widget(formulaire.nom) }}
+                            {{ form_errors(formulaire.nom) }}
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            {{ form_label(formulaire.couleur) }}
+                            {{ form_widget(formulaire.couleur) }}
+                            {{ form_errors(formulaire.couleur) }}
+                        </div>
+                    </div>
+
+              
+
+                    <div class="d-flex justify-content-end gap-2">
+                        <a href="{{ path('app_tag_recette') }}" class="btn btn-light px-4">Annuler</a>
+
+                    </div>
+                {{ form_end(formulaire) }}
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+    </div>
+</div>
+{% endblock %}

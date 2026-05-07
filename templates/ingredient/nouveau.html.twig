@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un ingrédient{% endblock %}
+
+{% block body %}
+
+
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <div class="card shadow-lg p-4">
+
+                <h3 class="text-center mb-4">➕ Ajouter un ingrédient</h3>
+                <div class="book-table-area ptb-100">
+    <div class="container">
+
+        <div class="book-table-wrap">
+
+                {{ form_start(form) }}
+
+                <div class="mb-3">
+                    {{ form_label(form.nom, 'Nom de l’ingrédient') }}
+                    {{ form_widget(form.nom, {
+                        'attr': {'class': 'form-control', 'placeholder': 'Ex: Farine'}
+                    }) }}
+                    {{ form_errors(form.nom) }}
+                </div>
+
+                <div class="mb-3">
+    
+                    {{ form_label(form.quantite
+                    , 'Quantité') }}
+                    {{ form_widget(form.quantite, {
+                        'attr': {'class': 'form-control', 'placeholder': 'Ex: 200'}
+                    }) }}
+                    {{ form_errors(form.quantite) }}
+                </div>
+
+             <div class="col-md-4 mb-3">{{ form_row(form.recette) }}</div>
+                {{ form_row(form.enregistrer) }}
+
+            <a href="{{ path('app_recette_detail', {'id': recette.id}) }}" class="btn btn-link mt-3 text-muted">
+                ← Retour aux detail recette
+            </a>
+                {{ form_end(form) }}
+
+            </div>
+
+        </div>
+    </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+{% endblock %}
