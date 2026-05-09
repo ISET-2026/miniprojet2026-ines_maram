@@ -180,6 +180,6 @@ class __TwigTemplate_a1451c3ea72329dfd573aa371f4cc2e8 extends Template
     <button>{{ options.button }}</button>
 
 </form>
-", "@KnpPaginator/Pagination/filtration.html.twig", "/home/vboxuser/projet_recettes_final/miniprojet2026-ines_maram/vendor/knplabs/knp-paginator-bundle/templates/Pagination/filtration.html.twig");
+", "@KnpPaginator/Pagination/filtration.html.twig", "/home/vboxuser/Documents/miniprojet2026-ines_maram/vendor/knplabs/knp-paginator-bundle/templates/Pagination/filtration.html.twig");
     }
 }

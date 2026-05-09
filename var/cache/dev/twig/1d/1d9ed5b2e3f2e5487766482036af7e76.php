@@ -323,6 +323,6 @@ class __TwigTemplate_f1aebf00f8b9bbdad9de0959f05d0c3e extends Template
     </div>
     
 </div>
-{% endblock %}", "Categorie/index.html.twig", "/home/vboxuser/projet_recettes_final/miniprojet2026-ines_maram/templates/Categorie/index.html.twig");
+{% endblock %}", "Categorie/index.html.twig", "/home/vboxuser/Documents/miniprojet2026-ines_maram/templates/Categorie/index.html.twig");
     }
 }

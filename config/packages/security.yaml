@@ -12,13 +12,17 @@ security:
         dev:
             pattern: ^/(_profiler|_wdt|assets|build)/
             security: false
-
         main:
             lazy: true
-            provider: app_user_provider   # ✅ must be INSIDE main firewall
-
+            provider: app_user_provider
             custom_authenticator: App\Security\AppAuthenticator
             entry_point: App\Security\AppAuthenticator
-
             logout:
                 path: app_logout
+
+    # ✅ MUST be indented inside security:
+    access_control:
+        - { path: ^/login, roles: PUBLIC_ACCESS }
+        - { path: ^/register, roles: PUBLIC_ACCESS }
+        - { path: ^/accueil$, roles: PUBLIC_ACCESS }
+        - { path: ^/, roles: ROLE_USER }

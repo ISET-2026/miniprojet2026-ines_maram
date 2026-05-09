@@ -52,11 +52,13 @@ class RecipeHubExtension extends AbstractExtension
 
         return $hours . "h" . str_pad($remainingMinutes, 2, '0', STR_PAD_LEFT);
     }
-
-    public function getStars(int $difficulty): string
-    {
-        if ($difficulty <= 2) return "⭐";
-        if ($difficulty <= 4) return "⭐⭐";
-        return "⭐⭐⭐";
-    }
+public function getStars(string $difficulty): string
+{
+    return match($difficulty) {
+        'facile'    => '⭐',
+        'moyen'     => '⭐⭐',
+        'difficile' => '⭐⭐⭐',
+        default     => '❓'
+    };
+}
 }

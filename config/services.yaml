@@ -1,9 +1,7 @@
 # yaml-language-server: $schema=../vendor/symfony/dependency-injection/Loader/schema/services.schema.json
 
-
 parameters:
-# Hna t7ot el path mta3 el dossier win bech t-sauvi el tsawer
-    images_directory: '%kernel.project_dir%/public/img'
+    uploads_directory: '%kernel.project_dir%/public/uploads'
 
 services:
 

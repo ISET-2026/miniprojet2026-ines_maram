@@ -96,7 +96,7 @@
 
                     <p>
                         <strong>Created by:</strong>
-                        {{ recette.user.nom ?? 'Unknown' }}
+                        {{ recette.auteur ? recette.auteur.email : 'Unknown' }}
                     </p>
 
                    

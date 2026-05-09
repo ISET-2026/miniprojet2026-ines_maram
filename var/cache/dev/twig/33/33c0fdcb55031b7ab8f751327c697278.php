@@ -71,6 +71,6 @@ class __TwigTemplate_c7053a546127d77bb3d72062812fe12e extends Template
 
     public function getSourceContext(): Source
     {
-        return new Source("", "Favoris/index.html.twig", "/home/vboxuser/projet_recettes_final/miniprojet2026-ines_maram/templates/Favoris/index.html.twig");
+        return new Source("", "Favoris/index.html.twig", "/home/vboxuser/Documents/miniprojet2026-ines_maram/templates/Favoris/index.html.twig");
     }
 }

@@ -3,181 +3,195 @@
 namespace App\Controller;
 
 use App\Entity\Recette;
+use App\Entity\User;
+use App\Form\RecetteType;
 use App\Repository\RecetteRepository;
+use App\Repository\CategorieRecetteRepository;
+use App\Service\RecetteAnalyser;
+use Doctrine\ORM\EntityManagerInterface;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
-use Doctrine\ORM\EntityManagerInterface;
-use App\Form\RecetteType;
-use Symfony\Component\HttpFoundation\Request;
-use App\Entity\User;
-use App\Repository\CategorieRecetteRepository;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
-use App\Service\RecetteAnalyser;
-use Knp\Component\Pager\PaginatorInterface;
-
-
 
 final class RecettesController extends AbstractController
 {
     public function __construct(private RecetteAnalyser $analyser) {}
- /*  #[Route('/recettes', name: 'app_recettes')]
-   public function index(RecetteRepository $recR,CategorieRecetteRepository $catR): Response
-    {
-        $recettes = $recR->findAll();
-        $categories = $catR->findAll();
+
+    // ================= LIST =================
+    #[Route('/recettes', name: 'app_recettes')]
+    public function index(
+        Request $request,
+        RecetteRepository $repo,
+        CategorieRecetteRepository $catRepo,
+        PaginatorInterface $paginator,
+        RecetteAnalyser $analyser
+    ): Response {
+
+        $titre = $request->query->get('titre');
+        $catId = $request->query->get('categorie');
+        $diff = $request->query->get('difficulte');
+
+        $qb = $repo->createQueryBuilder('r');
+
+        if ($titre) {
+            $qb->andWhere('r.titre LIKE :titre')
+               ->setParameter('titre', '%' . $titre . '%');
+        }
+
+        if ($catId) {
+            $qb->andWhere('r.categorie = :catId')
+               ->setParameter('catId', $catId);
+        }
+
+        if ($diff) {
+            $qb->andWhere('r.difficulte = :diff')
+               ->setParameter('diff', $diff);
+        }
+
+        $qb->orderBy('r.dateCreation', 'DESC');
+
+        $pagination = $paginator->paginate(
+            $qb->getQuery(),
+            $request->query->getInt('page', 1),
+            9
+        );
+
         return $this->render('recettes/index.html.twig', [
-            'recettes' => $recettes,
-            'categories' => $categories,
-            'total' => $this->analyser->getTotalRecettesPubliees(),
-            'statsCat' => $this->analyser->getRecettesParCategorie(),
-            'moyenne' => $this->analyser->getMoyenneIngredients(),
+            'recettes' => $pagination,
+            'categories' => $catRepo->findAll(),
+            'total' => $analyser->getTotalRecettesPubliees(),
+            'statsCat' => $analyser->getRecettesParCategorie(),
+            'moyenne' => $analyser->getMoyenneIngredients(),
         ]);
-        
-    }
- */// src/Controller/RecetteController.php
-
-#[Route('/recettes', name: 'app_recettes')]
-public function index(
-    Request $request, 
-    RecetteRepository $repo, 
-    CategorieRecetteRepository $catRepo, 
-    PaginatorInterface $paginator,
-    RecetteAnalyser $analyser 
-): Response {
-    
-    $titre = $request->query->get('titre');
-    $catId = $request->query->get('categorie');
-    $diff = $request->query->get('difficulte');
-    
-    $queryBuilder = $repo->createQueryBuilder('r');
-
-    if ($titre) {
-        $queryBuilder->andWhere('r.titre LIKE :titre')
-                     ->setParameter('titre', '%' . $titre . '%');
     }
 
-    if ($catId) {
-        $queryBuilder->andWhere('r.categorie = :catId')
-                     ->setParameter('catId', $catId);
-    }
-
-    if ($diff) {
-        $queryBuilder->andWhere('r.difficulte = :diff')
-                     ->setParameter('diff', $diff);
-    }
-
-    $queryBuilder->orderBy('r.dateCreation', 'DESC');
-
-   
-    $pagination = $paginator->paginate(
-        $queryBuilder->getQuery(),
-        $request->query->getInt('page', 1), 
-        9 
-    );
-
-    return $this->render('recettes/index.html.twig', [
-        'recettes' => $pagination,
-        'categories' => $catRepo->findAll(),
-        'total' => $analyser->getTotalRecettesPubliees(),
-        'statsCat' => $analyser->getRecettesParCategorie(),
-        'moyenne' => $analyser->getMoyenneIngredients(),
-    ]);
-}
-   #[Route('/recettes/nouvelle', name: 'app_recettes_nouvelle')]
-
+    // ================= CREATE =================
+  #[Route('/recettes/nouvelle', name: 'app_recettes_nouvelle')]
 public function nouvelle(Request $request, EntityManagerInterface $em): Response
 {
     $recette = new Recette();
+
+    // ✅ Set auteur BEFORE form handling so it's available during validation
+    $recette->setAuteur($this->getUser());
+
     $form = $this->createForm(RecetteType::class, $recette);
     $form->handleRequest($request);
 
     if ($form->isSubmitted() && $form->isValid()) {
-        
-        // 1. Traitement mta3 l'image
-        $imageFile = $form->get('imageName')->getData(); // Nekhdou el fichier mel form
+
+        $recette->setDateCreation(new \DateTime());
+
+        $imageFile = $form->get('imageFile')->getData();
 
         if ($imageFile) {
-            // Nasn3ou esm jdid unique l-el image
-            $newFilename = uniqid().'.'.$imageFile->guessExtension();
+            $newFilename = uniqid() . '.' . $imageFile->guessExtension();
 
-            // Nhallou el fichier fi dossier public/uploads/images
             try {
                 $imageFile->move(
-                    $this->getParameter('images_directory'), // Lezem t-configurih fi services.yaml
+                    $this->getParameter('uploads_directory'),
                     $newFilename
                 );
             } catch (FileException $e) {
-                // ... handle exception if something happens during file upload
+                $this->addFlash('danger', 'Image upload failed');
+                return $this->redirectToRoute('app_recettes_nouvelle');
             }
 
-            // Nsauviw el esm el jdid fil property imageName mta3 el Entity
             $recette->setImageName($newFilename);
         }
 
-        // 2. Bekiat el logic mte3ek
-        $user = $em->getRepository(User::class)->find(1);
-        $recette->setAuteur($user);
-        
-        $em->persist($recette);
-        $em->flush();
+         $em->persist($recette);
+          $em->flush();
 
-        $this->addFlash('success', 'Recette créée !');
-        return $this->redirectToRoute('app_recettes');
+        $this->addFlash('success', 'Recette ajoutée ! Ajoutez maintenant vos ingrédients.');
+
+        // ✅ Go straight to ingredient add page
+        return $this->redirectToRoute('app_ingredient_nouveau', [
+    'recette_id' => $recette->getId()
+
+]);
+
+
+      
+       
+    }
+
+
+    // ✅ Show WHY validation failed — visible in the template
+    if ($form->isSubmitted() && !$form->isValid()) {
+        foreach ($form->getErrors(true) as $error) {
+            $this->addFlash('danger', 
+                $error->getOrigin()->getName() . ': ' . $error->getMessage()
+            );
+        }
     }
 
     return $this->render('recettes/nouvelle.html.twig', [
         'formulaire' => $form,
     ]);
 }
-       #[Route('/recettes/{id}', name: 'app_recette_detail',requirements: ['id' => '\d+'], methods: ['GET'])]
-public function details(Recette $recette): Response
-{
-   
-    return $this->render('recettes/detail.html.twig', [
-        'recette' => $recette,
-    ]);
-}
-   #[Route('/recettes/{id}/modifier', name: 'app_recettes_modifier', requirements: ['id' => '\d+'])]
-public function modifier(Recette $recette, Request $request, EntityManagerInterface $em): Response
-{
-    $form = $this->createForm(RecetteType::class, $recette);
-    $form->handleRequest($request);
 
-    if ($form->isSubmitted() && $form->isValid()) {
-        
-        $imageFile = $form->get('imageName')->getData();
-        if ($imageFile) {
-            $newFilename = uniqid().'.'.$imageFile->guessExtension();
-            try {
-                $imageFile->move($this->getParameter('images_directory'), $newFilename);
-                $recette->setImageName($newFilename); 
-            } catch (FileException $e) {
-                $this->addFlash('danger', "Erreur upload");
-            }
-        }
-
-        $em->flush();
-        $this->addFlash('success', 'Recette modifiée !');
-        return $this->redirectToRoute('app_recettes');
+    // ================= DETAIL =================
+    #[Route('/recettes/{id}', name: 'app_recette_detail', methods: ['GET'])]
+    public function details(Recette $recette): Response
+    {
+        return $this->render('recettes/detail.html.twig', [
+            'recette' => $recette,
+        ]);
     }
 
-    return $this->render('recettes/modifier.html.twig', [
-        'formulaire' => $form,
-        'recette' => $recette, 
-    ]);
-}
+    // ================= EDIT =================
+    #[Route('/recettes/{id}/modifier', name: 'app_recettes_modifier')]
+    public function modifier(Recette $recette, Request $request, EntityManagerInterface $em): Response
+    {
+        $form = $this->createForm(RecetteType::class, $recette);
+        $form->handleRequest($request);
 
-  #[Route('/recettes/{id}/supprimer', name: 'app_recettes_supprimer', requirements: ['id' => '\d+'], methods: ['POST'])]
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $imageFile = $form->get('imageFile')->getData();
+
+            if ($imageFile) {
+                $newFilename = uniqid() . '.' . $imageFile->guessExtension();
+
+                try {
+                    $imageFile->move(
+                        $this->getParameter('uploads_directory'),
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+                    $this->addFlash('danger', 'Erreur upload');
+                }
+
+                $recette->setImageName($newFilename);
+            }
+
+            $em->flush();
+
+            $this->addFlash('success', 'Recette modifiée !');
+
+            return $this->redirectToRoute('app_recettes');
+        }
+
+        return $this->render('recettes/modifier.html.twig', [
+            'formulaire' => $form,
+            'recette' => $recette,
+        ]);
+    }
+
+    // ================= DELETE =================
+    #[Route('/recettes/{id}/supprimer', name: 'app_recettes_supprimer', methods: ['POST'])]
     public function supprimer(Recette $recette, Request $request, EntityManagerInterface $em): Response
     {
         if ($this->isCsrfTokenValid('supprimer_' . $recette->getId(), $request->request->get('_token'))) {
             $em->remove($recette);
             $em->flush();
 
-            $this->addFlash('success', 'recette supprimé avec succès.');
+            $this->addFlash('success', 'Recette supprimée avec succès.');
         } else {
-            $this->addFlash('danger', 'Token CSRF invalide. Suppression annulée.');
+            $this->addFlash('danger', 'Token CSRF invalide.');
         }
 
         return $this->redirectToRoute('app_recettes');

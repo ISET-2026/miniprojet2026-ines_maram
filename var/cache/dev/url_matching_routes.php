@@ -87,11 +87,15 @@ return [
                 .')'
                 .'|/recettes/(?'
                     .'|([^/]++)/ingredients/nouveau(*:756)'
-                    .'|(\\d+)(*:769)'
-                    .'|(\\d+)/modifier(*:791)'
-                    .'|(\\d+)/supprimer(?'
-                        .'|(*:817)'
+                    .'|(\\d+)/supprimer(*:779)'
+                    .'|([^/]++)(?'
+                        .'|(*:798)'
+                        .'|/(?'
+                            .'|modifier(*:818)'
+                            .'|supprimer(*:835)'
+                        .')'
                     .')'
+                    .'|(\\d+)/supprimer(*:860)'
                 .')'
             .')/?$}sDu',
     ],
@@ -130,10 +134,11 @@ return [
         680 => [[['_route' => 'favoris_add', '_controller' => 'App\\Controller\\FavorisController::addFavorite'], ['id'], null, null, false, true, null]],
         706 => [[['_route' => 'favoris_remove', '_controller' => 'App\\Controller\\FavorisController::removeFavorite'], ['id'], null, null, false, true, null]],
         756 => [[['_route' => 'app_ingredient_nouveau', '_controller' => 'App\\Controller\\IngredientController::nouveau'], ['recette_id'], null, null, false, false, null]],
-        769 => [[['_route' => 'app_recette_detail', '_controller' => 'App\\Controller\\RecettesController::details'], ['id'], ['GET' => 0], null, false, true, null]],
-        791 => [[['_route' => 'app_recettes_modifier', '_controller' => 'App\\Controller\\RecettesController::modifier'], ['id'], null, null, false, false, null]],
-        817 => [
-            [['_route' => 'app_recettes_supprimer', '_controller' => 'App\\Controller\\RecettesController::supprimer'], ['id'], ['POST' => 0], null, false, false, null],
+        779 => [[['_route' => 'app_ingredient_supprimer', '_controller' => 'App\\Controller\\IngredientController::supprimer'], ['id'], ['POST' => 0], null, false, false, null]],
+        798 => [[['_route' => 'app_recette_detail', '_controller' => 'App\\Controller\\RecettesController::details'], ['id'], ['GET' => 0], null, false, true, null]],
+        818 => [[['_route' => 'app_recettes_modifier', '_controller' => 'App\\Controller\\RecettesController::modifier'], ['id'], null, null, false, false, null]],
+        835 => [[['_route' => 'app_recettes_supprimer', '_controller' => 'App\\Controller\\RecettesController::supprimer'], ['id'], ['POST' => 0], null, false, false, null]],
+        860 => [
             [['_route' => 'app_tagrecettes_supprimer', '_controller' => 'App\\Controller\\TagRecettecontrollerController::supprimer'], ['id'], ['GET' => 0], null, false, false, null],
             [null, null, null, null, false, false, 0],
         ],

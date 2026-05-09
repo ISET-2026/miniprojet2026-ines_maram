@@ -60,7 +60,7 @@ class __TwigTemplate_f494f419477b6352cb7130e930111ea6 extends Template
 
     }
 
-    // line 3
+    // line 2
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -83,7 +83,7 @@ class __TwigTemplate_f494f419477b6352cb7130e930111ea6 extends Template
         yield from [];
     }
 
-    // line 5
+    // line 3
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -96,17 +96,15 @@ class __TwigTemplate_f494f419477b6352cb7130e930111ea6 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
+        // line 4
         yield "
-
-<!-- Page Title -->
 <div class=\"page-title-area page-title-img-one\">
     <div class=\"container\">
         <div class=\"page-title-item\">
             <h2>Add Recipe</h2>
             <ul>
                 <li><a href=\"";
-        // line 14
+        // line 10
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_recettes");
         yield "\">Home</a></li>
                 <li><i class='bx bx-chevron-right'></i></li>
@@ -116,96 +114,100 @@ class __TwigTemplate_f494f419477b6352cb7130e930111ea6 extends Template
     </div>
 </div>
 
-<!-- Form Section -->
 <div class=\"book-table-area ptb-100\">
     <div class=\"container\">
-
         <div class=\"book-table-wrap\">
-
             <div class=\"section-title\">
                 <h2>Add Recipe</h2>
             </div>
 
-                 ";
-        // line 32
-        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formulaire"]) || array_key_exists("formulaire", $context) ? $context["formulaire"] : (function () { throw new RuntimeError('Variable "formulaire" does not exist.', 32, $this->source); })()), 'form_start');
+            ";
+        // line 26
+        yield "            ";
+        $context['_parent'] = $context;
+        $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 26, $this->source); })()), "flashes", ["danger"], "method", false, false, false, 26));
+        foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
+            // line 27
+            yield "                <div class=\"alert alert-danger\">";
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["message"], "html", null, true);
+            yield "</div>
+            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_key'], $context['message'], $context['_parent']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 29
         yield "
-                <div class=\"row\">
-                    <div class=\"col-md-6 mb-3\">";
+            ";
+        // line 31
+        yield "            ";
+        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formulaire"]) || array_key_exists("formulaire", $context) ? $context["formulaire"] : (function () { throw new RuntimeError('Variable "formulaire" does not exist.', 31, $this->source); })()), 'form_start', ["attr" => ["enctype" => "multipart/form-data"]]);
+        yield "
+
+            <div class=\"row\">
+                <div class=\"col-md-6 mb-3\">";
         // line 34
         yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["formulaire"]) || array_key_exists("formulaire", $context) ? $context["formulaire"] : (function () { throw new RuntimeError('Variable "formulaire" does not exist.', 34, $this->source); })()), "titre", [], "any", false, false, false, 34), 'row');
         yield "</div>
-                    <div class=\"col-md-6 mb-3\">";
+                <div class=\"col-md-6 mb-3\">";
         // line 35
         yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["formulaire"]) || array_key_exists("formulaire", $context) ? $context["formulaire"] : (function () { throw new RuntimeError('Variable "formulaire" does not exist.', 35, $this->source); })()), "categorie", [], "any", false, false, false, 35), 'row');
         yield "</div>
-                </div>
-
-                <div class=\"mb-3\">";
+            </div>
+            <div class=\"mb-3\">";
+        // line 37
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["formulaire"]) || array_key_exists("formulaire", $context) ? $context["formulaire"] : (function () { throw new RuntimeError('Variable "formulaire" does not exist.', 37, $this->source); })()), "description", [], "any", false, false, false, 37), 'row');
+        yield "</div>
+            <div class=\"mb-3\">";
         // line 38
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["formulaire"]) || array_key_exists("formulaire", $context) ? $context["formulaire"] : (function () { throw new RuntimeError('Variable "formulaire" does not exist.', 38, $this->source); })()), "description", [], "any", false, false, false, 38), 'row');
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["formulaire"]) || array_key_exists("formulaire", $context) ? $context["formulaire"] : (function () { throw new RuntimeError('Variable "formulaire" does not exist.', 38, $this->source); })()), "instructions", [], "any", false, false, false, 38), 'row');
         yield "</div>
-                <div class=\"mb-3\">";
-        // line 39
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["formulaire"]) || array_key_exists("formulaire", $context) ? $context["formulaire"] : (function () { throw new RuntimeError('Variable "formulaire" does not exist.', 39, $this->source); })()), "instructions", [], "any", false, false, false, 39), 'row');
+            <div class=\"row\">
+                <div class=\"col-md-4 mb-3\">";
+        // line 40
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["formulaire"]) || array_key_exists("formulaire", $context) ? $context["formulaire"] : (function () { throw new RuntimeError('Variable "formulaire" does not exist.', 40, $this->source); })()), "tempsPreparation", [], "any", false, false, false, 40), 'row');
         yield "</div>
-
-                <div class=\"row\">
-                    <div class=\"col-md-4 mb-3\">";
+                <div class=\"col-md-4 mb-3\">";
+        // line 41
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["formulaire"]) || array_key_exists("formulaire", $context) ? $context["formulaire"] : (function () { throw new RuntimeError('Variable "formulaire" does not exist.', 41, $this->source); })()), "tempsCuisson", [], "any", false, false, false, 41), 'row');
+        yield "</div>
+                <div class=\"col-md-4 mb-3\">";
         // line 42
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["formulaire"]) || array_key_exists("formulaire", $context) ? $context["formulaire"] : (function () { throw new RuntimeError('Variable "formulaire" does not exist.', 42, $this->source); })()), "tempsPreparation", [], "any", false, false, false, 42), 'row');
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["formulaire"]) || array_key_exists("formulaire", $context) ? $context["formulaire"] : (function () { throw new RuntimeError('Variable "formulaire" does not exist.', 42, $this->source); })()), "difficulte", [], "any", false, false, false, 42), 'row');
         yield "</div>
-                    <div class=\"col-md-4 mb-3\">";
-        // line 43
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["formulaire"]) || array_key_exists("formulaire", $context) ? $context["formulaire"] : (function () { throw new RuntimeError('Variable "formulaire" does not exist.', 43, $this->source); })()), "tempsCuisson", [], "any", false, false, false, 43), 'row');
+                
+            </div>
+            <div class=\"col-md-6 mb-3\">";
+        // line 45
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["formulaire"]) || array_key_exists("formulaire", $context) ? $context["formulaire"] : (function () { throw new RuntimeError('Variable "formulaire" does not exist.', 45, $this->source); })()), "nbPersonnes", [], "any", false, false, false, 45), 'row');
         yield "</div>
-                    <div class=\"col-md-4 mb-3\">";
-        // line 44
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["formulaire"]) || array_key_exists("formulaire", $context) ? $context["formulaire"] : (function () { throw new RuntimeError('Variable "formulaire" does not exist.', 44, $this->source); })()), "difficulte", [], "any", false, false, false, 44), 'row');
+            <div class=\"col-md-6 mb-3\">";
+        // line 46
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["formulaire"]) || array_key_exists("formulaire", $context) ? $context["formulaire"] : (function () { throw new RuntimeError('Variable "formulaire" does not exist.', 46, $this->source); })()), "imageFile", [], "any", false, false, false, 46), 'row');
         yield "</div>
-                </div>
-
-              
-                    <div class=\"col-md-6 mb-3\">";
+            <div class=\"card mb-3 p-3 bg-light\">
+                ";
         // line 48
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["formulaire"]) || array_key_exists("formulaire", $context) ? $context["formulaire"] : (function () { throw new RuntimeError('Variable "formulaire" does not exist.', 48, $this->source); })()), "nbPersonnes", [], "any", false, false, false, 48), 'row');
-        yield "</div>
-                    
-                    <div class=\"col-md-6 mb-3\">";
-        // line 50
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["formulaire"]) || array_key_exists("formulaire", $context) ? $context["formulaire"] : (function () { throw new RuntimeError('Variable "formulaire" does not exist.', 50, $this->source); })()), "imageName", [], "any", false, false, false, 50), 'row');
-        yield "</div>
-                
-
-                
-                <div class=\"card mb-3 p-3 bg-light\">
-                    ";
-        // line 55
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["formulaire"]) || array_key_exists("formulaire", $context) ? $context["formulaire"] : (function () { throw new RuntimeError('Variable "formulaire" does not exist.', 55, $this->source); })()), "tags", [], "any", false, false, false, 55), 'row');
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["formulaire"]) || array_key_exists("formulaire", $context) ? $context["formulaire"] : (function () { throw new RuntimeError('Variable "formulaire" does not exist.', 48, $this->source); })()), "tags", [], "any", false, false, false, 48), 'row');
         yield "
-                </div>
-
-                <div class=\"mb-3\">";
-        // line 58
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["formulaire"]) || array_key_exists("formulaire", $context) ? $context["formulaire"] : (function () { throw new RuntimeError('Variable "formulaire" does not exist.', 58, $this->source); })()), "publiee", [], "any", false, false, false, 58), 'row');
+            </div>
+            <div class=\"mb-3\">";
+        // line 50
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["formulaire"]) || array_key_exists("formulaire", $context) ? $context["formulaire"] : (function () { throw new RuntimeError('Variable "formulaire" does not exist.', 50, $this->source); })()), "publiee", [], "any", false, false, false, 50), 'row');
         yield "</div>
 
-                <button type=\"submit\" class=\"btn  w-100\">💾 Enregistrer la recette</button>
+            <button type=\"submit\" class=\"btn w-100\">💾 Enregistrer la recette</button>
+
             ";
-        // line 61
-        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formulaire"]) || array_key_exists("formulaire", $context) ? $context["formulaire"] : (function () { throw new RuntimeError('Variable "formulaire" does not exist.', 61, $this->source); })()), 'form_end');
+        // line 54
+        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formulaire"]) || array_key_exists("formulaire", $context) ? $context["formulaire"] : (function () { throw new RuntimeError('Variable "formulaire" does not exist.', 54, $this->source); })()), 'form_end');
         yield "
 
             <a href=\"";
-        // line 63
+        // line 56
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_recettes");
-        yield "\" class=\"btn btn-link mt-3 text-muted\">
-                ← Retour
-            </a>
+        yield "\" class=\"btn btn-link mt-3 text-muted\">← Retour</a>
         </div>
-
-        </div>
-
     </div>
 </div>
 
@@ -240,19 +242,15 @@ class __TwigTemplate_f494f419477b6352cb7130e930111ea6 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  201 => 63,  196 => 61,  190 => 58,  184 => 55,  176 => 50,  171 => 48,  164 => 44,  160 => 43,  156 => 42,  150 => 39,  146 => 38,  140 => 35,  136 => 34,  131 => 32,  110 => 14,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  208 => 56,  203 => 54,  196 => 50,  191 => 48,  186 => 46,  182 => 45,  176 => 42,  172 => 41,  168 => 40,  163 => 38,  159 => 37,  154 => 35,  150 => 34,  143 => 31,  140 => 29,  131 => 27,  126 => 26,  108 => 10,  100 => 4,  87 => 3,  64 => 2,  41 => 1,);
     }
 
     public function getSourceContext(): Source
     {
         return new Source("{% extends 'base.html.twig' %}
-
 {% block title %}Add Recipe{% endblock %}
-
 {% block body %}
 
-
-<!-- Page Title -->
 <div class=\"page-title-area page-title-img-one\">
     <div class=\"container\">
         <div class=\"page-title-item\">
@@ -266,57 +264,49 @@ class __TwigTemplate_f494f419477b6352cb7130e930111ea6 extends Template
     </div>
 </div>
 
-<!-- Form Section -->
 <div class=\"book-table-area ptb-100\">
     <div class=\"container\">
-
         <div class=\"book-table-wrap\">
-
             <div class=\"section-title\">
                 <h2>Add Recipe</h2>
             </div>
 
-                 {{ form_start(formulaire) }}
-                <div class=\"row\">
-                    <div class=\"col-md-6 mb-3\">{{ form_row(formulaire.titre) }}</div>
-                    <div class=\"col-md-6 mb-3\">{{ form_row(formulaire.categorie) }}</div>
-                </div>
+            {# ✅ Show validation errors at the top #}
+            {% for message in app.flashes('danger') %}
+                <div class=\"alert alert-danger\">{{ message }}</div>
+            {% endfor %}
 
-                <div class=\"mb-3\">{{ form_row(formulaire.description) }}</div>
-                <div class=\"mb-3\">{{ form_row(formulaire.instructions) }}</div>
+            {# ✅ enctype is required for file upload #}
+            {{ form_start(formulaire, {'attr': {'enctype': 'multipart/form-data'}}) }}
 
-                <div class=\"row\">
-                    <div class=\"col-md-4 mb-3\">{{ form_row(formulaire.tempsPreparation) }}</div>
-                    <div class=\"col-md-4 mb-3\">{{ form_row(formulaire.tempsCuisson) }}</div>
-                    <div class=\"col-md-4 mb-3\">{{ form_row(formulaire.difficulte) }}</div>
-                </div>
-
-              
-                    <div class=\"col-md-6 mb-3\">{{ form_row(formulaire.nbPersonnes) }}</div>
-                    
-                    <div class=\"col-md-6 mb-3\">{{ form_row(formulaire.imageName) }}</div>
+            <div class=\"row\">
+                <div class=\"col-md-6 mb-3\">{{ form_row(formulaire.titre) }}</div>
+                <div class=\"col-md-6 mb-3\">{{ form_row(formulaire.categorie) }}</div>
+            </div>
+            <div class=\"mb-3\">{{ form_row(formulaire.description) }}</div>
+            <div class=\"mb-3\">{{ form_row(formulaire.instructions) }}</div>
+            <div class=\"row\">
+                <div class=\"col-md-4 mb-3\">{{ form_row(formulaire.tempsPreparation) }}</div>
+                <div class=\"col-md-4 mb-3\">{{ form_row(formulaire.tempsCuisson) }}</div>
+                <div class=\"col-md-4 mb-3\">{{ form_row(formulaire.difficulte) }}</div>
                 
+            </div>
+            <div class=\"col-md-6 mb-3\">{{ form_row(formulaire.nbPersonnes) }}</div>
+            <div class=\"col-md-6 mb-3\">{{ form_row(formulaire.imageFile) }}</div>
+            <div class=\"card mb-3 p-3 bg-light\">
+                {{ form_row(formulaire.tags) }}
+            </div>
+            <div class=\"mb-3\">{{ form_row(formulaire.publiee) }}</div>
 
-                
-                <div class=\"card mb-3 p-3 bg-light\">
-                    {{ form_row(formulaire.tags) }}
-                </div>
+            <button type=\"submit\" class=\"btn w-100\">💾 Enregistrer la recette</button>
 
-                <div class=\"mb-3\">{{ form_row(formulaire.publiee) }}</div>
-
-                <button type=\"submit\" class=\"btn  w-100\">💾 Enregistrer la recette</button>
             {{ form_end(formulaire) }}
 
-            <a href=\"{{ path('app_recettes') }}\" class=\"btn btn-link mt-3 text-muted\">
-                ← Retour
-            </a>
+            <a href=\"{{ path('app_recettes') }}\" class=\"btn btn-link mt-3 text-muted\">← Retour</a>
         </div>
-
-        </div>
-
     </div>
 </div>
 
-{% endblock %}", "recettes/nouvelle.html.twig", "/home/vboxuser/projet_recettes_final/miniprojet2026-ines_maram/templates/recettes/nouvelle.html.twig");
+{% endblock %}", "recettes/nouvelle.html.twig", "/home/vboxuser/Documents/miniprojet2026-ines_maram/templates/recettes/nouvelle.html.twig");
     }
 }

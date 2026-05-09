@@ -132,19 +132,7 @@ CategorieRecette
 </a>
                         </li>
 
-                        <li class=\"nav-item\">
-                            <a href=\"#\"
-                            class=\"nav-link\">
-                                Services
-                            </a>
-                        </li>
 
-                        <li class=\"nav-item\">
-                            <a href=\"#\"
-                            class=\"nav-link\">
-                                Blog
-                            </a>
-                        </li>
 
                         <li class=\"nav-item\">
                             <a href=\"#\"
@@ -157,15 +145,17 @@ CategorieRecette
 
                     <div class=\"side-nav\">
 
-                        <a class=\"nav-cart\" href=\"#\">
-                            <i class='bx bxs-cart'></i>
-                            <span>1</span>
+            
+                        <a class=\"nav-tel\" href\"login \">
+                            
+                            Log In
                         </a>
 
-                        <a class=\"nav-tel\" href=\"tel:+1123456789\">
-                            <i class='bx bxs-phone-call'></i>
-                            +1 123 456 789
+                        <a class=\"nav-tel\" href\"register\">
+                            
+                             register
                         </a>
+
 
                     </div>
 
@@ -273,19 +263,7 @@ CategorieRecette
 </a>
                         </li>
 
-                        <li class=\"nav-item\">
-                            <a href=\"#\"
-                            class=\"nav-link\">
-                                Services
-                            </a>
-                        </li>
 
-                        <li class=\"nav-item\">
-                            <a href=\"#\"
-                            class=\"nav-link\">
-                                Blog
-                            </a>
-                        </li>
 
                         <li class=\"nav-item\">
                             <a href=\"#\"
@@ -298,15 +276,17 @@ CategorieRecette
 
                     <div class=\"side-nav\">
 
-                        <a class=\"nav-cart\" href=\"#\">
-                            <i class='bx bxs-cart'></i>
-                            <span>1</span>
+            
+                        <a class=\"nav-tel\" href\"login \">
+                            
+                            Log In
                         </a>
 
-                        <a class=\"nav-tel\" href=\"tel:+1123456789\">
-                            <i class='bx bxs-phone-call'></i>
-                            +1 123 456 789
+                        <a class=\"nav-tel\" href\"register\">
+                            
+                             register
                         </a>
+
 
                     </div>
 
@@ -318,6 +298,6 @@ CategorieRecette
     </div>
 
 </div>
-<!-- End Navbar Area -->", "partials/navbar.html.twig", "/home/vboxuser/projet_recettes_final/miniprojet2026-ines_maram/templates/partials/navbar.html.twig");
+<!-- End Navbar Area -->", "partials/navbar.html.twig", "/home/vboxuser/Documents/miniprojet2026-ines_maram/templates/partials/navbar.html.twig");
     }
 }

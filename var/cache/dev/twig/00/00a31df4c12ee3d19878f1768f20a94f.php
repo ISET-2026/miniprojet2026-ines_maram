@@ -186,6 +186,6 @@ class __TwigTemplate_c8d1e0412dab437309e5fcd63c945c96 extends Template
         {%- endfor -%}
     </pre>
 {% endif %}
-", "@Doctrine/Collector/explain.html.twig", "/home/vboxuser/projet_recettes_final/miniprojet2026-ines_maram/vendor/doctrine/doctrine-bundle/templates/Collector/explain.html.twig");
+", "@Doctrine/Collector/explain.html.twig", "/home/vboxuser/Documents/miniprojet2026-ines_maram/vendor/doctrine/doctrine-bundle/templates/Collector/explain.html.twig");
     }
 }

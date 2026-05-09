@@ -137,6 +137,6 @@ class __TwigTemplate_f383e2f2dce3f5f5075db2ba8e2b2ab6 extends Template
     </span>
     {{- title -}}
 </a>
-", "@KnpPaginator/Pagination/semantic_ui_sortable_link.html.twig", "/home/vboxuser/projet_recettes_final/miniprojet2026-ines_maram/vendor/knplabs/knp-paginator-bundle/templates/Pagination/semantic_ui_sortable_link.html.twig");
+", "@KnpPaginator/Pagination/semantic_ui_sortable_link.html.twig", "/home/vboxuser/Documents/miniprojet2026-ines_maram/vendor/knplabs/knp-paginator-bundle/templates/Pagination/semantic_ui_sortable_link.html.twig");
     }
 }

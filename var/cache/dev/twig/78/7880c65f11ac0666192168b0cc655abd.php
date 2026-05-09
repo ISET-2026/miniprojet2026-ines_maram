@@ -543,17 +543,13 @@ class __TwigTemplate_496252487ba14650cedbeb9bed075534 extends Template
     </section>
     <!-- End Subscribe -->
 
-    ";
-        // line 382
-        yield from $this->load("partials/footer.html.twig", 382)->unwrap()->yield($context);
-        // line 383
-        yield "
+
 
 
 ";
-        // line 386
+        // line 385
         yield from $this->unwrap()->yieldBlock('javascripts', $context, $blocks);
-        // line 411
+        // line 410
         yield "
 ";
         
@@ -565,7 +561,7 @@ class __TwigTemplate_496252487ba14650cedbeb9bed075534 extends Template
         yield from [];
     }
 
-    // line 386
+    // line 385
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -578,60 +574,60 @@ class __TwigTemplate_496252487ba14650cedbeb9bed075534 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 387
+        // line 386
         yield "
     <script src=\"";
-        // line 388
+        // line 387
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/jquery.min.js"), "html", null, true);
         yield "\"></script>
 
     <script src=\"";
-        // line 390
+        // line 389
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/bootstrap.bundle.min.js"), "html", null, true);
         yield "\"></script>
 
     <script src=\"";
-        // line 392
+        // line 391
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/jquery.meanmenu.js"), "html", null, true);
         yield "\"></script>
 
     <script src=\"";
-        // line 394
+        // line 393
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/owl.carousel.min.js"), "html", null, true);
         yield "\"></script>
 
     <script src=\"";
-        // line 396
+        // line 395
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/jquery.mixitup.min.js"), "html", null, true);
         yield "\"></script>
 
     <script src=\"";
-        // line 398
+        // line 397
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/slick.min.js"), "html", null, true);
         yield "\"></script>
 
     <script src=\"";
-        // line 400
+        // line 399
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/jquery.ajaxchimp.min.js"), "html", null, true);
         yield "\"></script>
 
     <script src=\"";
-        // line 402
+        // line 401
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/form-validator.min.js"), "html", null, true);
         yield "\"></script>
 
     <script src=\"";
-        // line 404
+        // line 403
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/contact-form-script.js"), "html", null, true);
         yield "\"></script>
 
     <script src=\"";
-        // line 406
+        // line 405
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/jquery.magnific-popup.min.js"), "html", null, true);
         yield "\"></script>
 
     <script src=\"";
-        // line 408
+        // line 407
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/custom.js"), "html", null, true);
         yield "\"></script>
 
@@ -666,7 +662,7 @@ class __TwigTemplate_496252487ba14650cedbeb9bed075534 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  635 => 408,  630 => 406,  625 => 404,  620 => 402,  615 => 400,  610 => 398,  605 => 396,  600 => 394,  595 => 392,  590 => 390,  585 => 388,  582 => 387,  569 => 386,  557 => 411,  555 => 386,  550 => 383,  548 => 382,  532 => 369,  462 => 302,  429 => 272,  371 => 217,  364 => 213,  357 => 209,  339 => 194,  335 => 193,  313 => 174,  291 => 155,  282 => 149,  257 => 127,  248 => 121,  223 => 99,  214 => 93,  184 => 66,  177 => 62,  170 => 58,  134 => 25,  130 => 24,  126 => 23,  122 => 22,  106 => 8,  104 => 7,  101 => 6,  88 => 5,  65 => 3,  42 => 1,);
+        return array (  631 => 407,  626 => 405,  621 => 403,  616 => 401,  611 => 399,  606 => 397,  601 => 395,  596 => 393,  591 => 391,  586 => 389,  581 => 387,  578 => 386,  565 => 385,  553 => 410,  551 => 385,  532 => 369,  462 => 302,  429 => 272,  371 => 217,  364 => 213,  357 => 209,  339 => 194,  335 => 193,  313 => 174,  291 => 155,  282 => 149,  257 => 127,  248 => 121,  223 => 99,  214 => 93,  184 => 66,  177 => 62,  170 => 58,  134 => 25,  130 => 24,  126 => 23,  122 => 22,  106 => 8,  104 => 7,  101 => 6,  88 => 5,  65 => 3,  42 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -1052,7 +1048,6 @@ class __TwigTemplate_496252487ba14650cedbeb9bed075534 extends Template
     </section>
     <!-- End Subscribe -->
 
-    {% include 'partials/footer.html.twig' %}
 
 
 
@@ -1082,6 +1077,6 @@ class __TwigTemplate_496252487ba14650cedbeb9bed075534 extends Template
 
 {% endblock %}
 
-{% endblock %}", "accueil/index.html.twig", "/home/vboxuser/projet_recettes_final/miniprojet2026-ines_maram/templates/accueil/index.html.twig");
+{% endblock %}", "accueil/index.html.twig", "/home/vboxuser/Documents/miniprojet2026-ines_maram/templates/accueil/index.html.twig");
     }
 }

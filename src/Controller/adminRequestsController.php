@@ -1,8 +1,8 @@
 <?php
-
 namespace App\Controller;
 
 use App\Repository\UserRepository;
+use App\Service\MailerService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -28,9 +28,9 @@ class adminRequestsController extends AbstractController
     public function approve(
         int $id,
         UserRepository $userRepository,
-        EntityManagerInterface $entityManager
+        EntityManagerInterface $entityManager,
+        MailerService $mailer  // ✅ inject mailer
     ): Response {
-
         $user = $userRepository->find($id);
 
         if (!$user || !$user->getRequestedRole()) {
@@ -38,20 +38,21 @@ class adminRequestsController extends AbstractController
             return $this->redirectToRoute('admin_role_requests');
         }
 
-        // Add role safely
+        $requestedRole = $user->getRequestedRole();
+
+        // Add role
         $roles = $user->getRoles();
-        $roles[] = $user->getRequestedRole();
-
+        $roles[] = $requestedRole;
         $user->setRoles(array_unique($roles));
-
-        // Update status
         $user->setRoleRequestStatus('APPROVED');
         $user->setRequestedRole(null);
 
         $entityManager->flush();
 
-        $this->addFlash('success', 'Role approved successfully.');
+        // ✅ Send approval email
+        $mailer->sendRoleApprovedEmail($user->getEmail(), $requestedRole);
 
+        $this->addFlash('success', 'Role approved and email sent.');
         return $this->redirectToRoute('admin_role_requests');
     }
 
@@ -59,9 +60,9 @@ class adminRequestsController extends AbstractController
     public function reject(
         int $id,
         UserRepository $userRepository,
-        EntityManagerInterface $entityManager
+        EntityManagerInterface $entityManager,
+        MailerService $mailer  // ✅ inject mailer
     ): Response {
-
         $user = $userRepository->find($id);
 
         if (!$user) {
@@ -69,14 +70,15 @@ class adminRequestsController extends AbstractController
             return $this->redirectToRoute('admin_role_requests');
         }
 
-        // Reject request
         $user->setRoleRequestStatus('REJECTED');
         $user->setRequestedRole(null);
 
         $entityManager->flush();
 
-        $this->addFlash('warning', 'Role request rejected.');
+        // ✅ Send rejection email
+        $mailer->sendRoleRejectedEmail($user->getEmail());
 
+        $this->addFlash('warning', 'Role request rejected and email sent.');
         return $this->redirectToRoute('admin_role_requests');
     }
 }

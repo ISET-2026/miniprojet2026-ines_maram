@@ -8,9 +8,9 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\TextType; 
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class IngredientType extends AbstractType
 {
@@ -20,28 +20,51 @@ class IngredientType extends AbstractType
             ->add('nom', TextType::class, [
                 'label' => 'Nom',
                 'attr' => [
-                    'placeholder' => 'nom',
+                    'placeholder' => 'Nom de l’ingrédient',
                     'class' => 'form-control',
                 ],
             ])
-            ->add('quantite',IntegerType::class, [
-                'label' => 'quantite',
+            ->add('quantite', IntegerType::class, [
+                'label' => 'Quantité',
                 'attr' => [
-                    'placeholder' => 'quantite',
+                    'placeholder' => 'Quantité',
                     'class' => 'form-control',
+                ],
+            ])
+
+            // ONLY KEEP THIS IF Ingredient HAS ManyToOne Recette relation
+            ->add('recette', EntityType::class, [
+                'class' => Recette::class,
+                'choice_label' => 'titre', // better than id
+                'placeholder' => 'Choisir une recette',
+                'attr' => [
+                    'class' => 'form-control',
+                ],
+            ])
+
+            ->add('enregistrer', SubmitType::class, [
+                'label' => '💾 Enregistrer',
+                'attr' => [
+                    'class' => 'btn btn-primary w-100 mt-3',
                 ],
             ])
             ->add('recette', EntityType::class, [
-                'class' => Recette::class,
-                'choice_label' => 'id',
-            ])
-           ->add('enregistrer', SubmitType::class, [
-                'label' => '💾 Créer la catégorie',
-                'attr' => ['class' => 'btn btn-primary w-100 mt-3'],
-            ])
-            ->getForm();
-        ;
+    'class' => Recette::class,
+    'choice_label' => 'titre',
+    'attr' => [
+        'class' => 'form-control',
+        'style' => 'display:none', // ✅ hidden — set by controller
+    ],
+    'label' => false,
+    'placeholder' => false,
+]);
+
+            
+            
+
+            
     }
+    
 
     public function configureOptions(OptionsResolver $resolver): void
     {

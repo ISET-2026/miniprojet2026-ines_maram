@@ -17,6 +17,7 @@ use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+
 class RecetteType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
@@ -50,14 +51,15 @@ class RecetteType extends AbstractType
                     'placeholder' => 'tempsPreparation',
                     'class' => 'form-control',
                 ]
-                ])
-            ->add('tempsCuisson',IntegerType::class, [
-                  'label' => 'tempsCuisson',
-                'attr' => [
-                    'placeholder' => 'tempsCuisson',
-                    'class' => 'form-control',
-                ]
-                ])
+                        ])
+                ->add('tempsCuisson', IntegerType::class, [
+            'label' => 'Temps de cuisson',
+            'required' => false, // ← was blocking submission if left empty
+            'attr' => [
+                'placeholder' => 'tempsCuisson',
+                'class' => 'form-control',
+            ]
+])
             ->add('difficulte', ChoiceType::class, [
                  'label' => 'Difficulté',
                 'choices'  => [
@@ -76,14 +78,7 @@ class RecetteType extends AbstractType
                     'class' => 'form-control',
                 ]
                 ])
-            ->add('dateCreation',DateTimeType::class,[
-                'widget' => 'single_text',
-                  'label' => 'datecreation',
-                'attr' => [
-                    'placeholder' => 'datecreation',
-                    'class' => 'form-control',
-                ]
-                ])
+            
             ->add('publiee', CheckboxType::class, [
     'label' => 'Publier cette recette ?',
     'required' => false, 
@@ -99,28 +94,18 @@ class RecetteType extends AbstractType
     ]
 ])
   
+    ->add('imageFile', FileType::class, [
+        'required' => false,
+        'mapped' => false,
+    ])
 
-->add('imageName', FileType::class, [
-    'label' => 'Lien de l\'image (URL)',
-    'mapped' => false,
-    'required' => false,
-    'attr' => [
-     
-        'class' => 'form-control',
-    ]
-])
         ->add('categorie', EntityType::class, [
                 'class' => CategorieRecette::class,
                 'choice_label' => 'nom', 
                 'label' => 'Catégorie',
                 'attr' => ['class' => 'form-control']
             ])
-            ->add('auteur', EntityType::class, [
-                'class' => User::class,
-                'choice_label' => 'email', 
-                'label' => 'Auteur',
-                'attr' => ['class' => 'form-control']
-            ])
+            
             ->add('tags', EntityType::class, [
                 'class' => TagRecette::class,
                 'choice_label' => 'nom',
@@ -134,9 +119,11 @@ class RecetteType extends AbstractType
     }
 
     public function configureOptions(OptionsResolver $resolver): void
+    
     {
         $resolver->setDefaults([
-            'data_class' => Recette::class,
-        ]);
+        'data_class' => Recette::class,
+        'allow_extra_fields' => true, // ✅ stops the "extra field: recette" error
+    ]);
     }
 }

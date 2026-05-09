@@ -989,6 +989,6 @@ class __TwigTemplate_77d724d5d93876bdbf6eff3d7d074357 extends Template
         </td>
     </tr>
 {% endmacro %}
-", "@DoctrineMigrations/Collector/migrations.html.twig", "/home/vboxuser/projet_recettes_final/miniprojet2026-ines_maram/vendor/doctrine/doctrine-migrations-bundle/templates/Collector/migrations.html.twig");
+", "@DoctrineMigrations/Collector/migrations.html.twig", "/home/vboxuser/Documents/miniprojet2026-ines_maram/vendor/doctrine/doctrine-migrations-bundle/templates/Collector/migrations.html.twig");
     }
 }

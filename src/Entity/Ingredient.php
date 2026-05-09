@@ -23,7 +23,7 @@ class Ingredient
     private ?string $quantite = null;
 
     #[ORM\ManyToOne(inversedBy: 'ingredients')]
-    #[ORM\JoinColumn(nullable: false)]
+    #[ORM\JoinColumn(nullable: true)]   // ✅
     private ?Recette $recette = null;
 
     public function getId(): ?int
@@ -53,27 +53,7 @@ class Ingredient
         return $this;
     }
 
-    public function getIcone(): ?string
-    {
-        return $this->icone;
-    }
 
-    public function setIcone(?string $icone): static
-    {
-        $this->icone = $icone;
-        return $this;
-    }
-
-    public function getDescription(): ?string
-    {
-        return $this->description;
-    }
-
-    public function setDescription(?string $description): static
-    {
-        $this->description = $description;
-        return $this;
-    }
 
     public function getRecette(): ?Recette
     {

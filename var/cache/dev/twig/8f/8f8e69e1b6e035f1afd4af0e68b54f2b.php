@@ -2004,6 +2004,6 @@ $context["voter_detail"], "vote", [], "array", false, false, false, 581) == Twig
         </div>
     {% endif %}
 {% endblock %}
-", "@Security/Collector/security.html.twig", "/home/vboxuser/projet_recettes_final/miniprojet2026-ines_maram/vendor/symfony/security-bundle/Resources/views/Collector/security.html.twig");
+", "@Security/Collector/security.html.twig", "/home/vboxuser/Documents/miniprojet2026-ines_maram/vendor/symfony/security-bundle/Resources/views/Collector/security.html.twig");
     }
 }

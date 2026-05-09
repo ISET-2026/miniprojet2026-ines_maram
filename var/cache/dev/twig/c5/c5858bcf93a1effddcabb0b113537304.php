@@ -271,7 +271,7 @@ class __TwigTemplate_9d8b19c22540a6e73cdcfca51a3da33e extends Template
                         <strong>Created by:</strong>
                         ";
         // line 99
-        yield (((CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, ($context["recette"] ?? null), "user", [], "any", false, true, false, 99), "nom", [], "any", true, true, false, 99) &&  !(null === CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["recette"]) || array_key_exists("recette", $context) ? $context["recette"] : (function () { throw new RuntimeError('Variable "recette" does not exist.', 99, $this->source); })()), "user", [], "any", false, false, false, 99), "nom", [], "any", false, false, false, 99)))) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["recette"]) || array_key_exists("recette", $context) ? $context["recette"] : (function () { throw new RuntimeError('Variable "recette" does not exist.', 99, $this->source); })()), "user", [], "any", false, false, false, 99), "nom", [], "any", false, false, false, 99), "html", null, true)) : ("Unknown"));
+        yield (((($tmp = CoreExtension::getAttribute($this->env, $this->source, (isset($context["recette"]) || array_key_exists("recette", $context) ? $context["recette"] : (function () { throw new RuntimeError('Variable "recette" does not exist.', 99, $this->source); })()), "auteur", [], "any", false, false, false, 99)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["recette"]) || array_key_exists("recette", $context) ? $context["recette"] : (function () { throw new RuntimeError('Variable "recette" does not exist.', 99, $this->source); })()), "auteur", [], "any", false, false, false, 99), "email", [], "any", false, false, false, 99), "html", null, true)) : ("Unknown"));
         yield "
                     </p>
 
@@ -430,7 +430,7 @@ class __TwigTemplate_9d8b19c22540a6e73cdcfca51a3da33e extends Template
 
                     <p>
                         <strong>Created by:</strong>
-                        {{ recette.user.nom ?? 'Unknown' }}
+                        {{ recette.auteur ? recette.auteur.email : 'Unknown' }}
                     </p>
 
                    
@@ -448,6 +448,6 @@ class __TwigTemplate_9d8b19c22540a6e73cdcfca51a3da33e extends Template
     </div>
 </div>
 
-{% endblock %}", "recettes/detail.html.twig", "/home/vboxuser/projet_recettes_final/miniprojet2026-ines_maram/templates/recettes/detail.html.twig");
+{% endblock %}", "recettes/detail.html.twig", "/home/vboxuser/Documents/miniprojet2026-ines_maram/templates/recettes/detail.html.twig");
     }
 }

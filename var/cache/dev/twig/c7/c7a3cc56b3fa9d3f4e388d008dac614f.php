@@ -472,6 +472,6 @@ class __TwigTemplate_93ce67280751996b4719bee5371d44e9 extends Template
         </div>
     {% endfor %}
 {% endblock %}
-", "@Debug/Profiler/dump.html.twig", "/home/vboxuser/projet_recettes_final/miniprojet2026-ines_maram/vendor/symfony/debug-bundle/Resources/views/Profiler/dump.html.twig");
+", "@Debug/Profiler/dump.html.twig", "/home/vboxuser/Documents/miniprojet2026-ines_maram/vendor/symfony/debug-bundle/Resources/views/Profiler/dump.html.twig");
     }
 }
