@@ -823,7 +823,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" priority="-50">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.QNh6YCh"/>
+      <argument type="service" id=".service_locator.Ja6ORil"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" priority="-100">controller.argument_value_resolver</tag>
@@ -4104,7 +4104,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.QNh6YCh"/>
+      <argument type="service" id=".service_locator.Ja6ORil"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -10404,20 +10404,19 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.kPUbVqv" method="withContext"/>
     </service>
-    <service id=".service_locator.LCXzXFA" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.nWScd6n" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="repo" type="service_closure" id="App\Repository\RecetteRepository"/>
         <argument key="catRepo" type="service_closure" id="App\Repository\CategorieRecetteRepository"/>
         <argument key="paginator" type="service_closure" id="knp_paginator"/>
-        <argument key="analyser" type="service_closure" id="App\Service\RecetteAnalyser"/>
       </argument>
     </service>
-    <service id=".service_locator.LCXzXFA.App\Controller\RecettesController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.nWScd6n.App\Controller\RecettesController::index()" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\RecettesController::index()"/>
       <argument>App\Controller\RecettesController::index()</argument>
       <argument type="service" id="service_container"/>
-      <factory service=".service_locator.LCXzXFA" method="withContext"/>
+      <factory service=".service_locator.nWScd6n" method="withContext"/>
     </service>
     <service id=".service_locator.z0A7H.F.App\Controller\RecettesController::nouvelle()" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\RecettesController::nouvelle()"/>
@@ -10539,7 +10538,7 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.0MQaTBY" method="withContext"/>
     </service>
-    <service id=".service_locator.QNh6YCh" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.Ja6ORil" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.1vYpZ1B.kernel::registerContainerConfiguration()"/>
@@ -10551,7 +10550,7 @@
         <argument key="App\Controller\FavorisController::index" type="service_closure" id=".service_locator.Ca0F7z1.App\Controller\FavorisController::index()"/>
         <argument key="App\Controller\IngredientController::nouveau" type="service_closure" id=".service_locator.r9ynYy0.App\Controller\IngredientController::nouveau()"/>
         <argument key="App\Controller\IngredientController::supprimer" type="service_closure" id=".service_locator.kPUbVqv.App\Controller\IngredientController::supprimer()"/>
-        <argument key="App\Controller\RecettesController::index" type="service_closure" id=".service_locator.LCXzXFA.App\Controller\RecettesController::index()"/>
+        <argument key="App\Controller\RecettesController::index" type="service_closure" id=".service_locator.nWScd6n.App\Controller\RecettesController::index()"/>
         <argument key="App\Controller\RecettesController::nouvelle" type="service_closure" id=".service_locator.z0A7H.F.App\Controller\RecettesController::nouvelle()"/>
         <argument key="App\Controller\RecettesController::details" type="service_closure" id=".service_locator.A30mISa.App\Controller\RecettesController::details()"/>
         <argument key="App\Controller\RecettesController::modifier" type="service_closure" id=".service_locator.kPUbVqv.App\Controller\RecettesController::modifier()"/>
@@ -10571,7 +10570,7 @@
         <argument key="App\Controller\FavorisController:index" type="service_closure" id=".service_locator.Ca0F7z1.App\Controller\FavorisController::index()"/>
         <argument key="App\Controller\IngredientController:nouveau" type="service_closure" id=".service_locator.r9ynYy0.App\Controller\IngredientController::nouveau()"/>
         <argument key="App\Controller\IngredientController:supprimer" type="service_closure" id=".service_locator.kPUbVqv.App\Controller\IngredientController::supprimer()"/>
-        <argument key="App\Controller\RecettesController:index" type="service_closure" id=".service_locator.LCXzXFA.App\Controller\RecettesController::index()"/>
+        <argument key="App\Controller\RecettesController:index" type="service_closure" id=".service_locator.nWScd6n.App\Controller\RecettesController::index()"/>
         <argument key="App\Controller\RecettesController:nouvelle" type="service_closure" id=".service_locator.z0A7H.F.App\Controller\RecettesController::nouvelle()"/>
         <argument key="App\Controller\RecettesController:details" type="service_closure" id=".service_locator.A30mISa.App\Controller\RecettesController::details()"/>
         <argument key="App\Controller\RecettesController:modifier" type="service_closure" id=".service_locator.kPUbVqv.App\Controller\RecettesController::modifier()"/>
@@ -13489,7 +13488,7 @@
     <service id="container.env_var_processors_locator" alias=".service_locator.ryAvHi4" public="true"/>
     <service id="api_platform.name_converter" alias="api_platform.hydra.name_converter.hydra_prefix"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.QNh6YCh"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.Ja6ORil"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.W55Po6X"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id=".Psr\Log\LoggerInterface $request" alias="monolog.logger.request"/>
@@ -13626,7 +13625,7 @@
     <service id=".service_locator.hhnQOld" alias=".service_locator.Ca0F7z1"/>
     <service id=".service_locator.zIMoyYd" alias=".service_locator.r9ynYy0"/>
     <service id=".service_locator.O.d7A52" alias=".service_locator.kPUbVqv"/>
-    <service id=".service_locator.ZY9.ZZb" alias=".service_locator.LCXzXFA"/>
+    <service id=".service_locator.bnZ5WiG" alias=".service_locator.nWScd6n"/>
     <service id=".service_locator.az66ieV" alias=".service_locator.A30mISa"/>
     <service id=".service_locator.UFZ3.Iz" alias=".service_locator.TgjTaHZ"/>
     <service id=".service_locator.yyvdoxs" alias=".service_locator.7zeK6Sq"/>

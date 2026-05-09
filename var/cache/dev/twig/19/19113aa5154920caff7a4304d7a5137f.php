@@ -109,52 +109,71 @@ class __TwigTemplate_32131db724799bd84f7d9e16e41677e8 extends Template
         // line 43
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_tag_recette");
         yield "\"
-                             class=\"nav-item nav-link\">
+                            class=\"nav-item nav-link\">
                                 tag_recette
                             </a>
                         </li>
 
 
-       <li>
+        <li>
             <a  href=\"";
         // line 51
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_recettes");
         yield "\" class=\"nav-item nav-link\">Recette</a>
     
-          </li>
+        </li>
                         <li class=\"nav-item\">
                                 <a href=\"";
         // line 55
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_categories");
         yield "\"
-    class=\"nav-item nav-link\">
-CategorieRecette
-</a>
-                        </li>
-
-
-
-                        <li class=\"nav-item\">
-                            <a href=\"#\"
-                                class=\"nav-link\">
-                                Contact
+                                class=\"nav-item nav-link\">
+                            CategorieRecette
                             </a>
                         </li>
+
+                
+
+                        
+                        <li class=\"nav-item\">
+                                <a href=\"";
+        // line 65
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_role_requests");
+        yield "\"
+                                class=\"nav-item nav-link\">
+                                demandes
+                            </a>
+                        </li>
+
+
+                      
+                       
+        
+
+                    
 
                     </ul>
 
                     <div class=\"side-nav\">
 
             
-                        <a class=\"nav-tel\" href\"login \">
-                            
-                            Log In
-                        </a>
+                    <div class=\"side-nav\">
 
-                        <a class=\"nav-tel\" href\"register\">
-                            
-                             register
-                        </a>
+                <a class=\"nav-tel\" href=\"";
+        // line 85
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
+        yield "\">
+                    Log In
+                </a>
+
+                <a class=\"nav-tel\" href=\"";
+        // line 89
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
+        yield "\">
+                    Register
+                </a>
+
+</div>
 
 
                     </div>
@@ -198,7 +217,7 @@ CategorieRecette
      */
     public function getDebugInfo(): array
     {
-        return array (  128 => 55,  121 => 51,  110 => 43,  100 => 36,  86 => 25,  79 => 21,  74 => 19,  60 => 8,  56 => 7,  48 => 1,);
+        return array (  171 => 89,  164 => 85,  141 => 65,  128 => 55,  121 => 51,  110 => 43,  100 => 36,  86 => 25,  79 => 21,  74 => 19,  60 => 8,  56 => 7,  48 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -246,46 +265,56 @@ CategorieRecette
 
                         <li class=\"nav-item\">
                             <a href=\"{{ path('app_tag_recette') }}\"
-                             class=\"nav-item nav-link\">
+                            class=\"nav-item nav-link\">
                                 tag_recette
                             </a>
                         </li>
 
 
-       <li>
+        <li>
             <a  href=\"{{ path('app_recettes') }}\" class=\"nav-item nav-link\">Recette</a>
     
-          </li>
+        </li>
                         <li class=\"nav-item\">
                                 <a href=\"{{ path('app_categories') }}\"
-    class=\"nav-item nav-link\">
-CategorieRecette
-</a>
-                        </li>
-
-
-
-                        <li class=\"nav-item\">
-                            <a href=\"#\"
-                                class=\"nav-link\">
-                                Contact
+                                class=\"nav-item nav-link\">
+                            CategorieRecette
                             </a>
                         </li>
+
+                
+
+                        
+                        <li class=\"nav-item\">
+                                <a href=\"{{ path('admin_role_requests') }}\"
+                                class=\"nav-item nav-link\">
+                                demandes
+                            </a>
+                        </li>
+
+
+                      
+                       
+        
+
+                    
 
                     </ul>
 
                     <div class=\"side-nav\">
 
             
-                        <a class=\"nav-tel\" href\"login \">
-                            
-                            Log In
-                        </a>
+                    <div class=\"side-nav\">
 
-                        <a class=\"nav-tel\" href\"register\">
-                            
-                             register
-                        </a>
+                <a class=\"nav-tel\" href=\"{{ path('app_login') }}\">
+                    Log In
+                </a>
+
+                <a class=\"nav-tel\" href=\"{{ path('app_register') }}\">
+                    Register
+                </a>
+
+</div>
 
 
                     </div>

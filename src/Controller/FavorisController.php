@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Controller;
 
 use App\Repository\RecetteRepository;
@@ -16,10 +15,9 @@ final class FavorisController extends AbstractController
     {
         $session = $request->getSession();
         $ids = $session->get('favorites', []);
+        $recettes = empty($ids) ? [] : $repo->findBy(['id' => $ids]);
 
-        $recettes = $repo->findBy(['id' => $ids]);
-
-        return $this->render('favoris/index.html.twig', [
+        return $this->render('Favoris/index.html.twig', [
             'recettes' => $recettes
         ]);
     }
@@ -28,7 +26,6 @@ final class FavorisController extends AbstractController
     public function addFavorite(int $id, Request $request): Response
     {
         $session = $request->getSession();
-
         $favorites = $session->get('favorites', []);
 
         if (!in_array($id, $favorites)) {
@@ -37,20 +34,22 @@ final class FavorisController extends AbstractController
 
         $session->set('favorites', $favorites);
 
-        return $this->redirectToRoute('favoris_index');
+        // ✅ Stay on recipes page
+        return $this->redirectToRoute('app_recettes');
     }
 
     #[Route('/supprimer/{id}', name: 'favoris_remove')]
     public function removeFavorite(int $id, Request $request): Response
     {
         $session = $request->getSession();
-
         $favorites = $session->get('favorites', []);
-
-        $favorites = array_filter($favorites, fn($f) => $f != $id);
-
+        $favorites = array_values(array_filter($favorites, fn($f) => $f != $id));
         $session->set('favorites', $favorites);
 
-        return $this->redirectToRoute('favoris_index');
+        // ✅ Redirect back to referer (works from both recipes page and favorites page)
+        $referer = $request->headers->get('referer');
+        return $referer
+            ? $this->redirect($referer)
+            : $this->redirectToRoute('app_recettes');
     }
 }

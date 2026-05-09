@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Entity\Recette;
-use App\Entity\User;
 use App\Form\RecetteType;
 use App\Repository\RecetteRepository;
 use App\Repository\CategorieRecetteRepository;
@@ -26,8 +25,7 @@ final class RecettesController extends AbstractController
         Request $request,
         RecetteRepository $repo,
         CategorieRecetteRepository $catRepo,
-        PaginatorInterface $paginator,
-        RecetteAnalyser $analyser
+        PaginatorInterface $paginator
     ): Response {
 
         $titre = $request->query->get('titre');
@@ -62,76 +60,57 @@ final class RecettesController extends AbstractController
         return $this->render('recettes/index.html.twig', [
             'recettes' => $pagination,
             'categories' => $catRepo->findAll(),
-            'total' => $analyser->getTotalRecettesPubliees(),
-            'statsCat' => $analyser->getRecettesParCategorie(),
-            'moyenne' => $analyser->getMoyenneIngredients(),
+            'total' => $this->analyser->getTotalRecettesPubliees(),
+            'statsCat' => $this->analyser->getRecettesParCategorie(),
+            'moyenne' => $this->analyser->getMoyenneIngredients(),
         ]);
     }
 
     // ================= CREATE =================
-  #[Route('/recettes/nouvelle', name: 'app_recettes_nouvelle')]
-public function nouvelle(Request $request, EntityManagerInterface $em): Response
-{
-    $recette = new Recette();
+    #[Route('/recettes/nouvelle', name: 'app_recettes_nouvelle')]
+    public function nouvelle(Request $request, EntityManagerInterface $em): Response
+    {
+        $recette = new Recette();
 
-    // ✅ Set auteur BEFORE form handling so it's available during validation
-    $recette->setAuteur($this->getUser());
+        $recette->setAuteur($this->getUser());
 
-    $form = $this->createForm(RecetteType::class, $recette);
-    $form->handleRequest($request);
+        $form = $this->createForm(RecetteType::class, $recette);
+        $form->handleRequest($request);
 
-    if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()) {
 
-        $recette->setDateCreation(new \DateTime());
+            $recette->setDateCreation(new \DateTime());
 
-        $imageFile = $form->get('imageFile')->getData();
+            $imageFile = $form->get('imageFile')->getData();
 
-        if ($imageFile) {
-            $newFilename = uniqid() . '.' . $imageFile->guessExtension();
+            if ($imageFile) {
+                $newFilename = uniqid() . '.' . $imageFile->guessExtension();
 
-            try {
-                $imageFile->move(
-                    $this->getParameter('uploads_directory'),
-                    $newFilename
-                );
-            } catch (FileException $e) {
-                $this->addFlash('danger', 'Image upload failed');
-                return $this->redirectToRoute('app_recettes_nouvelle');
+                try {
+                    $imageFile->move(
+                        $this->getParameter('uploads_directory'),
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+                    $this->addFlash('danger', 'Image upload failed');
+                    return $this->redirectToRoute('app_recettes_nouvelle');
+                }
+
+                $recette->setImageName($newFilename);
             }
 
-            $recette->setImageName($newFilename);
+            $em->persist($recette);
+            $em->flush();
+
+            $this->addFlash('success', 'Recette ajoutée !');
+
+            return $this->redirectToRoute('app_recettes');
         }
 
-         $em->persist($recette);
-          $em->flush();
-
-        $this->addFlash('success', 'Recette ajoutée ! Ajoutez maintenant vos ingrédients.');
-
-        // ✅ Go straight to ingredient add page
-        return $this->redirectToRoute('app_ingredient_nouveau', [
-    'recette_id' => $recette->getId()
-
-]);
-
-
-      
-       
+        return $this->render('recettes/nouvelle.html.twig', [
+            'formulaire' => $form,
+        ]);
     }
-
-
-    // ✅ Show WHY validation failed — visible in the template
-    if ($form->isSubmitted() && !$form->isValid()) {
-        foreach ($form->getErrors(true) as $error) {
-            $this->addFlash('danger', 
-                $error->getOrigin()->getName() . ': ' . $error->getMessage()
-            );
-        }
-    }
-
-    return $this->render('recettes/nouvelle.html.twig', [
-        'formulaire' => $form,
-    ]);
-}
 
     // ================= DETAIL =================
     #[Route('/recettes/{id}', name: 'app_recette_detail', methods: ['GET'])]
@@ -189,11 +168,10 @@ public function nouvelle(Request $request, EntityManagerInterface $em): Response
             $em->remove($recette);
             $em->flush();
 
-            $this->addFlash('success', 'Recette supprimée avec succès.');
-        } else {
-            $this->addFlash('danger', 'Token CSRF invalide.');
+            $this->addFlash('success', 'Recette supprimée.');
         }
 
         return $this->redirectToRoute('app_recettes');
     }
+
 }

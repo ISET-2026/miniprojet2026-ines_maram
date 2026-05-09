@@ -10,6 +10,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
+use App\Entity\Recette;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ORM\Table(name: '`user`')]
@@ -35,16 +36,20 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column]
     private ?string $password = null;
+
     #[ORM\Column(length: 50, nullable: true)]
     private ?string $requestedRole = null;
 
     #[ORM\Column(length: 20)]
-    private string $roleRequestStatus = 'NONE'; 
-    // NONE | PENDING | APPROVED | REJECTED
+    private string $roleRequestStatus = 'NONE';
 
+    // ================= RELATIONS =================
 
     #[ORM\OneToMany(mappedBy: 'auteur', targetEntity: Recette::class)]
     private Collection $recettes;
+
+
+    // ================= CONSTRUCTOR =================
 
     public function __construct()
     {
@@ -52,22 +57,22 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->roles = ['ROLE_USER'];
     }
 
+    // ================= BASIC GETTERS / SETTERS =================
 
-public function getId(): ?int
-{
-    return $this->id;
-}
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
 
-    public function getpseudo(): ?string
+    public function getPseudo(): ?string
     {
         return $this->pseudo;
-
-
     }
-    public function setpseudo(string $pseudo): static
+
+    public function setPseudo(string $pseudo): static
     {
         $this->pseudo = $pseudo;
-        return $this ;
+        return $this;
     }
 
     public function getEmail(): ?string
@@ -81,18 +86,17 @@ public function getId(): ?int
         return $this;
     }
 
-    // 🔐 Symfony uses this for login
+    // ================= SECURITY =================
+
     public function getUserIdentifier(): string
     {
         return (string) $this->email;
     }
 
-    // ✅ Always ensures ROLE_USER exists
     public function getRoles(): array
     {
         $roles = $this->roles;
         $roles[] = 'ROLE_USER';
-
         return array_unique($roles);
     }
 
@@ -113,34 +117,34 @@ public function getId(): ?int
         return $this;
     }
 
-    // ✅ REQUIRED by Symfony security
-    public function eraseCredentials(): void
-    {
-        // If you store temporary sensitive data, clear it here
-    }
+    public function eraseCredentials(): void {}
+
+    // ================= RECETTES =================
 
     public function getRecettes(): Collection
     {
         return $this->recettes;
     }
+
     public function getRequestedRole(): ?string
-{
-    return $this->requestedRole;
-}
+    {
+        return $this->requestedRole;
+    }
 
-public function setRequestedRole(?string $requestedRole): self
-{
-    $this->requestedRole = $requestedRole;
-    return $this;
-}
-public function getRoleRequestStatus(): string
-{
-    return $this->roleRequestStatus;
-}
+    public function setRequestedRole(?string $requestedRole): self
+    {
+        $this->requestedRole = $requestedRole;
+        return $this;
+    }
 
-public function setRoleRequestStatus(string $roleRequestStatus): self
-{
-    $this->roleRequestStatus = $roleRequestStatus;
-    return $this;
-}
+    public function getRoleRequestStatus(): string
+    {
+        return $this->roleRequestStatus;
+    }
+
+    public function setRoleRequestStatus(string $roleRequestStatus): self
+    {
+        $this->roleRequestStatus = $roleRequestStatus;
+        return $this;
+    }
 }

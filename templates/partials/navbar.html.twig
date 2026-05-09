@@ -41,46 +41,56 @@
 
                         <li class="nav-item">
                             <a href="{{ path('app_tag_recette') }}"
-                             class="nav-item nav-link">
+                            class="nav-item nav-link">
                                 tag_recette
                             </a>
                         </li>
 
 
-       <li>
+        <li>
             <a  href="{{ path('app_recettes') }}" class="nav-item nav-link">Recette</a>
     
-          </li>
+        </li>
                         <li class="nav-item">
                                 <a href="{{ path('app_categories') }}"
-    class="nav-item nav-link">
-CategorieRecette
-</a>
-                        </li>
-
-
-
-                        <li class="nav-item">
-                            <a href="#"
-                                class="nav-link">
-                                Contact
+                                class="nav-item nav-link">
+                            CategorieRecette
                             </a>
                         </li>
+
+                
+
+                        
+                        <li class="nav-item">
+                                <a href="{{ path('admin_role_requests') }}"
+                                class="nav-item nav-link">
+                                demandes
+                            </a>
+                        </li>
+
+
+                      
+                       
+        
+
+                    
 
                     </ul>
 
                     <div class="side-nav">
 
             
-                        <a class="nav-tel" href"login ">
-                            
-                            Log In
-                        </a>
+                    <div class="side-nav">
 
-                        <a class="nav-tel" href"register">
-                            
-                             register
-                        </a>
+                <a class="nav-tel" href="{{ path('app_login') }}">
+                    Log In
+                </a>
+
+                <a class="nav-tel" href="{{ path('app_register') }}">
+                    Register
+                </a>
+
+</div>
 
 
                     </div>
