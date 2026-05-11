@@ -134,17 +134,24 @@ class __TwigTemplate_32131db724799bd84f7d9e16e41677e8 extends Template
 
                 
 
-                        
-                        <li class=\"nav-item\">
-                                <a href=\"";
-        // line 65
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_role_requests");
-        yield "\"
-                                class=\"nav-item nav-link\">
-                                demandes
-                            </a>
-                        </li>
-
+                                
+            ";
+        // line 64
+        if ((($tmp = $this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
+            // line 65
+            yield "            <li class=\"nav-item\">
+                <a href=\"";
+            // line 66
+            yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_role_requests");
+            yield "\"
+                class=\"nav-item nav-link\">
+                    demandes
+                </a>
+            </li>
+        ";
+        }
+        // line 72
+        yield "
 
                       
                        
@@ -160,14 +167,14 @@ class __TwigTemplate_32131db724799bd84f7d9e16e41677e8 extends Template
                     <div class=\"side-nav\">
 
                 <a class=\"nav-tel\" href=\"";
-        // line 85
+        // line 87
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
         yield "\">
                     Log In
                 </a>
 
                 <a class=\"nav-tel\" href=\"";
-        // line 89
+        // line 91
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
         yield "\">
                     Register
@@ -217,7 +224,7 @@ class __TwigTemplate_32131db724799bd84f7d9e16e41677e8 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  171 => 89,  164 => 85,  141 => 65,  128 => 55,  121 => 51,  110 => 43,  100 => 36,  86 => 25,  79 => 21,  74 => 19,  60 => 8,  56 => 7,  48 => 1,);
+        return array (  178 => 91,  171 => 87,  154 => 72,  145 => 66,  142 => 65,  140 => 64,  128 => 55,  121 => 51,  110 => 43,  100 => 36,  86 => 25,  79 => 21,  74 => 19,  60 => 8,  56 => 7,  48 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -284,13 +291,15 @@ class __TwigTemplate_32131db724799bd84f7d9e16e41677e8 extends Template
 
                 
 
-                        
-                        <li class=\"nav-item\">
-                                <a href=\"{{ path('admin_role_requests') }}\"
-                                class=\"nav-item nav-link\">
-                                demandes
-                            </a>
-                        </li>
+                                
+            {% if is_granted('ROLE_ADMIN') %}
+            <li class=\"nav-item\">
+                <a href=\"{{ path('admin_role_requests') }}\"
+                class=\"nav-item nav-link\">
+                    demandes
+                </a>
+            </li>
+        {% endif %}
 
 
                       

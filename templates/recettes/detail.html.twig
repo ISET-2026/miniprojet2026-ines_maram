@@ -50,13 +50,15 @@
                         {% else %}
                             <li class="list-group-item">No ingredients</li>
                         {% endfor %}
-                    </ul>
+                                        </ul>
+                    {% if app.user and (is_granted('ROLE_ADMIN') or app.user == recette.auteur) %}
 
-                    <a href="{{ path('app_ingredient_nouveau', {'recette_id': recette.id}) }}"
-                       class="btn btn-outline-primary w-100">
-                        + Add Ingredient
-                    </a>
+                        <a href="{{ path('app_ingredient_nouveau', {'recette_id': recette.id}) }}"
+                        class="btn btn-outline-primary w-100">
+                            + Add Ingredient
+                        </a>
 
+                    {% endif %}
                 </div>
             </div>
 

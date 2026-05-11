@@ -60,13 +60,15 @@
 
                 
 
-                        
-                        <li class="nav-item">
-                                <a href="{{ path('admin_role_requests') }}"
-                                class="nav-item nav-link">
-                                demandes
-                            </a>
-                        </li>
+                                
+            {% if is_granted('ROLE_ADMIN') %}
+            <li class="nav-item">
+                <a href="{{ path('admin_role_requests') }}"
+                class="nav-item nav-link">
+                    demandes
+                </a>
+            </li>
+        {% endif %}
 
 
                       
