@@ -22,12 +22,10 @@
                 <h2>Add Recipe</h2>
             </div>
 
-            {# ✅ Show validation errors at the top #}
             {% for message in app.flashes('danger') %}
                 <div class="alert alert-danger">{{ message }}</div>
             {% endfor %}
 
-            {# ✅ enctype is required for file upload #}
             {{ form_start(formulaire, {'attr': {'enctype': 'multipart/form-data'}}) }}
 
             <div class="row">
