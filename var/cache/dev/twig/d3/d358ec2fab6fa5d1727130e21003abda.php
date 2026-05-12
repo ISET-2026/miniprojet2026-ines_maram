@@ -84,7 +84,7 @@ class __TwigTemplate_c277cafded03baefb50d11f88debe7d5 extends Template
         </div>
         ";
         // line 10
-        if (($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_CUISINIER") || $this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN"))) {
+        if ((($tmp = $this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
             // line 11
             yield "            <a href=\"";
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_tagrecettes_nouvelle");
@@ -160,7 +160,7 @@ class __TwigTemplate_c277cafded03baefb50d11f88debe7d5 extends Template
                       <td class=\"text-end pe-4\">
                 ";
             // line 52
-            if (($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN") || $this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_CUISINIER"))) {
+            if ((($tmp = $this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
                 // line 53
                 yield "                <a href=\"";
                 yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_tagrecettes_supprimer", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["tag"], "id", [], "any", false, false, false, 53)]), "html", null, true);
@@ -239,7 +239,7 @@ class __TwigTemplate_c277cafded03baefb50d11f88debe7d5 extends Template
             <h1 class=\"display-5 fw-bold mb-0\">Tags</h1>
             <p class=\"text-muted\">{{ tagrecettes|length }} tags</p>
         </div>
-        {% if is_granted('ROLE_CUISINIER') or is_granted('ROLE_ADMIN') %}
+        {% if  is_granted('ROLE_ADMIN') %}
             <a href=\"{{ path('app_tagrecettes_nouvelle') }}\" class=\"btn btn-outline-primary px-4 py-2 rounded-pill\">
                 + Nouveau tag
             </a>
@@ -281,7 +281,7 @@ class __TwigTemplate_c277cafded03baefb50d11f88debe7d5 extends Template
                             </td>
                             
                       <td class=\"text-end pe-4\">
-                {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_CUISINIER') %}
+                {% if is_granted('ROLE_ADMIN') %}
                 <a href=\"{{ path('app_tagrecettes_supprimer', {'id': tag.id}) }}\" 
                 class=\"btn btn-sm btn-outline-danger\" 
                 onclick=\"return confirm('Etes-vous sûr ?')\">
@@ -300,6 +300,6 @@ class __TwigTemplate_c277cafded03baefb50d11f88debe7d5 extends Template
         </div>
     </div>
 </div>
-{% endblock %}", "tag_recette/index.html.twig", "/home/vboxuser/Documents/miniprojet2026-ines_maram/templates/tag_recette/index.html.twig");
+{% endblock %}", "tag_recette/index.html.twig", "/home/useradm/miniprojet2026-ines_maram/templates/tag_recette/index.html.twig");
     }
 }

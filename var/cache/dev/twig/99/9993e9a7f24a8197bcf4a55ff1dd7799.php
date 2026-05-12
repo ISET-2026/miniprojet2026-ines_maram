@@ -142,6 +142,6 @@ class __TwigTemplate_410a55b0b3238f98327b584efeb940fd extends Template
     </tbody>
 </table>
 </div>
-", "@WebProfiler/Profiler/table.html.twig", "/home/vboxuser/Documents/miniprojet2026-ines_maram/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/table.html.twig");
+", "@WebProfiler/Profiler/table.html.twig", "/home/useradm/miniprojet2026-ines_maram/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/table.html.twig");
     }
 }

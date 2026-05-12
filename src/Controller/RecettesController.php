@@ -19,54 +19,59 @@ final class RecettesController extends AbstractController
 {
     public function __construct(private RecetteAnalyser $analyser) {}
 
-    // ================= LIST =================
-    #[Route('/recettes', name: 'app_recettes')]
-    public function index(
-        Request $request,
-        RecetteRepository $repo,
-        CategorieRecetteRepository $catRepo,
-        PaginatorInterface $paginator
-    ): Response {
+   #[Route('/recettes', name: 'app_recettes')]
+public function index(
+    Request $request,
+    RecetteRepository $repo,
+    CategorieRecetteRepository $catRepo,
+    PaginatorInterface $paginator,
+RecetteAnalyser $analyser 
+): Response {
 
-        $titre = $request->query->get('titre');
-        $catId = $request->query->get('categorie');
-        $diff = $request->query->get('difficulte');
+    $titre = $request->query->get('titre');
+    $catId = $request->query->get('categorie');
+    $diff = $request->query->get('difficulte');
 
-        $qb = $repo->createQueryBuilder('r');
+    $qb = $repo->createQueryBuilder('r');
 
-        if ($titre) {
-            $qb->andWhere('r.titre LIKE :titre')
-               ->setParameter('titre', '%' . $titre . '%');
-        }
-
-        if ($catId) {
-            $qb->andWhere('r.categorie = :catId')
-               ->setParameter('catId', $catId);
-        }
-
-        if ($diff) {
-            $qb->andWhere('r.difficulte = :diff')
-               ->setParameter('diff', $diff);
-        }
-
-        $qb->orderBy('r.dateCreation', 'DESC');
-
-        $pagination = $paginator->paginate(
-            $qb->getQuery(),
-            $request->query->getInt('page', 1),
-            9
-        );
-
-        return $this->render('recettes/index.html.twig', [
-            'recettes' => $pagination,
-            'categories' => $catRepo->findAll(),
-            'total' => $this->analyser->getTotalRecettesPubliees(),
-            'statsCat' => $this->analyser->getRecettesParCategorie(),
-            'moyenne' => $this->analyser->getMoyenneIngredients(),
-        ]);
+    if ($titre) {
+        $qb->andWhere('r.titre LIKE :titre')
+           ->setParameter('titre', '%' . $titre . '%');
     }
 
-    // ================= CREATE =================
+    if ($catId) {
+        $qb->andWhere('r.categorie = :catId')
+           ->setParameter('catId', $catId);
+    }
+
+    if ($diff) {
+        $qb->andWhere('r.difficulte = :diff')
+           ->setParameter('diff', $diff);
+    }
+
+    if (!$request->query->has('sort')) {
+        $qb->orderBy('r.dateCreation', 'DESC');
+    }
+ 
+
+    $pagination = $paginator->paginate(
+        $qb, 
+        $request->query->getInt('page', 1),
+        9,
+        [
+        'wrap-queries' => true, 
+        'distinct' => false    
+    ]
+    );
+
+    return $this->render('recettes/index.html.twig', [
+        'recettes' => $pagination,
+        'categories' => $catRepo->findAll(),
+        'total' => $analyser->getTotalRecettesPubliees(),
+        'statsCat' => $analyser->getRecettesParCategorie(),
+        'moyenne' => $analyser->getMoyenneIngredients(),
+    ]);
+}
     #[Route('/recettes/nouvelle', name: 'app_recettes_nouvelle')]
     public function nouvelle(Request $request, EntityManagerInterface $em): Response
     {
@@ -112,7 +117,6 @@ final class RecettesController extends AbstractController
         ]);
     }
 
-    // ================= DETAIL =================
     #[Route('/recettes/{id}', name: 'app_recette_detail', methods: ['GET'])]
     public function details(Recette $recette): Response
     {
@@ -121,7 +125,6 @@ final class RecettesController extends AbstractController
         ]);
     }
 
-    // ================= EDIT =================
     #[Route('/recettes/{id}/modifier', name: 'app_recettes_modifier')]
     public function modifier(Recette $recette, Request $request, EntityManagerInterface $em): Response
     {
@@ -160,7 +163,6 @@ final class RecettesController extends AbstractController
         ]);
     }
 
-    // ================= DELETE =================
     #[Route('/recettes/{id}/supprimer', name: 'app_recettes_supprimer', methods: ['POST'])]
     public function supprimer(Recette $recette, Request $request, EntityManagerInterface $em): Response
     {

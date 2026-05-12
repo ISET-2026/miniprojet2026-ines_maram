@@ -73,7 +73,8 @@ class __TwigTemplate_1781686f24237a2486aaf42298cb720d extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        yield "Ajouter un ingrédient";
+        yield "Ajouter un ingrédient
+";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -83,7 +84,7 @@ class __TwigTemplate_1781686f24237a2486aaf42298cb720d extends Template
         yield from [];
     }
 
-    // line 3
+    // line 4
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -96,113 +97,109 @@ class __TwigTemplate_1781686f24237a2486aaf42298cb720d extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 4
-        yield "<div class=\"container mt-4\">
-    <div class=\"row justify-content-center\">
-        <div class=\"col-md-6\">
+        // line 5
+        yield "\t<div class=\"container mt-4\">
+\t\t<div class=\"row justify-content-center\">
+\t\t\t<div class=\"col-md-6\">
 
-            ";
+\t\t\t\t";
         // line 9
-        yield "            ";
         $context['_parent'] = $context;
         $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 9, $this->source); })()), "flashes", ["success"], "method", false, false, false, 9));
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
             // line 10
-            yield "                <div class=\"alert alert-success\">";
+            yield "\t\t\t\t\t<div class=\"alert alert-success\">";
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["message"], "html", null, true);
             yield "</div>
-            ";
+\t\t\t\t";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['message'], $context['_parent']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 12
         yield "
-            <div class=\"card p-4 shadow\">
-                <div class=\"alert alert-info\">
-                    Recette : <strong>";
-        // line 15
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["recette"]) || array_key_exists("recette", $context) ? $context["recette"] : (function () { throw new RuntimeError('Variable "recette" does not exist.', 15, $this->source); })()), "titre", [], "any", false, false, false, 15), "html", null, true);
+\t\t\t\t<div class=\"card p-4 shadow\">
+\t\t\t\t\t<div class=\"alert alert-info\">
+\t\t\t\t\t\tRecette :
+\t\t\t\t\t\t<strong>";
+        // line 16
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["recette"]) || array_key_exists("recette", $context) ? $context["recette"] : (function () { throw new RuntimeError('Variable "recette" does not exist.', 16, $this->source); })()), "titre", [], "any", false, false, false, 16), "html", null, true);
         yield "</strong>
-                </div>
+\t\t\t\t\t</div>
 
-                <h3 class=\"text-center mb-4\">➕ Ajouter un ingrédient</h3>
+\t\t\t\t\t<h3 class=\"text-center mb-4\">➕ Ajouter un ingrédient</h3>
 
-                ";
-        // line 20
-        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 20, $this->source); })()), 'form_start');
-        yield "
-                <div class=\"mb-3\">";
+\t\t\t\t\t";
         // line 21
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 21, $this->source); })()), "nom", [], "any", false, false, false, 21), 'row');
-        yield "</div>
-                <div class=\"mb-3\">";
+        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 21, $this->source); })()), 'form_start');
+        yield "
+\t\t\t\t\t<div class=\"mb-3\">";
         // line 22
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 22, $this->source); })()), "quantite", [], "any", false, false, false, 22), 'row');
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 22, $this->source); })()), "nom", [], "any", false, false, false, 22), 'row');
         yield "</div>
-                ";
+\t\t\t\t\t<div class=\"mb-3\">";
+        // line 23
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 23, $this->source); })()), "quantite", [], "any", false, false, false, 23), 'row');
+        yield "</div>
+\t\t\t\t\t";
         // line 24
-        yield "                ";
         yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 24, $this->source); })()), "enregistrer", [], "any", false, false, false, 24), 'row');
         yield "
-                ";
+\t\t\t\t\t";
         // line 25
         yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 25, $this->source); })()), 'form_end');
         yield "
 
-                ";
-        // line 28
-        yield "                ";
-        if ((Twig\Extension\CoreExtension::length($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, (isset($context["recette"]) || array_key_exists("recette", $context) ? $context["recette"] : (function () { throw new RuntimeError('Variable "recette" does not exist.', 28, $this->source); })()), "ingredients", [], "any", false, false, false, 28)) > 0)) {
-            // line 29
-            yield "                    <div class=\"mt-4\">
-                        <h6 class=\"fw-bold\">Ingrédients ajoutés :</h6>
-                        <ul class=\"list-group mb-3\">
-                            ";
-            // line 32
+\t\t\t\t\t";
+        // line 27
+        if ((Twig\Extension\CoreExtension::length($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, (isset($context["recette"]) || array_key_exists("recette", $context) ? $context["recette"] : (function () { throw new RuntimeError('Variable "recette" does not exist.', 27, $this->source); })()), "ingredients", [], "any", false, false, false, 27)) > 0)) {
+            // line 28
+            yield "\t\t\t\t\t\t<div class=\"mt-4\">
+\t\t\t\t\t\t\t<h6 class=\"fw-bold\">Ingrédients ajoutés :</h6>
+\t\t\t\t\t\t\t<ul class=\"list-group mb-3\">
+\t\t\t\t\t\t\t\t";
+            // line 31
             $context['_parent'] = $context;
-            $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, (isset($context["recette"]) || array_key_exists("recette", $context) ? $context["recette"] : (function () { throw new RuntimeError('Variable "recette" does not exist.', 32, $this->source); })()), "ingredients", [], "any", false, false, false, 32));
+            $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, (isset($context["recette"]) || array_key_exists("recette", $context) ? $context["recette"] : (function () { throw new RuntimeError('Variable "recette" does not exist.', 31, $this->source); })()), "ingredients", [], "any", false, false, false, 31));
             foreach ($context['_seq'] as $context["_key"] => $context["ingredient"]) {
+                // line 32
+                yield "\t\t\t\t\t\t\t\t\t<li class=\"list-group-item d-flex justify-content-between\">
+\t\t\t\t\t\t\t\t\t\t<span>";
                 // line 33
-                yield "                                <li class=\"list-group-item d-flex justify-content-between\">
-                                    <span>";
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["ingredient"], "nom", [], "any", false, false, false, 33), "html", null, true);
+                yield "</span>
+\t\t\t\t\t\t\t\t\t\t<span class=\"text-muted\">";
                 // line 34
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["ingredient"], "nom", [], "any", false, false, false, 34), "html", null, true);
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["ingredient"], "quantite", [], "any", false, false, false, 34), "html", null, true);
                 yield "</span>
-                                    <span class=\"text-muted\">";
-                // line 35
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["ingredient"], "quantite", [], "any", false, false, false, 35), "html", null, true);
-                yield "</span>
-                                </li>
-                            ";
+\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_key'], $context['ingredient'], $context['_parent']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 38
-            yield "                        </ul>
-                    </div>
-                ";
+            // line 37
+            yield "\t\t\t\t\t\t\t</ul>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t";
         }
-        // line 41
+        // line 40
         yield "
-                ";
-        // line 43
-        yield "                <a href=\"";
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_recette_detail", ["id" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["recette"]) || array_key_exists("recette", $context) ? $context["recette"] : (function () { throw new RuntimeError('Variable "recette" does not exist.', 43, $this->source); })()), "id", [], "any", false, false, false, 43)]), "html", null, true);
-        yield "\"
-                   class=\"btn btn-success w-100 mt-2\">
-                    ✅ Terminer — Voir la recette
-                </a>
+\t\t\t\t\t<a href=\"";
+        // line 41
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_recette_detail", ["id" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["recette"]) || array_key_exists("recette", $context) ? $context["recette"] : (function () { throw new RuntimeError('Variable "recette" does not exist.', 41, $this->source); })()), "id", [], "any", false, false, false, 41)]), "html", null, true);
+        yield "\" class=\"btn btn-success w-100 mt-2\">
+\t\t\t\t\t\t✅ Terminer — Voir la recette
+\t\t\t\t\t</a>
 
-                <a href=\"";
-        // line 48
+\t\t\t\t\t<a href=\"";
+        // line 45
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_recettes");
         yield "\" class=\"btn btn-link mt-2\">← Retour aux recettes</a>
-            </div>
-        </div>
-    </div>
-</div>
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t</div>
+\t</div>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -234,63 +231,61 @@ class __TwigTemplate_1781686f24237a2486aaf42298cb720d extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  200 => 48,  191 => 43,  188 => 41,  183 => 38,  174 => 35,  170 => 34,  167 => 33,  163 => 32,  158 => 29,  155 => 28,  150 => 25,  145 => 24,  141 => 22,  137 => 21,  133 => 20,  125 => 15,  120 => 12,  111 => 10,  106 => 9,  100 => 4,  87 => 3,  64 => 2,  41 => 1,);
+        return array (  197 => 45,  190 => 41,  187 => 40,  182 => 37,  173 => 34,  169 => 33,  166 => 32,  162 => 31,  157 => 28,  155 => 27,  150 => 25,  146 => 24,  142 => 23,  138 => 22,  134 => 21,  126 => 16,  120 => 12,  111 => 10,  107 => 9,  101 => 5,  88 => 4,  64 => 2,  41 => 1,);
     }
 
     public function getSourceContext(): Source
     {
         return new Source("{% extends 'base.html.twig' %}
-{% block title %}Ajouter un ingrédient{% endblock %}
+{% block title %}Ajouter un ingrédient
+{% endblock %}
 {% block body %}
-<div class=\"container mt-4\">
-    <div class=\"row justify-content-center\">
-        <div class=\"col-md-6\">
+\t<div class=\"container mt-4\">
+\t\t<div class=\"row justify-content-center\">
+\t\t\t<div class=\"col-md-6\">
 
-            {# ✅ Flash messages #}
-            {% for message in app.flashes('success') %}
-                <div class=\"alert alert-success\">{{ message }}</div>
-            {% endfor %}
+\t\t\t\t{% for message in app.flashes('success') %}
+\t\t\t\t\t<div class=\"alert alert-success\">{{ message }}</div>
+\t\t\t\t{% endfor %}
 
-            <div class=\"card p-4 shadow\">
-                <div class=\"alert alert-info\">
-                    Recette : <strong>{{ recette.titre }}</strong>
-                </div>
+\t\t\t\t<div class=\"card p-4 shadow\">
+\t\t\t\t\t<div class=\"alert alert-info\">
+\t\t\t\t\t\tRecette :
+\t\t\t\t\t\t<strong>{{ recette.titre }}</strong>
+\t\t\t\t\t</div>
 
-                <h3 class=\"text-center mb-4\">➕ Ajouter un ingrédient</h3>
+\t\t\t\t\t<h3 class=\"text-center mb-4\">➕ Ajouter un ingrédient</h3>
 
-                {{ form_start(form) }}
-                <div class=\"mb-3\">{{ form_row(form.nom) }}</div>
-                <div class=\"mb-3\">{{ form_row(form.quantite) }}</div>
-                {# ✅ Hide recette field — already set automatically #}
-                {{ form_row(form.enregistrer) }}
-                {{ form_end(form) }}
+\t\t\t\t\t{{ form_start(form) }}
+\t\t\t\t\t<div class=\"mb-3\">{{ form_row(form.nom) }}</div>
+\t\t\t\t\t<div class=\"mb-3\">{{ form_row(form.quantite) }}</div>
+\t\t\t\t\t{{ form_row(form.enregistrer) }}
+\t\t\t\t\t{{ form_end(form) }}
 
-                {# ✅ Show ingredients already added #}
-                {% if recette.ingredients|length > 0 %}
-                    <div class=\"mt-4\">
-                        <h6 class=\"fw-bold\">Ingrédients ajoutés :</h6>
-                        <ul class=\"list-group mb-3\">
-                            {% for ingredient in recette.ingredients %}
-                                <li class=\"list-group-item d-flex justify-content-between\">
-                                    <span>{{ ingredient.nom }}</span>
-                                    <span class=\"text-muted\">{{ ingredient.quantite }}</span>
-                                </li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                {% endif %}
+\t\t\t\t\t{% if recette.ingredients|length > 0 %}
+\t\t\t\t\t\t<div class=\"mt-4\">
+\t\t\t\t\t\t\t<h6 class=\"fw-bold\">Ingrédients ajoutés :</h6>
+\t\t\t\t\t\t\t<ul class=\"list-group mb-3\">
+\t\t\t\t\t\t\t\t{% for ingredient in recette.ingredients %}
+\t\t\t\t\t\t\t\t\t<li class=\"list-group-item d-flex justify-content-between\">
+\t\t\t\t\t\t\t\t\t\t<span>{{ ingredient.nom }}</span>
+\t\t\t\t\t\t\t\t\t\t<span class=\"text-muted\">{{ ingredient.quantite }}</span>
+\t\t\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t\t{% endfor %}
+\t\t\t\t\t\t\t</ul>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t{% endif %}
 
-                {# ✅ Terminer button — goes to recipe detail #}
-                <a href=\"{{ path('app_recette_detail', {id: recette.id}) }}\"
-                   class=\"btn btn-success w-100 mt-2\">
-                    ✅ Terminer — Voir la recette
-                </a>
+\t\t\t\t\t<a href=\"{{ path('app_recette_detail', {id: recette.id}) }}\" class=\"btn btn-success w-100 mt-2\">
+\t\t\t\t\t\t✅ Terminer — Voir la recette
+\t\t\t\t\t</a>
 
-                <a href=\"{{ path('app_recettes') }}\" class=\"btn btn-link mt-2\">← Retour aux recettes</a>
-            </div>
-        </div>
-    </div>
-</div>
-{% endblock %}", "ingredient/nouveau.html.twig", "/home/vboxuser/Documents/miniprojet2026-ines_maram/templates/ingredient/nouveau.html.twig");
+\t\t\t\t\t<a href=\"{{ path('app_recettes') }}\" class=\"btn btn-link mt-2\">← Retour aux recettes</a>
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t</div>
+\t</div>
+{% endblock %}
+", "ingredient/nouveau.html.twig", "/home/useradm/miniprojet2026-ines_maram/templates/ingredient/nouveau.html.twig");
     }
 }

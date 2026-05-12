@@ -36,11 +36,9 @@ class RecipeHubStatsCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $io = new SymfonyStyle($input, $output);
-        $io->title('📊 RecipeHub - Statistiques de la Plateforme');
+        $io->title('RecipeHub - Statistiques de la Plateforme');
 
-        // 1. الإحصائيات العامة
         $totalRecettes = $this->recetteRepo->count([]);
-        // افتراضياً: سنعتبر الوصفات التي ليس لها عنوان "برافو" (بإمكانك تعديل المنطق حسب الـ Entity متاعك)
         $totalIngredients = $this->ingredientRepo->count([]);
 
         $io->section('Résumé Global');
@@ -50,7 +48,6 @@ class RecipeHubStatsCommand extends Command
             "Temps de préparation moyen : " . round($this->recetteRepo->createQueryBuilder('r')->select('AVG(r.tempsPreparation)')->getQuery()->getSingleScalarResult()) . " min"
         ]);
 
-        // 2. التوزيع حسب الصعوبة (Répartition par difficulté)
         $io->section('Répartition par Difficulté');
         $diffStats = [];
         for ($i = 1; $i <= 5; $i++) {
@@ -59,7 +56,6 @@ class RecipeHubStatsCommand extends Command
         }
         $io->table(['Difficulté', 'Nombre'], $diffStats);
 
-        // 3. خيار --detail : التوزيع حسب الفئة
         if ($input->getOption('detail')) {
             $io->section('Détail par Catégorie');
             $categories = $this->catRepo->findAll();
@@ -70,7 +66,6 @@ class RecipeHubStatsCommand extends Command
             $io->table(['Catégorie', 'Nombre de Recettes'], $catData);
         }
 
-        // 4. خيار --top=N : أطول الوصفات
         $n = (int) $input->getOption('top');
         $io->section("Top $n des recettes les plus longues (Temps total)");
         $topRecettes = $this->recetteRepo->createQueryBuilder('r')

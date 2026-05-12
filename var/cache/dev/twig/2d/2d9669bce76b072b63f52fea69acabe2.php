@@ -1943,6 +1943,6 @@ class __TwigTemplate_5148c0efaea34a1b9ea144ed44b953a3 extends Template
         </tbody>
     </table>
 {% endmacro %}
-", "@Doctrine/Collector/db.html.twig", "/home/vboxuser/Documents/miniprojet2026-ines_maram/vendor/doctrine/doctrine-bundle/templates/Collector/db.html.twig");
+", "@Doctrine/Collector/db.html.twig", "/home/useradm/miniprojet2026-ines_maram/vendor/doctrine/doctrine-bundle/templates/Collector/db.html.twig");
     }
 }

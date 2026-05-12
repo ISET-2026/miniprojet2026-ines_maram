@@ -73,7 +73,6 @@ class Recette
     #[Groups(['recette:read', 'recette:write'])]
     private ?string $imageName = null;
 
-    // ===================== RELATIONS =====================
 
     #[ORM\ManyToOne(inversedBy: 'recettes')]
     #[ORM\JoinColumn(nullable: false)]
@@ -98,7 +97,6 @@ class Recette
     #[Groups(['recette:read', 'recette:write'])]
     private Collection $tags;
 
-    // ===================== CONSTRUCTOR =====================
 
     public function __construct()
     {
@@ -107,7 +105,6 @@ class Recette
         $this->tags = new ArrayCollection();
     }
 
-    // ===================== GETTERS / SETTERS =====================
 
     public function getId(): ?int { return $this->id; }
 

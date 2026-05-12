@@ -27,7 +27,6 @@ class RegistrationController extends AbstractController
 
         $user = new User();
 
-        // DEFAULT SAFE ROLE
         $user->setRoles(['ROLE_USER']);
         $user->setRoleRequestStatus('NONE');
 
@@ -36,16 +35,13 @@ class RegistrationController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            // PSEUDO
             $user->setPseudo($form->get('pseudo')->getData());
 
-            // PASSWORD HASHING
             $plainPassword = $form->get('plainPassword')->getData();
             $user->setPassword(
                 $userPasswordHasher->hashPassword($user, $plainPassword)
             );
 
-            // ROLE REQUEST
             $requestedRole = $form->get('requestedRole')->getData();
 
             if (!empty($requestedRole)) {
@@ -56,14 +52,11 @@ class RegistrationController extends AbstractController
                 $user->setRoleRequestStatus('NONE');
             }
 
-            // SAVE USER
             $entityManager->persist($user);
             $entityManager->flush();
 
-            // SEND EMAIL
             $mailer->sendWelcomeEmail($user->getEmail());
 
-            // AUTO LOGIN
             return $security->login($user, AppAuthenticator::class, 'main');
         }
 

@@ -625,6 +625,6 @@ class __TwigTemplate_aa6fac65eb00a698cb3adffb11cce7e8 extends Template
         </div>
     {% endif %}
 {% endblock %}
-", "@WebProfiler/Collector/twig.html.twig", "/home/vboxuser/Documents/miniprojet2026-ines_maram/vendor/symfony/web-profiler-bundle/Resources/views/Collector/twig.html.twig");
+", "@WebProfiler/Collector/twig.html.twig", "/home/useradm/miniprojet2026-ines_maram/vendor/symfony/web-profiler-bundle/Resources/views/Collector/twig.html.twig");
     }
 }

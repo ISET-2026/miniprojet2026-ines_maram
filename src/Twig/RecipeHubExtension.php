@@ -58,7 +58,7 @@ public function getStars(string $difficulty): string
         'facile'    => '⭐',
         'moyen'     => '⭐⭐',
         'difficile' => '⭐⭐⭐',
-        default     => '❓'
+        default     => ''
     };
 }
 }

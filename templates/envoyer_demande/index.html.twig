@@ -1,0 +1,84 @@
+{# templates/envoyer_demande/index.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="container mt-5 mb-5">
+		<div class="row justify-content-center">
+			<div class="col-md-6">
+				<div class="card shadow-lg border-0 rounded-4">
+					<div class="card-body p-5">
+						<h3 class="text-center mb-4">Ma Demande de Rôle 📝</h3>
+
+						<div class="alert alert-light border text-center mb-4">
+							<span class="text-muted">Votre rôle actuel :</span>
+							<br>
+							<strong class="text-primary" style="font-size: 1.2rem;">
+
+								{{ app.user.roles[0]|replace({'ROLE_': ''})|capitalize }}
+							</strong>
+						</div>
+
+						<hr>
+
+						{{ form_start(form) }}
+						<div class="mb-4">
+							<label class="form-label fw-bold">Quel rôle souhaitez-vous ?</label>
+							{{ form_label(form.requestedRole) }}
+							{{ form_widget(form.requestedRole, {'attr': {'class': 'form-select p-2'}}) }}
+
+
+							{{ form_errors(form.requestedRole) }}
+						</div>
+
+						<button type="submit" class="btn w-100 py-2" style="background-color: #FFC107; color: black; font-weight: bold; border: none;">
+							Envoyer la demande
+						</button>
+						{{ form_end(form) }}
+						{{ form_errors(form) }}
+
+						{% if app.user.roleRequestStatus == 'PENDING' %}
+							<div class="alert alert-warning border-0 shadow-sm rounded-4 d-flex align-items-center mt-3 p-3">
+								<div class="icon-box me-3">
+									<i class="fas fa-hourglass-half fa-spin fa-2x text-warning"></i>
+								</div>
+								<div>
+									<h6 class="mb-0 fw-bold">Demande en cours</h6>
+									<small>Votre demande est en cours de traitement par l'administrateur.</small>
+								</div>
+							</div>
+
+						{% elseif app.user.roleRequestStatus == 'REJECTED' %}
+							<div class="alert alert-danger border-0 shadow-sm rounded-4 d-flex align-items-center mt-3 p-3">
+								<div class="icon-box me-3">
+									<i class="fas fa-times-circle fa-2x text-danger"></i>
+								</div>
+								<div>
+									<h6 class="mb-0 fw-bold">Demande Refusée</h6>
+									<small>Désolé, votre demande n'a pas été acceptée pour le moment.</small>
+								</div>
+							</div>
+
+						{% elseif app.user.roleRequestStatus == 'APPROVED' %}
+							<div class="alert alert-success border-0 shadow-sm rounded-4 d-flex align-items-center mt-3 p-3">
+								<div class="icon-box me-3">
+									<i class="fas fa-check-circle fa-2x text-success"></i>
+								</div>
+								<div>
+									<h6 class="mb-0 fw-bold">Félicitations !</h6>
+									<small>Votre demande a été approuvée. Vous êtes maintenant Chef !</small>
+								</div>
+							</div>
+
+						{% else %}
+							<div class="text-center mt-3 text-muted">
+								<small>
+									<i class="fas fa-info-circle"></i>
+									Vous n'avez aucune demande en cours.</small>
+							</div>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

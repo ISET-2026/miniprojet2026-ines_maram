@@ -111,6 +111,6 @@ class __TwigTemplate_8f3d3e1246b0141b0818d1e3c9db9457 extends Template
         <link rel=\"next\" href=\"{{ path(route, knp_pagination_query(query, next, options)) }}\">
     {% endif %}
 {% endif %}
-", "@KnpPaginator/Pagination/rel_links.html.twig", "/home/vboxuser/Documents/miniprojet2026-ines_maram/vendor/knplabs/knp-paginator-bundle/templates/Pagination/rel_links.html.twig");
+", "@KnpPaginator/Pagination/rel_links.html.twig", "/home/useradm/miniprojet2026-ines_maram/vendor/knplabs/knp-paginator-bundle/templates/Pagination/rel_links.html.twig");
     }
 }

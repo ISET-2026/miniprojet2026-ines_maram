@@ -51,7 +51,6 @@ final class IngredientController extends AbstractController
             'recette' => $recette,
         ]);
     }
-    // ✅ supprimer is INSIDE the class now
     #[Route('/recettes/{id}/supprimer', name: 'app_ingredient_supprimer', requirements: ['id' => '\d+'], methods: ['POST'])]
     public function supprimer(Recette $recette, Request $request, EntityManagerInterface $em): Response
     {
@@ -65,4 +64,4 @@ final class IngredientController extends AbstractController
 
         return $this->redirectToRoute('app_recettes');
     }
-} // ✅ single closing brace for the class
+} 

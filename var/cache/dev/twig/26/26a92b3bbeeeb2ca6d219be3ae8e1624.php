@@ -505,6 +505,6 @@ class __TwigTemplate_a1222289035d7203128e96359b3e2638 extends Template
     {%- set widget_class = widget_class|default('mr-2') -%}
     {{- parent() -}}
 {%- endblock radio_widget -%}
-", "tailwind_2_layout.html.twig", "/home/vboxuser/Documents/miniprojet2026-ines_maram/vendor/symfony/twig-bridge/Resources/views/Form/tailwind_2_layout.html.twig");
+", "tailwind_2_layout.html.twig", "/home/useradm/miniprojet2026-ines_maram/vendor/symfony/twig-bridge/Resources/views/Form/tailwind_2_layout.html.twig");
     }
 }

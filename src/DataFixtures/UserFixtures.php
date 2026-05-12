@@ -15,7 +15,6 @@ class UserFixtures extends Fixture
     {
         $faker = Factory::create('fr_FR');
 
-        // 1. Admin
         $admin = new User();
         $admin->setEmail('admin@recipehub.com')
               ->setRoles(['ROLE_ADMIN'])
@@ -24,7 +23,6 @@ class UserFixtures extends Fixture
         $manager->persist($admin);
         
 
-        // 2. Cuisinier
         $chef = new User();
         $chef->setEmail('chef@recipehub.com')
              ->setRoles(['ROLE_CUISINIER'])
@@ -32,7 +30,6 @@ class UserFixtures extends Fixture
              ->setPassword($this->hasher->hashPassword($chef, 'chef123'));
         $manager->persist($chef);
 
-        // 3. 5 Users Faker
         for ($i = 0; $i < 5; $i++) {
             $user = new User();
             $user->setEmail($faker->email)

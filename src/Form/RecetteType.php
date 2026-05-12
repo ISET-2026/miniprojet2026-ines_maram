@@ -54,7 +54,7 @@ class RecetteType extends AbstractType
                         ])
                 ->add('tempsCuisson', IntegerType::class, [
             'label' => 'Temps de cuisson',
-            'required' => false, // ← was blocking submission if left empty
+            'required' => false, 
             'attr' => [
                 'placeholder' => 'tempsCuisson',
                 'class' => 'form-control',
@@ -123,7 +123,7 @@ class RecetteType extends AbstractType
     {
         $resolver->setDefaults([
         'data_class' => Recette::class,
-        'allow_extra_fields' => true, // ✅ stops the "extra field: recette" error
+        'allow_extra_fields' => true, 
     ]);
     }
 }

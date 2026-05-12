@@ -73,7 +73,8 @@ class __TwigTemplate_d8eaabf292b8c4d08a5ec59291d50fcf extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        yield "Role Requests";
+        yield "Role Requests
+";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -83,7 +84,7 @@ class __TwigTemplate_d8eaabf292b8c4d08a5ec59291d50fcf extends Template
         yield from [];
     }
 
-    // line 5
+    // line 6
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -96,122 +97,120 @@ class __TwigTemplate_d8eaabf292b8c4d08a5ec59291d50fcf extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
+        // line 7
         yield "
-<div class=\"container mt-5\">
+\t<div class=\"container mt-5\">
 
-    <h2 class=\"mb-4\">Pending Role Requests</h2>
+\t\t<h2 class=\"mb-4\">Pending Role Requests</h2>
 
-    ";
-        // line 11
+\t\t";
+        // line 12
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 11, $this->source); })()), "flashes", ["success"], "method", false, false, false, 11));
+        $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 12, $this->source); })()), "flashes", ["success"], "method", false, false, false, 12));
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-            // line 12
-            yield "        <div class=\"alert alert-success\">";
+            // line 13
+            yield "\t\t\t<div class=\"alert alert-success\">";
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["message"], "html", null, true);
             yield "</div>
-    ";
+\t\t";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['message'], $context['_parent']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 14
-        yield "
-    ";
         // line 15
+        yield "
+\t\t";
+        // line 16
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 15, $this->source); })()), "flashes", ["error"], "method", false, false, false, 15));
+        $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 16, $this->source); })()), "flashes", ["error"], "method", false, false, false, 16));
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-            // line 16
-            yield "        <div class=\"alert alert-danger\">";
+            // line 17
+            yield "\t\t\t<div class=\"alert alert-danger\">";
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["message"], "html", null, true);
             yield "</div>
-    ";
+\t\t";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['message'], $context['_parent']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 18
-        yield "
-    ";
         // line 19
+        yield "
+\t\t";
+        // line 20
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 19, $this->source); })()), "flashes", ["warning"], "method", false, false, false, 19));
+        $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 20, $this->source); })()), "flashes", ["warning"], "method", false, false, false, 20));
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-            // line 20
-            yield "        <div class=\"alert alert-warning\">";
+            // line 21
+            yield "\t\t\t<div class=\"alert alert-warning\">";
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["message"], "html", null, true);
             yield "</div>
-    ";
+\t\t";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['message'], $context['_parent']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 22
+        // line 23
         yield "
-    <table class=\"table table-bordered table-striped\">
+\t\t<table class=\"table table-bordered table-striped\">
 
-        <thead>
-            <tr>
-                <th>User</th>
-                <th>Email</th>
-                <th>Requested Role</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
+\t\t\t<thead>
+\t\t\t\t<tr>
+\t\t\t\t\t<th>User</th>
+\t\t\t\t\t<th>Email</th>
+\t\t\t\t\t<th>Requested Role</th>
+\t\t\t\t\t<th>Actions</th>
+\t\t\t\t</tr>
+\t\t\t</thead>
 
-        <tbody>
-        ";
-        // line 35
+\t\t\t<tbody>
+\t\t\t\t";
+        // line 36
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 35, $this->source); })()));
+        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 36, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
-            // line 36
-            yield "            <tr>
-                <td>";
             // line 37
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["user"], "pseudo", [], "any", false, false, false, 37), "html", null, true);
-            yield "</td>
-                <td>";
+            yield "\t\t\t\t\t<tr>
+\t\t\t\t\t\t<td>";
             // line 38
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["user"], "email", [], "any", false, false, false, 38), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["user"], "pseudo", [], "any", false, false, false, 38), "html", null, true);
             yield "</td>
-                <td>";
+\t\t\t\t\t\t<td>";
             // line 39
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["user"], "requestedRole", [], "any", false, false, false, 39), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["user"], "email", [], "any", false, false, false, 39), "html", null, true);
             yield "</td>
-                <td>
+\t\t\t\t\t\t<td>";
+            // line 40
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["user"], "requestedRole", [], "any", false, false, false, 40), "html", null, true);
+            yield "</td>
+\t\t\t\t\t\t<td>
 
-                    <a href=\"";
-            // line 42
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_role_request_approve", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 42)]), "html", null, true);
-            yield "\"
-                       class=\"btn btn-success btn-sm\">
-                        Approve
-                    </a>
+\t\t\t\t\t\t\t<a href=\"";
+            // line 43
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_role_request_approve", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 43)]), "html", null, true);
+            yield "\" class=\"btn btn-success btn-sm\">
+\t\t\t\t\t\t\t\tApprove
+\t\t\t\t\t\t\t</a>
 
-                    <a href=\"";
+\t\t\t\t\t\t\t<a href=\"";
             // line 47
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_role_request_reject", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 47)]), "html", null, true);
-            yield "\"
-                       class=\"btn btn-danger btn-sm\">
-                        Reject
-                    </a>
+            yield "\" class=\"btn btn-danger btn-sm\">
+\t\t\t\t\t\t\t\tReject
+\t\t\t\t\t\t\t</a>
 
-                </td>
-            </tr>
-        ";
+\t\t\t\t\t\t</td>
+\t\t\t\t\t</tr>
+\t\t\t\t";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['user'], $context['_parent']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 55
-        yield "        </tbody>
+        // line 54
+        yield "\t\t\t</tbody>
 
-    </table>
+\t\t</table>
 
-</div>
+\t</div>
 
 ";
         
@@ -244,71 +243,71 @@ class __TwigTemplate_d8eaabf292b8c4d08a5ec59291d50fcf extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  210 => 55,  196 => 47,  188 => 42,  182 => 39,  178 => 38,  174 => 37,  171 => 36,  167 => 35,  152 => 22,  143 => 20,  139 => 19,  136 => 18,  127 => 16,  123 => 15,  120 => 14,  111 => 12,  107 => 11,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  209 => 54,  196 => 47,  189 => 43,  183 => 40,  179 => 39,  175 => 38,  172 => 37,  168 => 36,  153 => 23,  144 => 21,  140 => 20,  137 => 19,  128 => 17,  124 => 16,  121 => 15,  112 => 13,  108 => 12,  101 => 7,  88 => 6,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Role Requests{% endblock %}
+{% block title %}Role Requests
+{% endblock %}
 
 {% block body %}
 
-<div class=\"container mt-5\">
+\t<div class=\"container mt-5\">
 
-    <h2 class=\"mb-4\">Pending Role Requests</h2>
+\t\t<h2 class=\"mb-4\">Pending Role Requests</h2>
 
-    {% for message in app.flashes('success') %}
-        <div class=\"alert alert-success\">{{ message }}</div>
-    {% endfor %}
+\t\t{% for message in app.flashes('success') %}
+\t\t\t<div class=\"alert alert-success\">{{ message }}</div>
+\t\t{% endfor %}
 
-    {% for message in app.flashes('error') %}
-        <div class=\"alert alert-danger\">{{ message }}</div>
-    {% endfor %}
+\t\t{% for message in app.flashes('error') %}
+\t\t\t<div class=\"alert alert-danger\">{{ message }}</div>
+\t\t{% endfor %}
 
-    {% for message in app.flashes('warning') %}
-        <div class=\"alert alert-warning\">{{ message }}</div>
-    {% endfor %}
+\t\t{% for message in app.flashes('warning') %}
+\t\t\t<div class=\"alert alert-warning\">{{ message }}</div>
+\t\t{% endfor %}
 
-    <table class=\"table table-bordered table-striped\">
+\t\t<table class=\"table table-bordered table-striped\">
 
-        <thead>
-            <tr>
-                <th>User</th>
-                <th>Email</th>
-                <th>Requested Role</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
+\t\t\t<thead>
+\t\t\t\t<tr>
+\t\t\t\t\t<th>User</th>
+\t\t\t\t\t<th>Email</th>
+\t\t\t\t\t<th>Requested Role</th>
+\t\t\t\t\t<th>Actions</th>
+\t\t\t\t</tr>
+\t\t\t</thead>
 
-        <tbody>
-        {% for user in users %}
-            <tr>
-                <td>{{ user.pseudo }}</td>
-                <td>{{ user.email }}</td>
-                <td>{{ user.requestedRole }}</td>
-                <td>
+\t\t\t<tbody>
+\t\t\t\t{% for user in users %}
+\t\t\t\t\t<tr>
+\t\t\t\t\t\t<td>{{ user.pseudo }}</td>
+\t\t\t\t\t\t<td>{{ user.email }}</td>
+\t\t\t\t\t\t<td>{{ user.requestedRole }}</td>
+\t\t\t\t\t\t<td>
 
-                    <a href=\"{{ path('admin_role_request_approve', {id: user.id}) }}\"
-                       class=\"btn btn-success btn-sm\">
-                        Approve
-                    </a>
+\t\t\t\t\t\t\t<a href=\"{{ path('admin_role_request_approve', {id: user.id}) }}\" class=\"btn btn-success btn-sm\">
+\t\t\t\t\t\t\t\tApprove
+\t\t\t\t\t\t\t</a>
 
-                    <a href=\"{{ path('admin_role_request_reject', {id: user.id}) }}\"
-                       class=\"btn btn-danger btn-sm\">
-                        Reject
-                    </a>
+\t\t\t\t\t\t\t<a href=\"{{ path('admin_role_request_reject', {id: user.id}) }}\" class=\"btn btn-danger btn-sm\">
+\t\t\t\t\t\t\t\tReject
+\t\t\t\t\t\t\t</a>
 
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
+\t\t\t\t\t\t</td>
+\t\t\t\t\t</tr>
+\t\t\t\t{% endfor %}
+\t\t\t</tbody>
 
-    </table>
+\t\t</table>
 
-</div>
+\t</div>
 
-{% endblock %}", "adminRequests/index.html.twig", "/home/vboxuser/Documents/miniprojet2026-ines_maram/templates/adminRequests/index.html.twig");
+{% endblock %}
+", "adminRequests/index.html.twig", "/home/useradm/miniprojet2026-ines_maram/templates/adminRequests/index.html.twig");
     }
 }

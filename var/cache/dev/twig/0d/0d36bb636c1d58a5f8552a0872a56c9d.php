@@ -216,6 +216,6 @@ class __TwigTemplate_3527b9399b1d5ff7a4078f6d9c0f6a9e extends Template
         </div>
     </div>
 {% endif %}
-", "@KnpPaginator/Pagination/tailwindcss_pagination.html.twig", "/home/vboxuser/Documents/miniprojet2026-ines_maram/vendor/knplabs/knp-paginator-bundle/templates/Pagination/tailwindcss_pagination.html.twig");
+", "@KnpPaginator/Pagination/tailwindcss_pagination.html.twig", "/home/useradm/miniprojet2026-ines_maram/vendor/knplabs/knp-paginator-bundle/templates/Pagination/tailwindcss_pagination.html.twig");
     }
 }

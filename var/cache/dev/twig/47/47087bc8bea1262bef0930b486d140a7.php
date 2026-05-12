@@ -300,6 +300,6 @@ class __TwigTemplate_a6cea0be96c59b05064d14f0dcb8a539 extends Template
         {% endif %}
     </ul>
 {% endif %}
-", "@KnpPaginator/Pagination/materialize_pagination.html.twig", "/home/vboxuser/Documents/miniprojet2026-ines_maram/vendor/knplabs/knp-paginator-bundle/templates/Pagination/materialize_pagination.html.twig");
+", "@KnpPaginator/Pagination/materialize_pagination.html.twig", "/home/useradm/miniprojet2026-ines_maram/vendor/knplabs/knp-paginator-bundle/templates/Pagination/materialize_pagination.html.twig");
     }
 }

@@ -316,6 +316,6 @@ class __TwigTemplate_9953ab403050576315b57374cdd61080 extends Template
         {{- form_rest(form) -}}
     </table>
 {%- endblock form_widget_compound -%}
-", "form_table_layout.html.twig", "/home/vboxuser/Documents/miniprojet2026-ines_maram/vendor/symfony/twig-bridge/Resources/views/Form/form_table_layout.html.twig");
+", "form_table_layout.html.twig", "/home/useradm/miniprojet2026-ines_maram/vendor/symfony/twig-bridge/Resources/views/Form/form_table_layout.html.twig");
     }
 }

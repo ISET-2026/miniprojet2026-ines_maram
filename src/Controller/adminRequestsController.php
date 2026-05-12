@@ -9,12 +9,17 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Security\Http\Attribute\IsGranted;
 
-#[IsGranted('ROLE_ADMIN')]
+
 class adminRequestsController extends AbstractController
 {
+    
     #[Route('requests', name: 'admin_role_requests')]
     public function index(UserRepository $userRepository): Response
     {
+         if  (!$this->isGranted('ROLE_ADMIN')) {
+      
+        return $this->redirectToRoute('app_accueil');
+    }
         $users = $userRepository->findBy([
             'roleRequestStatus' => 'PENDING'
         ]);
@@ -29,8 +34,11 @@ class adminRequestsController extends AbstractController
         int $id,
         UserRepository $userRepository,
         EntityManagerInterface $entityManager,
-        MailerService $mailer  // ✅ inject mailer
+        MailerService $mailer  
     ): Response {
+           if  (!$this->isGranted('ROLE_ADMIN')) {
+        return $this->redirectToRoute('app_accueil');
+    }
         $user = $userRepository->find($id);
 
         if (!$user || !$user->getRequestedRole()) {
@@ -40,16 +48,14 @@ class adminRequestsController extends AbstractController
 
         $requestedRole = $user->getRequestedRole();
 
-        // Add role
-        $roles = $user->getRoles();
-        $roles[] = $requestedRole;
-        $user->setRoles(array_unique($roles));
+     
+       
+     $user->setRoles([ $requestedRole]);
         $user->setRoleRequestStatus('APPROVED');
         $user->setRequestedRole(null);
 
         $entityManager->flush();
 
-        // ✅ Send approval email
         $mailer->sendRoleApprovedEmail($user->getEmail(), $requestedRole);
 
         $this->addFlash('success', 'Role approved and email sent.');
@@ -61,8 +67,11 @@ class adminRequestsController extends AbstractController
         int $id,
         UserRepository $userRepository,
         EntityManagerInterface $entityManager,
-        MailerService $mailer  // ✅ inject mailer
+        MailerService $mailer  
     ): Response {
+           if  (!$this->isGranted('ROLE_ADMIN')) {
+        return $this->redirectToRoute('app_accueil');
+    }
         $user = $userRepository->find($id);
 
         if (!$user) {
@@ -71,11 +80,11 @@ class adminRequestsController extends AbstractController
         }
 
         $user->setRoleRequestStatus('REJECTED');
+  
         $user->setRequestedRole(null);
-
+          
         $entityManager->flush();
 
-        // ✅ Send rejection email
         $mailer->sendRoleRejectedEmail($user->getEmail());
 
         $this->addFlash('warning', 'Role request rejected and email sent.');

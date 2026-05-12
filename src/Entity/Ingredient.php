@@ -23,7 +23,7 @@ class Ingredient
     private ?string $quantite = null;
 
     #[ORM\ManyToOne(inversedBy: 'ingredients')]
-    #[ORM\JoinColumn(nullable: true)]   // ✅
+    #[ORM\JoinColumn(nullable: true)]   
     private ?Recette $recette = null;
 
     public function getId(): ?int

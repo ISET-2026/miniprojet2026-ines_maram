@@ -20,6 +20,7 @@ return [
         '/tagrecette' => [[['_route' => 'app_tag_recette', '_controller' => 'App\\Controller\\TagRecettecontrollerController::index'], null, null, null, false, false, null]],
         '/tagrecette/nouvelle' => [[['_route' => 'app_tagrecettes_nouvelle', '_controller' => 'App\\Controller\\TagRecettecontrollerController::nouvelle'], null, null, null, false, false, null]],
         '/requests' => [[['_route' => 'admin_role_requests', '_controller' => 'App\\Controller\\adminRequestsController::index'], null, null, null, false, false, null]],
+        '/envoyerdemande' => [[['_route' => 'app_envoyer', '_controller' => 'App\\Controller\\envoyerdemlandecontroller::envoyer'], null, null, null, false, false, null]],
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\loginController::login'], null, null, null, false, false, null]],
         '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\loginController::logout'], null, null, null, false, false, null]],
         '/addRecette' => [[['_route' => 'addRecette', '_controller' => 'App\\Controller\\newRecetteController::index'], null, null, null, true, false, null]],

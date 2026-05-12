@@ -74,7 +74,8 @@ class __TwigTemplate_496252487ba14650cedbeb9bed075534 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        yield "Home";
+        yield "Home
+";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -84,7 +85,7 @@ class __TwigTemplate_496252487ba14650cedbeb9bed075534 extends Template
         yield from [];
     }
 
-    // line 5
+    // line 6
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -97,459 +98,442 @@ class __TwigTemplate_496252487ba14650cedbeb9bed075534 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
-        yield "
-    ";
         // line 7
-        yield from $this->load("partials/navbar.html.twig", 7)->unwrap()->yield($context);
-        // line 8
         yield "
-    <!-- Preloader -->
-    <div class=\"loader\">
-        <div class=\"d-table\">
-            <div class=\"d-table-cell\">
-                <div class=\"spinner\"></div>
-            </div>
-        </div>
-    </div>
-    <!-- End Preloader -->
+\t";
+        // line 8
+        yield from $this->load("partials/navbar.html.twig", 8)->unwrap()->yield($context);
+        // line 9
+        yield "
 
-    <!-- Banner -->
-    <div class=\"banner-area\">
-        <div class=\"banner-shape\">
-            <img src=\"";
+\t<div class=\"loader\">
+\t\t<div class=\"d-table\">
+\t\t\t<div class=\"d-table-cell\">
+\t\t\t\t<div class=\"spinner\"></div>
+\t\t\t</div>
+\t\t</div>
+\t</div>
+
+
+\t<div class=\"banner-area\">
+\t\t<div class=\"banner-shape\">
+\t\t\t<img src=\"";
         // line 22
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/home-one/banner/shape1.png"), "html", null, true);
         yield "\" alt=\"Shape\">
-            <img src=\"";
+\t\t\t<img src=\"";
         // line 23
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/home-one/banner/shape2.png"), "html", null, true);
         yield "\" alt=\"Shape\">
-            <img src=\"";
+\t\t\t<img src=\"";
         // line 24
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/home-one/banner/shape3.png"), "html", null, true);
         yield "\" alt=\"Shape\">
-            <img src=\"";
+\t\t\t<img src=\"";
         // line 25
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/home-one/banner/banner-shape.png"), "html", null, true);
         yield "\" alt=\"Shape\">
-        </div>
+\t\t</div>
 
-        <div class=\"d-table\">
-            <div class=\"d-table-cell\">
-                <div class=\"container\">
-                    <div class=\"row align-items-center justify-content-center\">
+\t\t<div class=\"d-table\">
+\t\t\t<div class=\"d-table-cell\">
+\t\t\t\t<div class=\"container\">
+\t\t\t\t\t<div class=\"row align-items-center justify-content-center\">
 
-                        <div class=\"col-lg-6\">
-                            <div class=\"banner-content\">
-                                <h1>Discover & Share Delicious Recipes Online</h1>
+\t\t\t\t\t\t<div class=\"col-lg-6\">
+\t\t\t\t\t\t\t<div class=\"banner-content\">
+\t\t\t\t\t\t\t\t<h1>Discover & Share Delicious Recipes Online</h1>
 
-                                <p>
-                                    Find, cook, and enjoy delicious meals with simple instructions and ingredients.
-                                </p>
+\t\t\t\t\t\t\t\t<p>
+\t\t\t\t\t\t\t\t\tFind, cook, and enjoy delicious meals with simple instructions and ingredients.
+\t\t\t\t\t\t\t\t</p>
 
-                                <form>
-                                    <input type=\"text\"
-                                        class=\"form-control\"
-                                        placeholder=\"Enter food name\">
+\t\t\t\t\t\t\t\t<form>
+\t\t\t\t\t\t\t\t\t<input type=\"text\" class=\"form-control\" placeholder=\"Enter food name\">
 
-                                    <button type=\"submit\"
-                                            class=\"btn banner-form-btn\">
-                                        Search Now
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
+\t\t\t\t\t\t\t\t\t<button type=\"submit\" class=\"btn banner-form-btn\">
+\t\t\t\t\t\t\t\t\t\tSearch Now
+\t\t\t\t\t\t\t\t\t</button>
+\t\t\t\t\t\t\t\t</form>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
 
-                        <div class=\"col-lg-6\">
-                            <div class=\"banner-slider owl-theme owl-carousel\">
+\t\t\t\t\t\t<div class=\"col-lg-6\">
+\t\t\t\t\t\t\t<div class=\"banner-slider owl-theme owl-carousel\">
 
-                                <div class=\"slider-item\">
-                                    <img src=\"";
-        // line 58
+\t\t\t\t\t\t\t\t<div class=\"slider-item\">
+\t\t\t\t\t\t\t\t\t<img src=\"";
+        // line 55
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/home-one/banner/banner-slider1.png"), "html", null, true);
         yield "\" alt=\"Slider\">
-                                </div>
+\t\t\t\t\t\t\t\t</div>
 
-                                <div class=\"slider-item\">
-                                    <img src=\"";
-        // line 62
+\t\t\t\t\t\t\t\t<div class=\"slider-item\">
+\t\t\t\t\t\t\t\t\t<img src=\"";
+        // line 59
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/home-one/banner/banner-slider2.png"), "html", null, true);
         yield "\" alt=\"Slider\">
-                                </div>
+\t\t\t\t\t\t\t\t</div>
 
-                                <div class=\"slider-item\">
-                                    <img src=\"";
-        // line 66
+\t\t\t\t\t\t\t\t<div class=\"slider-item\">
+\t\t\t\t\t\t\t\t\t<img src=\"";
+        // line 63
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/home-one/banner/banner-slider3.png"), "html", null, true);
         yield "\" alt=\"Slider\">
-                                </div>
+\t\t\t\t\t\t\t\t</div>
 
-                            </div>
-                        </div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Banner -->
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t</div>
+\t</div>
 
-    <!-- Feature -->
-    <section class=\"feature-area pb-70\">
-        <div class=\"container\">
+\t<section class=\"feature-area pb-70\">
+\t\t<div class=\"container\">
 
-            <div class=\"section-title\">
-                <h2>Featured Categories</h2>
-                <p>Explore a variety of recipe categories and find the perfect meal for every occasion..</p>
-            </div>
+\t\t\t<div class=\"section-title\">
+\t\t\t\t<h2>Featured Categories</h2>
+\t\t\t\t<p>Explore a variety of recipe categories and find the perfect meal for every occasion..</p>
+\t\t\t</div>
 
-            <div class=\"row justify-content-center\">
+\t\t\t<div class=\"row justify-content-center\">
 
-                <div class=\"col-sm-6 col-lg-4\">
-                    <div class=\"feature-item\">
+\t\t\t\t<div class=\"col-sm-6 col-lg-4\">
+\t\t\t\t\t<div class=\"feature-item\">
 
-                        <img src=\"";
-        // line 93
+\t\t\t\t\t\t<img src=\"";
+        // line 88
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/home-one/feature1.jpg"), "html", null, true);
         yield "\" alt=\"Feature\">
 
-                        <div class=\"feature-inner\">
-                            <ul>
+\t\t\t\t\t\t<div class=\"feature-inner\">
+\t\t\t\t\t\t\t<ul>
 
-                                <li>
-                                    <img src=\"";
-        // line 99
+\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t<img src=\"";
+        // line 94
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/home-one/feature1.png"), "html", null, true);
         yield "\" alt=\"Feature\">
-                                </li>
+\t\t\t\t\t\t\t\t</li>
 
-                                <li>
-                                    <span>Fast Food</span>
-                                </li>
+\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t<span>Fast Food</span>
+\t\t\t\t\t\t\t\t</li>
 
-                                <li>
-                                    <a href=\"#\">
-                                        <i class='bx bx-right-arrow-alt'></i>
-                                    </a>
-                                </li>
+\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t<a href=\"#\">
+\t\t\t\t\t\t\t\t\t\t<i class='bx bx-right-arrow-alt'></i>
+\t\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t</li>
 
-                            </ul>
-                        </div>
+\t\t\t\t\t\t\t</ul>
+\t\t\t\t\t\t</div>
 
-                    </div>
-                </div>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
 
-                <div class=\"col-sm-6 col-lg-4\">
-                    <div class=\"feature-item\">
+\t\t\t\t<div class=\"col-sm-6 col-lg-4\">
+\t\t\t\t\t<div class=\"feature-item\">
 
-                        <img src=\"";
-        // line 121
+\t\t\t\t\t\t<img src=\"";
+        // line 116
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/home-one/feature2.jpg"), "html", null, true);
         yield "\" alt=\"Feature\">
 
-                        <div class=\"feature-inner\">
-                            <ul>
+\t\t\t\t\t\t<div class=\"feature-inner\">
+\t\t\t\t\t\t\t<ul>
 
-                                <li>
-                                    <img src=\"";
-        // line 127
+\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t<img src=\"";
+        // line 122
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/home-one/feature2.png"), "html", null, true);
         yield "\" alt=\"Feature\">
-                                </li>
+\t\t\t\t\t\t\t\t</li>
 
-                                <li>
-                                    <span>Hot Platter</span>
-                                </li>
+\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t<span>Hot Platter</span>
+\t\t\t\t\t\t\t\t</li>
 
-                                <li>
-                                    <a href=\"#\">
-                                        <i class='bx bx-right-arrow-alt'></i>
-                                    </a>
-                                </li>
+\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t<a href=\"#\">
+\t\t\t\t\t\t\t\t\t\t<i class='bx bx-right-arrow-alt'></i>
+\t\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t</li>
 
-                            </ul>
-                        </div>
+\t\t\t\t\t\t\t</ul>
+\t\t\t\t\t\t</div>
 
-                    </div>
-                </div>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
 
-                <div class=\"col-sm-6 col-lg-4\">
-                    <div class=\"feature-item\">
+\t\t\t\t<div class=\"col-sm-6 col-lg-4\">
+\t\t\t\t\t<div class=\"feature-item\">
 
-                        <img src=\"";
-        // line 149
+\t\t\t\t\t\t<img src=\"";
+        // line 144
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/home-one/feature3.jpg"), "html", null, true);
         yield "\" alt=\"Feature\">
 
-                        <div class=\"feature-inner\">
-                            <ul>
+\t\t\t\t\t\t<div class=\"feature-inner\">
+\t\t\t\t\t\t\t<ul>
 
-                                <li>
-                                    <img src=\"";
-        // line 155
+\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t<img src=\"";
+        // line 150
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/home-one/feature3.png"), "html", null, true);
         yield "\" alt=\"Feature\">
-                                </li>
+\t\t\t\t\t\t\t\t</li>
 
-                                <li>
-                                    <span>Dessert</span>
-                                </li>
+\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t<span>Dessert</span>
+\t\t\t\t\t\t\t\t</li>
 
-                                <li>
-                                    <a href=\"#\">
-                                        <i class='bx bx-right-arrow-alt'></i>
-                                    </a>
-                                </li>
+\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t<a href=\"#\">
+\t\t\t\t\t\t\t\t\t\t<i class='bx bx-right-arrow-alt'></i>
+\t\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t</li>
 
-                            </ul>
-                        </div>
+\t\t\t\t\t\t\t</ul>
+\t\t\t\t\t\t</div>
 
-                    </div>
-                </div>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
 
-            <a href=\"";
-        // line 174
+\t\t\t\t<a href=\"";
+        // line 169
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_categories");
         yield "\" class=\"see-more-link\">
-            See all categories <span>→</span>
-            </a>
+\t\t\t\t\tSee all categories
+\t\t\t\t\t<span>→</span>
+\t\t\t\t</a>
 
-            </div>
-            
-        </div>
-        
-        
+\t\t\t</div>
 
-    </section>
-    <!-- End Feature -->
-        <!-- Review -->
-    <div class=\"review-area\">
-        <div class=\"container-fluid p-0\">
-            <div class=\"row m-0 align-items-center justify-content-center\">
+\t\t</div>
 
-                <div class=\"col-lg-6 p-0\">
-                    <div class=\"review-img\">
-                        <img src=\"";
-        // line 193
+
+\t</section>
+
+\t<div class=\"review-area\">
+\t\t<div class=\"container-fluid p-0\">
+\t\t\t<div class=\"row m-0 align-items-center justify-content-center\">
+
+\t\t\t\t<div class=\"col-lg-6 p-0\">
+\t\t\t\t\t<div class=\"review-img\">
+\t\t\t\t\t\t<img src=\"";
+        // line 187
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/home-one/review1.png"), "html", null, true);
         yield "\" alt=\"Review\">
-                        <img src=\"";
-        // line 194
+\t\t\t\t\t\t<img src=\"";
+        // line 188
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/home-one/review2.png"), "html", null, true);
         yield "\" alt=\"Review\">
-                    </div>
-                </div>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
 
-                <div class=\"col-lg-6 p-0\">
-                    <div class=\"review-item\">
+\t\t\t\t<div class=\"col-lg-6 p-0\">
+\t\t\t\t\t<div class=\"review-item\">
 
-                        <div class=\"section-title\">
-                            <h2>What People Say About Us</h2>
-                            <p>Read honest feedback from our users who love cooking with our recipes.</p>
-                        </div>
+\t\t\t\t\t\t<div class=\"section-title\">
+\t\t\t\t\t\t\t<h2>What People Say About Us</h2>
+\t\t\t\t\t\t\t<p>Read honest feedback from our users who love cooking with our recipes.</p>
+\t\t\t\t\t\t</div>
 
-                        <div class=\"slider-nav\">
+\t\t\t\t\t\t<div class=\"slider-nav\">
 
-                            <div class=\"item\">
-                                <img src=\"";
-        // line 209
+\t\t\t\t\t\t\t<div class=\"item\">
+\t\t\t\t\t\t\t\t<img src=\"";
+        // line 203
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/home-one/review3.png"), "html", null, true);
         yield "\" alt=\"Review\">
-                            </div>
+\t\t\t\t\t\t\t</div>
 
-                            <div class=\"item\">
-                                <img src=\"";
-        // line 213
+\t\t\t\t\t\t\t<div class=\"item\">
+\t\t\t\t\t\t\t\t<img src=\"";
+        // line 207
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/home-one/review4.png"), "html", null, true);
         yield "\" alt=\"Review\">
-                            </div>
+\t\t\t\t\t\t\t</div>
 
-                            <div class=\"item\">
-                                <img src=\"";
-        // line 217
+\t\t\t\t\t\t\t<div class=\"item\">
+\t\t\t\t\t\t\t\t<img src=\"";
+        // line 211
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/home-one/review5.png"), "html", null, true);
         yield "\" alt=\"Review\">
-                            </div>
+\t\t\t\t\t\t\t</div>
 
-                        </div>
+\t\t\t\t\t\t</div>
 
-                        <div class=\"slider-for\">
+\t\t\t\t\t\t<div class=\"slider-for\">
 
-                            <div class=\"item\">
-                                <h3>John Doe</h3>
-                                <p>
-                                    Restaurants range from inexpensive and informal dining places.
-                                </p>
-                            </div>
+\t\t\t\t\t\t\t<div class=\"item\">
+\t\t\t\t\t\t\t\t<h3>John Doe</h3>
+\t\t\t\t\t\t\t\t<p>
+\t\t\t\t\t\t\t\t\tRestaurants range from inexpensive and informal dining places.
+\t\t\t\t\t\t\t\t</p>
+\t\t\t\t\t\t\t</div>
 
-                            <div class=\"item\">
-                                <h3>Jac Jackson</h3>
-                                <p>
-                                    Restaurants range from inexpensive and informal dining places.
-                                </p>
-                            </div>
+\t\t\t\t\t\t\t<div class=\"item\">
+\t\t\t\t\t\t\t\t<h3>Jac Jackson</h3>
+\t\t\t\t\t\t\t\t<p>
+\t\t\t\t\t\t\t\t\tRestaurants range from inexpensive and informal dining places.
+\t\t\t\t\t\t\t\t</p>
+\t\t\t\t\t\t\t</div>
 
-                            <div class=\"item\">
-                                <h3>Tom Henry</h3>
-                                <p>
-                                    Restaurants range from inexpensive and informal dining places.
-                                </p>
-                            </div>
+\t\t\t\t\t\t\t<div class=\"item\">
+\t\t\t\t\t\t\t\t<h3>Tom Henry</h3>
+\t\t\t\t\t\t\t\t<p>
+\t\t\t\t\t\t\t\t\tRestaurants range from inexpensive and informal dining places.
+\t\t\t\t\t\t\t\t</p>
+\t\t\t\t\t\t\t</div>
 
-                        </div>
+\t\t\t\t\t\t</div>
 
-                    </div>
-                </div>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
 
-            </div>
-        </div>
-    </div>
-    <!-- End Review -->
+\t\t\t</div>
+\t\t</div>
+\t</div>
 
-    <!-- Blog -->
-    <section class=\"blog-area ptb-100\">
+\t<section class=\"blog-area ptb-100\">
 
-        <div class=\"container\">
+\t\t<div class=\"container\">
 
-            <div class=\"section-title\">
-                <h2>Newly Added Recepies</h2>
-                <p>Check out the latest recipes updated on our platform.</p>
-            </div>
+\t\t\t<div class=\"section-title\">
+\t\t\t\t<h2>Newly Added Recepies</h2>
+\t\t\t\t<p>Check out the latest recipes updated on our platform.</p>
+\t\t\t</div>
 
-            <div class=\"row justify-content-center\">
+\t\t\t<div class=\"row justify-content-center\">
 
-                <div class=\"col-sm-6 col-lg-4\">
-                    <div class=\"blog-item\">
+\t\t\t\t<div class=\"col-sm-6 col-lg-4\">
+\t\t\t\t\t<div class=\"blog-item\">
 
-                        <div class=\"blog-top\">
-                            <a href=\"#\">
-                                <img src=\"";
-        // line 272
+\t\t\t\t\t\t<div class=\"blog-top\">
+\t\t\t\t\t\t\t<a href=\"#\">
+\t\t\t\t\t\t\t\t<img src=\"";
+        // line 264
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/home-one/blog1.jpg"), "html", null, true);
         yield "\" alt=\"Blog\">
-                            </a>
+\t\t\t\t\t\t\t</a>
 
-                            <span>01 May 2024</span>
-                        </div>
+\t\t\t\t\t\t\t<span>01 May 2024</span>
+\t\t\t\t\t\t</div>
 
-                        <div class=\"blog-bottom\">
+\t\t\t\t\t\t<div class=\"blog-bottom\">
 
-                            <h3>
-                                <a href=\"#\">
-                                    Brief About How to Make Pasta
-                                </a>
-                            </h3>
+\t\t\t\t\t\t\t<h3>
+\t\t\t\t\t\t\t\t<a href=\"#\">
+\t\t\t\t\t\t\t\t\tBrief About How to Make Pasta
+\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t</h3>
 
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+\t\t\t\t\t\t\t<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
 
-                            <a class=\"cmn-btn\" href=\"#\">
-                                Read More
-                            </a>
+\t\t\t\t\t\t\t<a class=\"cmn-btn\" href=\"#\">
+\t\t\t\t\t\t\t\tRead More
+\t\t\t\t\t\t\t</a>
 
-                        </div>
+\t\t\t\t\t\t</div>
 
-                    </div>
-                </div>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
 
-                <div class=\"col-sm-6 col-lg-4\">
-                    <div class=\"blog-item\">
+\t\t\t\t<div class=\"col-sm-6 col-lg-4\">
+\t\t\t\t\t<div class=\"blog-item\">
 
-                        <div class=\"blog-top\">
-                            <a href=\"#\">
-                                <img src=\"";
-        // line 302
+\t\t\t\t\t\t<div class=\"blog-top\">
+\t\t\t\t\t\t\t<a href=\"#\">
+\t\t\t\t\t\t\t\t<img src=\"";
+        // line 294
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/home-one/blog2.jpg"), "html", null, true);
         yield "\" alt=\"Blog\">
-                            </a>
+\t\t\t\t\t\t\t</a>
 
-                            <span>02 May 2024</span>
-                        </div>
+\t\t\t\t\t\t\t<span>02 May 2024</span>
+\t\t\t\t\t\t</div>
 
-                        <div class=\"blog-bottom\">
+\t\t\t\t\t\t<div class=\"blog-bottom\">
 
-                            <h3>
-                                <a href=\"#\">
-                                    Brief About How to Make Pizza
-                                </a>
-                            </h3>
+\t\t\t\t\t\t\t<h3>
+\t\t\t\t\t\t\t\t<a href=\"#\">
+\t\t\t\t\t\t\t\t\tBrief About How to Make Pizza
+\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t</h3>
 
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+\t\t\t\t\t\t\t<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
 
-                            <a class=\"cmn-btn\" href=\"#\">
-                                Read More
-                            </a>
+\t\t\t\t\t\t\t<a class=\"cmn-btn\" href=\"#\">
+\t\t\t\t\t\t\t\tRead More
+\t\t\t\t\t\t\t</a>
 
-                        </div>
+\t\t\t\t\t\t</div>
 
-                    </div>
-                </div>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
 
-            </div>
+\t\t\t</div>
 
-        </div>
+\t\t</div>
 
-    </section>
-    <!-- End Blog -->
+\t</section>
 
-    <!-- Subscribe -->
-    <section class=\"subscribe-area\">
+\t<section class=\"subscribe-area\">
 
-        <div class=\"container\">
+\t\t<div class=\"container\">
 
-            <div class=\"row align-items-center justify-content-center\">
+\t\t\t<div class=\"row align-items-center justify-content-center\">
 
-                <div class=\"col-lg-7\">
+\t\t\t\t<div class=\"col-lg-7\">
 
-                    <div class=\"subscribe-item\">
+\t\t\t\t\t<div class=\"subscribe-item\">
 
-                        <div class=\"section-title\">
-                            <h2>Subscribe News Letter</h2>
-                            <p>Get updates from our restaurant.</p>
-                        </div>
+\t\t\t\t\t\t<div class=\"section-title\">
+\t\t\t\t\t\t\t<h2>Subscribe News Letter</h2>
+\t\t\t\t\t\t\t<p>Get updates from our restaurant.</p>
+\t\t\t\t\t\t</div>
 
-                        <form class=\"newsletter-form\">
+\t\t\t\t\t\t<form class=\"newsletter-form\">
 
-                            <input type=\"email\"
-                                class=\"form-control\"
-                                placeholder=\"Enter your email\">
+\t\t\t\t\t\t\t<input type=\"email\" class=\"form-control\" placeholder=\"Enter your email\">
 
-                            <button class=\"btn cmn-btn\" type=\"submit\">
-                                Subscribe
-                            </button>
+\t\t\t\t\t\t\t<button class=\"btn cmn-btn\" type=\"submit\">
+\t\t\t\t\t\t\t\tSubscribe
+\t\t\t\t\t\t\t</button>
 
-                        </form>
+\t\t\t\t\t\t</form>
 
-                    </div>
+\t\t\t\t\t</div>
 
-                </div>
+\t\t\t\t</div>
 
-                <div class=\"col-lg-5\">
+\t\t\t\t<div class=\"col-lg-5\">
 
-                    <div class=\"subscribe-img\">
-                        <img src=\"";
-        // line 369
+\t\t\t\t\t<div class=\"subscribe-img\">
+\t\t\t\t\t\t<img src=\"";
+        // line 357
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/home-one/subscribe-main.png"), "html", null, true);
-        yield "\"
-                        alt=\"Subscribe\">
-                    </div>
+        yield "\" alt=\"Subscribe\">
+\t\t\t\t\t</div>
 
-                </div>
+\t\t\t\t</div>
 
-            </div>
+\t\t\t</div>
 
-        </div>
+\t\t</div>
 
-    </section>
-    <!-- End Subscribe -->
+\t</section>
 
 
-
-
-";
-        // line 385
+\t";
+        // line 369
         yield from $this->unwrap()->yieldBlock('javascripts', $context, $blocks);
-        // line 410
+        // line 394
         yield "
 ";
         
@@ -561,7 +545,7 @@ class __TwigTemplate_496252487ba14650cedbeb9bed075534 extends Template
         yield from [];
     }
 
-    // line 385
+    // line 369
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -574,64 +558,64 @@ class __TwigTemplate_496252487ba14650cedbeb9bed075534 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 386
+        // line 370
         yield "
-    <script src=\"";
-        // line 387
+\t\t<script src=\"";
+        // line 371
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/jquery.min.js"), "html", null, true);
         yield "\"></script>
 
-    <script src=\"";
-        // line 389
+\t\t<script src=\"";
+        // line 373
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/bootstrap.bundle.min.js"), "html", null, true);
         yield "\"></script>
 
-    <script src=\"";
-        // line 391
+\t\t<script src=\"";
+        // line 375
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/jquery.meanmenu.js"), "html", null, true);
         yield "\"></script>
 
-    <script src=\"";
-        // line 393
+\t\t<script src=\"";
+        // line 377
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/owl.carousel.min.js"), "html", null, true);
         yield "\"></script>
 
-    <script src=\"";
-        // line 395
+\t\t<script src=\"";
+        // line 379
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/jquery.mixitup.min.js"), "html", null, true);
         yield "\"></script>
 
-    <script src=\"";
-        // line 397
+\t\t<script src=\"";
+        // line 381
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/slick.min.js"), "html", null, true);
         yield "\"></script>
 
-    <script src=\"";
-        // line 399
+\t\t<script src=\"";
+        // line 383
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/jquery.ajaxchimp.min.js"), "html", null, true);
         yield "\"></script>
 
-    <script src=\"";
-        // line 401
+\t\t<script src=\"";
+        // line 385
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/form-validator.min.js"), "html", null, true);
         yield "\"></script>
 
-    <script src=\"";
-        // line 403
+\t\t<script src=\"";
+        // line 387
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/contact-form-script.js"), "html", null, true);
         yield "\"></script>
 
-    <script src=\"";
-        // line 405
+\t\t<script src=\"";
+        // line 389
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/jquery.magnific-popup.min.js"), "html", null, true);
         yield "\"></script>
 
-    <script src=\"";
-        // line 407
+\t\t<script src=\"";
+        // line 391
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/custom.js"), "html", null, true);
         yield "\"></script>
 
-";
+\t";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -662,421 +646,406 @@ class __TwigTemplate_496252487ba14650cedbeb9bed075534 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  631 => 407,  626 => 405,  621 => 403,  616 => 401,  611 => 399,  606 => 397,  601 => 395,  596 => 393,  591 => 391,  586 => 389,  581 => 387,  578 => 386,  565 => 385,  553 => 410,  551 => 385,  532 => 369,  462 => 302,  429 => 272,  371 => 217,  364 => 213,  357 => 209,  339 => 194,  335 => 193,  313 => 174,  291 => 155,  282 => 149,  257 => 127,  248 => 121,  223 => 99,  214 => 93,  184 => 66,  177 => 62,  170 => 58,  134 => 25,  130 => 24,  126 => 23,  122 => 22,  106 => 8,  104 => 7,  101 => 6,  88 => 5,  65 => 3,  42 => 1,);
+        return array (  615 => 391,  610 => 389,  605 => 387,  600 => 385,  595 => 383,  590 => 381,  585 => 379,  580 => 377,  575 => 375,  570 => 373,  565 => 371,  562 => 370,  549 => 369,  537 => 394,  535 => 369,  520 => 357,  454 => 294,  421 => 264,  365 => 211,  358 => 207,  351 => 203,  333 => 188,  329 => 187,  308 => 169,  286 => 150,  277 => 144,  252 => 122,  243 => 116,  218 => 94,  209 => 88,  181 => 63,  174 => 59,  167 => 55,  134 => 25,  130 => 24,  126 => 23,  122 => 22,  107 => 9,  105 => 8,  102 => 7,  89 => 6,  65 => 3,  42 => 1,);
     }
 
     public function getSourceContext(): Source
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Home
+{% endblock %}
 
 {% block body %}
 
-    {% include 'partials/navbar.html.twig' %}
-
-    <!-- Preloader -->
-    <div class=\"loader\">
-        <div class=\"d-table\">
-            <div class=\"d-table-cell\">
-                <div class=\"spinner\"></div>
-            </div>
-        </div>
-    </div>
-    <!-- End Preloader -->
-
-    <!-- Banner -->
-    <div class=\"banner-area\">
-        <div class=\"banner-shape\">
-            <img src=\"{{ asset('assets/img/home-one/banner/shape1.png') }}\" alt=\"Shape\">
-            <img src=\"{{ asset('assets/img/home-one/banner/shape2.png') }}\" alt=\"Shape\">
-            <img src=\"{{ asset('assets/img/home-one/banner/shape3.png') }}\" alt=\"Shape\">
-            <img src=\"{{ asset('assets/img/home-one/banner/banner-shape.png') }}\" alt=\"Shape\">
-        </div>
-
-        <div class=\"d-table\">
-            <div class=\"d-table-cell\">
-                <div class=\"container\">
-                    <div class=\"row align-items-center justify-content-center\">
-
-                        <div class=\"col-lg-6\">
-                            <div class=\"banner-content\">
-                                <h1>Discover & Share Delicious Recipes Online</h1>
-
-                                <p>
-                                    Find, cook, and enjoy delicious meals with simple instructions and ingredients.
-                                </p>
-
-                                <form>
-                                    <input type=\"text\"
-                                        class=\"form-control\"
-                                        placeholder=\"Enter food name\">
-
-                                    <button type=\"submit\"
-                                            class=\"btn banner-form-btn\">
-                                        Search Now
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
-
-                        <div class=\"col-lg-6\">
-                            <div class=\"banner-slider owl-theme owl-carousel\">
-
-                                <div class=\"slider-item\">
-                                    <img src=\"{{ asset('assets/img/home-one/banner/banner-slider1.png') }}\" alt=\"Slider\">
-                                </div>
-
-                                <div class=\"slider-item\">
-                                    <img src=\"{{ asset('assets/img/home-one/banner/banner-slider2.png') }}\" alt=\"Slider\">
-                                </div>
-
-                                <div class=\"slider-item\">
-                                    <img src=\"{{ asset('assets/img/home-one/banner/banner-slider3.png') }}\" alt=\"Slider\">
-                                </div>
-
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Banner -->
-
-    <!-- Feature -->
-    <section class=\"feature-area pb-70\">
-        <div class=\"container\">
-
-            <div class=\"section-title\">
-                <h2>Featured Categories</h2>
-                <p>Explore a variety of recipe categories and find the perfect meal for every occasion..</p>
-            </div>
-
-            <div class=\"row justify-content-center\">
-
-                <div class=\"col-sm-6 col-lg-4\">
-                    <div class=\"feature-item\">
-
-                        <img src=\"{{ asset('assets/img/home-one/feature1.jpg') }}\" alt=\"Feature\">
-
-                        <div class=\"feature-inner\">
-                            <ul>
-
-                                <li>
-                                    <img src=\"{{ asset('assets/img/home-one/feature1.png') }}\" alt=\"Feature\">
-                                </li>
-
-                                <li>
-                                    <span>Fast Food</span>
-                                </li>
-
-                                <li>
-                                    <a href=\"#\">
-                                        <i class='bx bx-right-arrow-alt'></i>
-                                    </a>
-                                </li>
+\t{% include 'partials/navbar.html.twig' %}
+
 
-                            </ul>
-                        </div>
+\t<div class=\"loader\">
+\t\t<div class=\"d-table\">
+\t\t\t<div class=\"d-table-cell\">
+\t\t\t\t<div class=\"spinner\"></div>
+\t\t\t</div>
+\t\t</div>
+\t</div>
 
-                    </div>
-                </div>
 
-                <div class=\"col-sm-6 col-lg-4\">
-                    <div class=\"feature-item\">
+\t<div class=\"banner-area\">
+\t\t<div class=\"banner-shape\">
+\t\t\t<img src=\"{{ asset('assets/img/home-one/banner/shape1.png') }}\" alt=\"Shape\">
+\t\t\t<img src=\"{{ asset('assets/img/home-one/banner/shape2.png') }}\" alt=\"Shape\">
+\t\t\t<img src=\"{{ asset('assets/img/home-one/banner/shape3.png') }}\" alt=\"Shape\">
+\t\t\t<img src=\"{{ asset('assets/img/home-one/banner/banner-shape.png') }}\" alt=\"Shape\">
+\t\t</div>
 
-                        <img src=\"{{ asset('assets/img/home-one/feature2.jpg') }}\" alt=\"Feature\">
+\t\t<div class=\"d-table\">
+\t\t\t<div class=\"d-table-cell\">
+\t\t\t\t<div class=\"container\">
+\t\t\t\t\t<div class=\"row align-items-center justify-content-center\">
 
-                        <div class=\"feature-inner\">
-                            <ul>
+\t\t\t\t\t\t<div class=\"col-lg-6\">
+\t\t\t\t\t\t\t<div class=\"banner-content\">
+\t\t\t\t\t\t\t\t<h1>Discover & Share Delicious Recipes Online</h1>
 
-                                <li>
-                                    <img src=\"{{ asset('assets/img/home-one/feature2.png') }}\" alt=\"Feature\">
-                                </li>
+\t\t\t\t\t\t\t\t<p>
+\t\t\t\t\t\t\t\t\tFind, cook, and enjoy delicious meals with simple instructions and ingredients.
+\t\t\t\t\t\t\t\t</p>
 
-                                <li>
-                                    <span>Hot Platter</span>
-                                </li>
+\t\t\t\t\t\t\t\t<form>
+\t\t\t\t\t\t\t\t\t<input type=\"text\" class=\"form-control\" placeholder=\"Enter food name\">
 
-                                <li>
-                                    <a href=\"#\">
-                                        <i class='bx bx-right-arrow-alt'></i>
-                                    </a>
-                                </li>
+\t\t\t\t\t\t\t\t\t<button type=\"submit\" class=\"btn banner-form-btn\">
+\t\t\t\t\t\t\t\t\t\tSearch Now
+\t\t\t\t\t\t\t\t\t</button>
+\t\t\t\t\t\t\t\t</form>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
 
-                            </ul>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class=\"col-sm-6 col-lg-4\">
-                    <div class=\"feature-item\">
-
-                        <img src=\"{{ asset('assets/img/home-one/feature3.jpg') }}\" alt=\"Feature\">
+\t\t\t\t\t\t<div class=\"col-lg-6\">
+\t\t\t\t\t\t\t<div class=\"banner-slider owl-theme owl-carousel\">
 
-                        <div class=\"feature-inner\">
-                            <ul>
-
-                                <li>
-                                    <img src=\"{{ asset('assets/img/home-one/feature3.png') }}\" alt=\"Feature\">
-                                </li>
-
-                                <li>
-                                    <span>Dessert</span>
-                                </li>
+\t\t\t\t\t\t\t\t<div class=\"slider-item\">
+\t\t\t\t\t\t\t\t\t<img src=\"{{ asset('assets/img/home-one/banner/banner-slider1.png') }}\" alt=\"Slider\">
+\t\t\t\t\t\t\t\t</div>
 
-                                <li>
-                                    <a href=\"#\">
-                                        <i class='bx bx-right-arrow-alt'></i>
-                                    </a>
-                                </li>
+\t\t\t\t\t\t\t\t<div class=\"slider-item\">
+\t\t\t\t\t\t\t\t\t<img src=\"{{ asset('assets/img/home-one/banner/banner-slider2.png') }}\" alt=\"Slider\">
+\t\t\t\t\t\t\t\t</div>
 
-                            </ul>
-                        </div>
+\t\t\t\t\t\t\t\t<div class=\"slider-item\">
+\t\t\t\t\t\t\t\t\t<img src=\"{{ asset('assets/img/home-one/banner/banner-slider3.png') }}\" alt=\"Slider\">
+\t\t\t\t\t\t\t\t</div>
 
-                    </div>
-                </div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
 
-            <a href=\"{{ path('app_categories') }}\" class=\"see-more-link\">
-            See all categories <span>→</span>
-            </a>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t</div>
+\t</div>
 
-            </div>
-            
-        </div>
-        
-        
+\t<section class=\"feature-area pb-70\">
+\t\t<div class=\"container\">
 
-    </section>
-    <!-- End Feature -->
-        <!-- Review -->
-    <div class=\"review-area\">
-        <div class=\"container-fluid p-0\">
-            <div class=\"row m-0 align-items-center justify-content-center\">
+\t\t\t<div class=\"section-title\">
+\t\t\t\t<h2>Featured Categories</h2>
+\t\t\t\t<p>Explore a variety of recipe categories and find the perfect meal for every occasion..</p>
+\t\t\t</div>
 
-                <div class=\"col-lg-6 p-0\">
-                    <div class=\"review-img\">
-                        <img src=\"{{ asset('assets/img/home-one/review1.png') }}\" alt=\"Review\">
-                        <img src=\"{{ asset('assets/img/home-one/review2.png') }}\" alt=\"Review\">
-                    </div>
-                </div>
+\t\t\t<div class=\"row justify-content-center\">
 
-                <div class=\"col-lg-6 p-0\">
-                    <div class=\"review-item\">
+\t\t\t\t<div class=\"col-sm-6 col-lg-4\">
+\t\t\t\t\t<div class=\"feature-item\">
 
-                        <div class=\"section-title\">
-                            <h2>What People Say About Us</h2>
-                            <p>Read honest feedback from our users who love cooking with our recipes.</p>
-                        </div>
+\t\t\t\t\t\t<img src=\"{{ asset('assets/img/home-one/feature1.jpg') }}\" alt=\"Feature\">
 
-                        <div class=\"slider-nav\">
+\t\t\t\t\t\t<div class=\"feature-inner\">
+\t\t\t\t\t\t\t<ul>
 
-                            <div class=\"item\">
-                                <img src=\"{{ asset('assets/img/home-one/review3.png') }}\" alt=\"Review\">
-                            </div>
+\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t<img src=\"{{ asset('assets/img/home-one/feature1.png') }}\" alt=\"Feature\">
+\t\t\t\t\t\t\t\t</li>
 
-                            <div class=\"item\">
-                                <img src=\"{{ asset('assets/img/home-one/review4.png') }}\" alt=\"Review\">
-                            </div>
+\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t<span>Fast Food</span>
+\t\t\t\t\t\t\t\t</li>
 
-                            <div class=\"item\">
-                                <img src=\"{{ asset('assets/img/home-one/review5.png') }}\" alt=\"Review\">
-                            </div>
+\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t<a href=\"#\">
+\t\t\t\t\t\t\t\t\t\t<i class='bx bx-right-arrow-alt'></i>
+\t\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t</li>
 
-                        </div>
+\t\t\t\t\t\t\t</ul>
+\t\t\t\t\t\t</div>
 
-                        <div class=\"slider-for\">
+\t\t\t\t\t</div>
+\t\t\t\t</div>
 
-                            <div class=\"item\">
-                                <h3>John Doe</h3>
-                                <p>
-                                    Restaurants range from inexpensive and informal dining places.
-                                </p>
-                            </div>
+\t\t\t\t<div class=\"col-sm-6 col-lg-4\">
+\t\t\t\t\t<div class=\"feature-item\">
 
-                            <div class=\"item\">
-                                <h3>Jac Jackson</h3>
-                                <p>
-                                    Restaurants range from inexpensive and informal dining places.
-                                </p>
-                            </div>
+\t\t\t\t\t\t<img src=\"{{ asset('assets/img/home-one/feature2.jpg') }}\" alt=\"Feature\">
 
-                            <div class=\"item\">
-                                <h3>Tom Henry</h3>
-                                <p>
-                                    Restaurants range from inexpensive and informal dining places.
-                                </p>
-                            </div>
+\t\t\t\t\t\t<div class=\"feature-inner\">
+\t\t\t\t\t\t\t<ul>
 
-                        </div>
+\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t<img src=\"{{ asset('assets/img/home-one/feature2.png') }}\" alt=\"Feature\">
+\t\t\t\t\t\t\t\t</li>
 
-                    </div>
-                </div>
+\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t<span>Hot Platter</span>
+\t\t\t\t\t\t\t\t</li>
 
-            </div>
-        </div>
-    </div>
-    <!-- End Review -->
+\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t<a href=\"#\">
+\t\t\t\t\t\t\t\t\t\t<i class='bx bx-right-arrow-alt'></i>
+\t\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t</li>
 
-    <!-- Blog -->
-    <section class=\"blog-area ptb-100\">
+\t\t\t\t\t\t\t</ul>
+\t\t\t\t\t\t</div>
 
-        <div class=\"container\">
+\t\t\t\t\t</div>
+\t\t\t\t</div>
 
-            <div class=\"section-title\">
-                <h2>Newly Added Recepies</h2>
-                <p>Check out the latest recipes updated on our platform.</p>
-            </div>
+\t\t\t\t<div class=\"col-sm-6 col-lg-4\">
+\t\t\t\t\t<div class=\"feature-item\">
 
-            <div class=\"row justify-content-center\">
+\t\t\t\t\t\t<img src=\"{{ asset('assets/img/home-one/feature3.jpg') }}\" alt=\"Feature\">
 
-                <div class=\"col-sm-6 col-lg-4\">
-                    <div class=\"blog-item\">
+\t\t\t\t\t\t<div class=\"feature-inner\">
+\t\t\t\t\t\t\t<ul>
 
-                        <div class=\"blog-top\">
-                            <a href=\"#\">
-                                <img src=\"{{ asset('assets/img/home-one/blog1.jpg') }}\" alt=\"Blog\">
-                            </a>
+\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t<img src=\"{{ asset('assets/img/home-one/feature3.png') }}\" alt=\"Feature\">
+\t\t\t\t\t\t\t\t</li>
 
-                            <span>01 May 2024</span>
-                        </div>
+\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t<span>Dessert</span>
+\t\t\t\t\t\t\t\t</li>
 
-                        <div class=\"blog-bottom\">
+\t\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t\t<a href=\"#\">
+\t\t\t\t\t\t\t\t\t\t<i class='bx bx-right-arrow-alt'></i>
+\t\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t\t</li>
 
-                            <h3>
-                                <a href=\"#\">
-                                    Brief About How to Make Pasta
-                                </a>
-                            </h3>
+\t\t\t\t\t\t\t</ul>
+\t\t\t\t\t\t</div>
 
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
 
-                            <a class=\"cmn-btn\" href=\"#\">
-                                Read More
-                            </a>
+\t\t\t\t<a href=\"{{ path('app_categories') }}\" class=\"see-more-link\">
+\t\t\t\t\tSee all categories
+\t\t\t\t\t<span>→</span>
+\t\t\t\t</a>
 
-                        </div>
+\t\t\t</div>
 
-                    </div>
-                </div>
+\t\t</div>
 
-                <div class=\"col-sm-6 col-lg-4\">
-                    <div class=\"blog-item\">
 
-                        <div class=\"blog-top\">
-                            <a href=\"#\">
-                                <img src=\"{{ asset('assets/img/home-one/blog2.jpg') }}\" alt=\"Blog\">
-                            </a>
+\t</section>
 
-                            <span>02 May 2024</span>
-                        </div>
+\t<div class=\"review-area\">
+\t\t<div class=\"container-fluid p-0\">
+\t\t\t<div class=\"row m-0 align-items-center justify-content-center\">
 
-                        <div class=\"blog-bottom\">
+\t\t\t\t<div class=\"col-lg-6 p-0\">
+\t\t\t\t\t<div class=\"review-img\">
+\t\t\t\t\t\t<img src=\"{{ asset('assets/img/home-one/review1.png') }}\" alt=\"Review\">
+\t\t\t\t\t\t<img src=\"{{ asset('assets/img/home-one/review2.png') }}\" alt=\"Review\">
+\t\t\t\t\t</div>
+\t\t\t\t</div>
 
-                            <h3>
-                                <a href=\"#\">
-                                    Brief About How to Make Pizza
-                                </a>
-                            </h3>
+\t\t\t\t<div class=\"col-lg-6 p-0\">
+\t\t\t\t\t<div class=\"review-item\">
 
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+\t\t\t\t\t\t<div class=\"section-title\">
+\t\t\t\t\t\t\t<h2>What People Say About Us</h2>
+\t\t\t\t\t\t\t<p>Read honest feedback from our users who love cooking with our recipes.</p>
+\t\t\t\t\t\t</div>
 
-                            <a class=\"cmn-btn\" href=\"#\">
-                                Read More
-                            </a>
+\t\t\t\t\t\t<div class=\"slider-nav\">
 
-                        </div>
+\t\t\t\t\t\t\t<div class=\"item\">
+\t\t\t\t\t\t\t\t<img src=\"{{ asset('assets/img/home-one/review3.png') }}\" alt=\"Review\">
+\t\t\t\t\t\t\t</div>
 
-                    </div>
-                </div>
+\t\t\t\t\t\t\t<div class=\"item\">
+\t\t\t\t\t\t\t\t<img src=\"{{ asset('assets/img/home-one/review4.png') }}\" alt=\"Review\">
+\t\t\t\t\t\t\t</div>
 
-            </div>
+\t\t\t\t\t\t\t<div class=\"item\">
+\t\t\t\t\t\t\t\t<img src=\"{{ asset('assets/img/home-one/review5.png') }}\" alt=\"Review\">
+\t\t\t\t\t\t\t</div>
 
-        </div>
+\t\t\t\t\t\t</div>
 
-    </section>
-    <!-- End Blog -->
+\t\t\t\t\t\t<div class=\"slider-for\">
 
-    <!-- Subscribe -->
-    <section class=\"subscribe-area\">
+\t\t\t\t\t\t\t<div class=\"item\">
+\t\t\t\t\t\t\t\t<h3>John Doe</h3>
+\t\t\t\t\t\t\t\t<p>
+\t\t\t\t\t\t\t\t\tRestaurants range from inexpensive and informal dining places.
+\t\t\t\t\t\t\t\t</p>
+\t\t\t\t\t\t\t</div>
 
-        <div class=\"container\">
+\t\t\t\t\t\t\t<div class=\"item\">
+\t\t\t\t\t\t\t\t<h3>Jac Jackson</h3>
+\t\t\t\t\t\t\t\t<p>
+\t\t\t\t\t\t\t\t\tRestaurants range from inexpensive and informal dining places.
+\t\t\t\t\t\t\t\t</p>
+\t\t\t\t\t\t\t</div>
 
-            <div class=\"row align-items-center justify-content-center\">
+\t\t\t\t\t\t\t<div class=\"item\">
+\t\t\t\t\t\t\t\t<h3>Tom Henry</h3>
+\t\t\t\t\t\t\t\t<p>
+\t\t\t\t\t\t\t\t\tRestaurants range from inexpensive and informal dining places.
+\t\t\t\t\t\t\t\t</p>
+\t\t\t\t\t\t\t</div>
 
-                <div class=\"col-lg-7\">
+\t\t\t\t\t\t</div>
 
-                    <div class=\"subscribe-item\">
+\t\t\t\t\t</div>
+\t\t\t\t</div>
 
-                        <div class=\"section-title\">
-                            <h2>Subscribe News Letter</h2>
-                            <p>Get updates from our restaurant.</p>
-                        </div>
+\t\t\t</div>
+\t\t</div>
+\t</div>
 
-                        <form class=\"newsletter-form\">
+\t<section class=\"blog-area ptb-100\">
 
-                            <input type=\"email\"
-                                class=\"form-control\"
-                                placeholder=\"Enter your email\">
+\t\t<div class=\"container\">
 
-                            <button class=\"btn cmn-btn\" type=\"submit\">
-                                Subscribe
-                            </button>
+\t\t\t<div class=\"section-title\">
+\t\t\t\t<h2>Newly Added Recepies</h2>
+\t\t\t\t<p>Check out the latest recipes updated on our platform.</p>
+\t\t\t</div>
 
-                        </form>
+\t\t\t<div class=\"row justify-content-center\">
 
-                    </div>
+\t\t\t\t<div class=\"col-sm-6 col-lg-4\">
+\t\t\t\t\t<div class=\"blog-item\">
 
-                </div>
+\t\t\t\t\t\t<div class=\"blog-top\">
+\t\t\t\t\t\t\t<a href=\"#\">
+\t\t\t\t\t\t\t\t<img src=\"{{ asset('assets/img/home-one/blog1.jpg') }}\" alt=\"Blog\">
+\t\t\t\t\t\t\t</a>
 
-                <div class=\"col-lg-5\">
+\t\t\t\t\t\t\t<span>01 May 2024</span>
+\t\t\t\t\t\t</div>
 
-                    <div class=\"subscribe-img\">
-                        <img src=\"{{ asset('assets/img/home-one/subscribe-main.png') }}\"
-                        alt=\"Subscribe\">
-                    </div>
+\t\t\t\t\t\t<div class=\"blog-bottom\">
 
-                </div>
+\t\t\t\t\t\t\t<h3>
+\t\t\t\t\t\t\t\t<a href=\"#\">
+\t\t\t\t\t\t\t\t\tBrief About How to Make Pasta
+\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t</h3>
 
-            </div>
+\t\t\t\t\t\t\t<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
 
-        </div>
+\t\t\t\t\t\t\t<a class=\"cmn-btn\" href=\"#\">
+\t\t\t\t\t\t\t\tRead More
+\t\t\t\t\t\t\t</a>
 
-    </section>
-    <!-- End Subscribe -->
+\t\t\t\t\t\t</div>
 
+\t\t\t\t\t</div>
+\t\t\t\t</div>
 
+\t\t\t\t<div class=\"col-sm-6 col-lg-4\">
+\t\t\t\t\t<div class=\"blog-item\">
 
+\t\t\t\t\t\t<div class=\"blog-top\">
+\t\t\t\t\t\t\t<a href=\"#\">
+\t\t\t\t\t\t\t\t<img src=\"{{ asset('assets/img/home-one/blog2.jpg') }}\" alt=\"Blog\">
+\t\t\t\t\t\t\t</a>
 
-{% block javascripts %}
+\t\t\t\t\t\t\t<span>02 May 2024</span>
+\t\t\t\t\t\t</div>
 
-    <script src=\"{{ asset('assets/js/jquery.min.js') }}\"></script>
+\t\t\t\t\t\t<div class=\"blog-bottom\">
 
-    <script src=\"{{ asset('assets/js/bootstrap.bundle.min.js') }}\"></script>
+\t\t\t\t\t\t\t<h3>
+\t\t\t\t\t\t\t\t<a href=\"#\">
+\t\t\t\t\t\t\t\t\tBrief About How to Make Pizza
+\t\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t</h3>
 
-    <script src=\"{{ asset('assets/js/jquery.meanmenu.js') }}\"></script>
+\t\t\t\t\t\t\t<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
 
-    <script src=\"{{ asset('assets/js/owl.carousel.min.js') }}\"></script>
+\t\t\t\t\t\t\t<a class=\"cmn-btn\" href=\"#\">
+\t\t\t\t\t\t\t\tRead More
+\t\t\t\t\t\t\t</a>
 
-    <script src=\"{{ asset('assets/js/jquery.mixitup.min.js') }}\"></script>
+\t\t\t\t\t\t</div>
 
-    <script src=\"{{ asset('assets/js/slick.min.js') }}\"></script>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
 
-    <script src=\"{{ asset('assets/js/jquery.ajaxchimp.min.js') }}\"></script>
+\t\t\t</div>
 
-    <script src=\"{{ asset('assets/js/form-validator.min.js') }}\"></script>
+\t\t</div>
 
-    <script src=\"{{ asset('assets/js/contact-form-script.js') }}\"></script>
+\t</section>
 
-    <script src=\"{{ asset('assets/js/jquery.magnific-popup.min.js') }}\"></script>
+\t<section class=\"subscribe-area\">
 
-    <script src=\"{{ asset('assets/js/custom.js') }}\"></script>
+\t\t<div class=\"container\">
+
+\t\t\t<div class=\"row align-items-center justify-content-center\">
+
+\t\t\t\t<div class=\"col-lg-7\">
+
+\t\t\t\t\t<div class=\"subscribe-item\">
+
+\t\t\t\t\t\t<div class=\"section-title\">
+\t\t\t\t\t\t\t<h2>Subscribe News Letter</h2>
+\t\t\t\t\t\t\t<p>Get updates from our restaurant.</p>
+\t\t\t\t\t\t</div>
+
+\t\t\t\t\t\t<form class=\"newsletter-form\">
+
+\t\t\t\t\t\t\t<input type=\"email\" class=\"form-control\" placeholder=\"Enter your email\">
+
+\t\t\t\t\t\t\t<button class=\"btn cmn-btn\" type=\"submit\">
+\t\t\t\t\t\t\t\tSubscribe
+\t\t\t\t\t\t\t</button>
+
+\t\t\t\t\t\t</form>
+
+\t\t\t\t\t</div>
+
+\t\t\t\t</div>
+
+\t\t\t\t<div class=\"col-lg-5\">
+
+\t\t\t\t\t<div class=\"subscribe-img\">
+\t\t\t\t\t\t<img src=\"{{ asset('assets/img/home-one/subscribe-main.png') }}\" alt=\"Subscribe\">
+\t\t\t\t\t</div>
+
+\t\t\t\t</div>
+
+\t\t\t</div>
+
+\t\t</div>
+
+\t</section>
+
+
+\t{% block javascripts %}
+
+\t\t<script src=\"{{ asset('assets/js/jquery.min.js') }}\"></script>
+
+\t\t<script src=\"{{ asset('assets/js/bootstrap.bundle.min.js') }}\"></script>
+
+\t\t<script src=\"{{ asset('assets/js/jquery.meanmenu.js') }}\"></script>
+
+\t\t<script src=\"{{ asset('assets/js/owl.carousel.min.js') }}\"></script>
+
+\t\t<script src=\"{{ asset('assets/js/jquery.mixitup.min.js') }}\"></script>
+
+\t\t<script src=\"{{ asset('assets/js/slick.min.js') }}\"></script>
+
+\t\t<script src=\"{{ asset('assets/js/jquery.ajaxchimp.min.js') }}\"></script>
+
+\t\t<script src=\"{{ asset('assets/js/form-validator.min.js') }}\"></script>
+
+\t\t<script src=\"{{ asset('assets/js/contact-form-script.js') }}\"></script>
+
+\t\t<script src=\"{{ asset('assets/js/jquery.magnific-popup.min.js') }}\"></script>
+
+\t\t<script src=\"{{ asset('assets/js/custom.js') }}\"></script>
+
+\t{% endblock %}
 
 {% endblock %}
-
-{% endblock %}", "accueil/index.html.twig", "/home/vboxuser/Documents/miniprojet2026-ines_maram/templates/accueil/index.html.twig");
+", "accueil/index.html.twig", "/home/useradm/miniprojet2026-ines_maram/templates/accueil/index.html.twig");
     }
 }

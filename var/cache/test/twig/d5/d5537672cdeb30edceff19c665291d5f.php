@@ -398,6 +398,6 @@ class __TwigTemplate_31c95890d0a1edfe206ef031e2ce902c extends Template
     </div>
 
 </div>
-<!-- End Copyright -->", "partials/footer.html.twig", "/home/vboxuser/Documents/miniprojet2026-ines_maram/templates/partials/footer.html.twig");
+<!-- End Copyright -->", "partials/footer.html.twig", "/home/useradm/miniprojet2026-ines_maram/templates/partials/footer.html.twig");
     }
 }

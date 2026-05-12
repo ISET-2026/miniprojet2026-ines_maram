@@ -32,10 +32,9 @@ class IngredientType extends AbstractType
                 ],
             ])
 
-            // ONLY KEEP THIS IF Ingredient HAS ManyToOne Recette relation
             ->add('recette', EntityType::class, [
                 'class' => Recette::class,
-                'choice_label' => 'titre', // better than id
+                'choice_label' => 'titre', 
                 'placeholder' => 'Choisir une recette',
                 'attr' => [
                     'class' => 'form-control',
@@ -53,7 +52,7 @@ class IngredientType extends AbstractType
     'choice_label' => 'titre',
     'attr' => [
         'class' => 'form-control',
-        'style' => 'display:none', // ✅ hidden — set by controller
+        'style' => 'display:none', 
     ],
     'label' => false,
     'placeholder' => false,

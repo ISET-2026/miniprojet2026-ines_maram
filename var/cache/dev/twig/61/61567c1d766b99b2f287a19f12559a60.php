@@ -73,7 +73,8 @@ class __TwigTemplate_6f555d796842bfe92b4916a14baa7dc3 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        yield "Nouvelle catégorie";
+        yield "Nouvelle catégorie
+";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -83,7 +84,7 @@ class __TwigTemplate_6f555d796842bfe92b4916a14baa7dc3 extends Template
         yield from [];
     }
 
-    // line 5
+    // line 6
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -96,52 +97,52 @@ class __TwigTemplate_6f555d796842bfe92b4916a14baa7dc3 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
-        yield "<div class=\"container py-5 mt-5\">
-    <div class=\"row justify-content-center\">
-        <div class=\"col-md-8\">
-            <h1 class=\"mb-4\">➕ Créer une catégorie</h1>
-<div class=\"book-table-area ptb-100\">
-    <div class=\"container\">
+        // line 7
+        yield "\t<div class=\"container py-5 mt-5\">
+\t\t<div class=\"row justify-content-center\">
+\t\t\t<div class=\"col-md-8\">
+\t\t\t\t<h1 class=\"mb-4\">➕ Créer une catégorie</h1>
+\t\t\t\t<div class=\"book-table-area ptb-100\">
+\t\t\t\t\t<div class=\"container\">
 
-        <div class=\"book-table-wrap\">
-            ";
-        // line 14
-        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formulaire"]) || array_key_exists("formulaire", $context) ? $context["formulaire"] : (function () { throw new RuntimeError('Variable "formulaire" does not exist.', 14, $this->source); })()), 'form_start');
-        yield "
-                <div class=\"mb-3\">";
+\t\t\t\t\t\t<div class=\"book-table-wrap\">
+\t\t\t\t\t\t\t";
         // line 15
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["formulaire"]) || array_key_exists("formulaire", $context) ? $context["formulaire"] : (function () { throw new RuntimeError('Variable "formulaire" does not exist.', 15, $this->source); })()), "nom", [], "any", false, false, false, 15), 'row');
-        yield "</div>
-                <div class=\"mb-3\">";
-        // line 16
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["formulaire"]) || array_key_exists("formulaire", $context) ? $context["formulaire"] : (function () { throw new RuntimeError('Variable "formulaire" does not exist.', 16, $this->source); })()), "description", [], "any", false, false, false, 16), 'row');
-        yield "</div>
-                    <div class=\"mb-3\">";
-        // line 17
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["formulaire"]) || array_key_exists("formulaire", $context) ? $context["formulaire"] : (function () { throw new RuntimeError('Variable "formulaire" does not exist.', 17, $this->source); })()), "icone", [], "any", false, false, false, 17), 'row');
-        yield "</div>
-                ";
-        // line 18
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["formulaire"]) || array_key_exists("formulaire", $context) ? $context["formulaire"] : (function () { throw new RuntimeError('Variable "formulaire" does not exist.', 18, $this->source); })()), "enregistrer", [], "any", false, false, false, 18), 'row');
+        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formulaire"]) || array_key_exists("formulaire", $context) ? $context["formulaire"] : (function () { throw new RuntimeError('Variable "formulaire" does not exist.', 15, $this->source); })()), 'form_start');
         yield "
-            ";
+\t\t\t\t\t\t\t<div class=\"mb-3\">";
+        // line 16
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["formulaire"]) || array_key_exists("formulaire", $context) ? $context["formulaire"] : (function () { throw new RuntimeError('Variable "formulaire" does not exist.', 16, $this->source); })()), "nom", [], "any", false, false, false, 16), 'row');
+        yield "</div>
+\t\t\t\t\t\t\t<div class=\"mb-3\">";
+        // line 17
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["formulaire"]) || array_key_exists("formulaire", $context) ? $context["formulaire"] : (function () { throw new RuntimeError('Variable "formulaire" does not exist.', 17, $this->source); })()), "description", [], "any", false, false, false, 17), 'row');
+        yield "</div>
+\t\t\t\t\t\t\t<div class=\"mb-3\">";
+        // line 18
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["formulaire"]) || array_key_exists("formulaire", $context) ? $context["formulaire"] : (function () { throw new RuntimeError('Variable "formulaire" does not exist.', 18, $this->source); })()), "icone", [], "any", false, false, false, 18), 'row');
+        yield "</div>
+\t\t\t\t\t\t\t";
         // line 19
-        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formulaire"]) || array_key_exists("formulaire", $context) ? $context["formulaire"] : (function () { throw new RuntimeError('Variable "formulaire" does not exist.', 19, $this->source); })()), 'form_end');
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["formulaire"]) || array_key_exists("formulaire", $context) ? $context["formulaire"] : (function () { throw new RuntimeError('Variable "formulaire" does not exist.', 19, $this->source); })()), "enregistrer", [], "any", false, false, false, 19), 'row');
+        yield "
+\t\t\t\t\t\t\t";
+        // line 20
+        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formulaire"]) || array_key_exists("formulaire", $context) ? $context["formulaire"] : (function () { throw new RuntimeError('Variable "formulaire" does not exist.', 20, $this->source); })()), 'form_end');
         yield "
 
-            <a href=\"";
-        // line 21
+\t\t\t\t\t\t\t<a href=\"";
+        // line 22
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_categories");
         yield "\" class=\"btn btn-link mt-3 text-muted\">
-                ← Retour aux catégories
-            </a>
-        </div>
-    </div>
-    </div>
-           </div>
-    </div>
-    </div>
+\t\t\t\t\t\t\t\t← Retour aux catégories
+\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t</div>
+\t</div>
 
 ";
         
@@ -174,41 +175,43 @@ class __TwigTemplate_6f555d796842bfe92b4916a14baa7dc3 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  135 => 21,  130 => 19,  126 => 18,  122 => 17,  118 => 16,  114 => 15,  110 => 14,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  136 => 22,  131 => 20,  127 => 19,  123 => 18,  119 => 17,  115 => 16,  111 => 15,  101 => 7,  88 => 6,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Nouvelle catégorie{% endblock %}
+{% block title %}Nouvelle catégorie
+{% endblock %}
 
 {% block body %}
-<div class=\"container py-5 mt-5\">
-    <div class=\"row justify-content-center\">
-        <div class=\"col-md-8\">
-            <h1 class=\"mb-4\">➕ Créer une catégorie</h1>
-<div class=\"book-table-area ptb-100\">
-    <div class=\"container\">
+\t<div class=\"container py-5 mt-5\">
+\t\t<div class=\"row justify-content-center\">
+\t\t\t<div class=\"col-md-8\">
+\t\t\t\t<h1 class=\"mb-4\">➕ Créer une catégorie</h1>
+\t\t\t\t<div class=\"book-table-area ptb-100\">
+\t\t\t\t\t<div class=\"container\">
 
-        <div class=\"book-table-wrap\">
-            {{ form_start(formulaire) }}
-                <div class=\"mb-3\">{{ form_row(formulaire.nom) }}</div>
-                <div class=\"mb-3\">{{ form_row(formulaire.description) }}</div>
-                    <div class=\"mb-3\">{{ form_row(formulaire.icone) }}</div>
-                {{ form_row(formulaire.enregistrer) }}
-            {{ form_end(formulaire) }}
+\t\t\t\t\t\t<div class=\"book-table-wrap\">
+\t\t\t\t\t\t\t{{ form_start(formulaire) }}
+\t\t\t\t\t\t\t<div class=\"mb-3\">{{ form_row(formulaire.nom) }}</div>
+\t\t\t\t\t\t\t<div class=\"mb-3\">{{ form_row(formulaire.description) }}</div>
+\t\t\t\t\t\t\t<div class=\"mb-3\">{{ form_row(formulaire.icone) }}</div>
+\t\t\t\t\t\t\t{{ form_row(formulaire.enregistrer) }}
+\t\t\t\t\t\t\t{{ form_end(formulaire) }}
 
-            <a href=\"{{ path('app_categories') }}\" class=\"btn btn-link mt-3 text-muted\">
-                ← Retour aux catégories
-            </a>
-        </div>
-    </div>
-    </div>
-           </div>
-    </div>
-    </div>
+\t\t\t\t\t\t\t<a href=\"{{ path('app_categories') }}\" class=\"btn btn-link mt-3 text-muted\">
+\t\t\t\t\t\t\t\t← Retour aux catégories
+\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t</div>
+\t</div>
 
-{% endblock %}", "Categorie/nouvelle.html.twig", "/home/vboxuser/Documents/miniprojet2026-ines_maram/templates/Categorie/nouvelle.html.twig");
+{% endblock %}
+", "Categorie/nouvelle.html.twig", "/home/useradm/miniprojet2026-ines_maram/templates/Categorie/nouvelle.html.twig");
     }
 }

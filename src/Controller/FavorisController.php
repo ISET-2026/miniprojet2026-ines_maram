@@ -34,7 +34,6 @@ final class FavorisController extends AbstractController
 
         $session->set('favorites', $favorites);
 
-        // ✅ Stay on recipes page
         return $this->redirectToRoute('app_recettes');
     }
 
@@ -46,7 +45,6 @@ final class FavorisController extends AbstractController
         $favorites = array_values(array_filter($favorites, fn($f) => $f != $id));
         $session->set('favorites', $favorites);
 
-        // ✅ Redirect back to referer (works from both recipes page and favorites page)
         $referer = $request->headers->get('referer');
         return $referer
             ? $this->redirect($referer)

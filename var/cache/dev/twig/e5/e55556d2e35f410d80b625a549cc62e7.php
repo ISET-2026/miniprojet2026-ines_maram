@@ -189,7 +189,7 @@ class __TwigTemplate_f494f419477b6352cb7130e930111ea6 extends Template
                 ";
         // line 48
         yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["formulaire"]) || array_key_exists("formulaire", $context) ? $context["formulaire"] : (function () { throw new RuntimeError('Variable "formulaire" does not exist.', 48, $this->source); })()), "tags", [], "any", false, false, false, 48), 'row');
-        yield "
+        yield "<br>
             </div>
             <div class=\"mb-3\">";
         // line 50
@@ -294,7 +294,7 @@ class __TwigTemplate_f494f419477b6352cb7130e930111ea6 extends Template
             <div class=\"col-md-6 mb-3\">{{ form_row(formulaire.nbPersonnes) }}</div>
             <div class=\"col-md-6 mb-3\">{{ form_row(formulaire.imageFile) }}</div>
             <div class=\"card mb-3 p-3 bg-light\">
-                {{ form_row(formulaire.tags) }}
+                {{ form_row(formulaire.tags) }}<br>
             </div>
             <div class=\"mb-3\">{{ form_row(formulaire.publiee) }}</div>
 
@@ -307,6 +307,6 @@ class __TwigTemplate_f494f419477b6352cb7130e930111ea6 extends Template
     </div>
 </div>
 
-{% endblock %}", "recettes/nouvelle.html.twig", "/home/vboxuser/Documents/miniprojet2026-ines_maram/templates/recettes/nouvelle.html.twig");
+{% endblock %}", "recettes/nouvelle.html.twig", "/home/useradm/miniprojet2026-ines_maram/templates/recettes/nouvelle.html.twig");
     }
 }

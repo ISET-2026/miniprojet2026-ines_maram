@@ -12,14 +12,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Form\FormInterface;
 final class CategorieRecettecontrollerController extends AbstractController
 {
-/* #[Route('/categorie/recettecontroller', name: 'app_categorie_recettecontroller')]
-    public function index(): Response
-    {
-        return $this->render('categorie_recettecontroller/index.html.twig', [
-            'controller_name' => 'CategorieRecettecontrollerController',
-        ]);
-    }
-        */
+
     #[Route('/categories', name: 'app_categories')]
     public function index(CategorieRecetteRepository $categorieRepository): Response
     {

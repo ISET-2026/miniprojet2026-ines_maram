@@ -29,6 +29,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 180)]
     #[Assert\NotBlank]
     #[Assert\Email]
+    
     private ?string $email = null;
 
     #[ORM\Column]
@@ -43,13 +44,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 20)]
     private string $roleRequestStatus = 'NONE';
 
-    // ================= RELATIONS =================
 
     #[ORM\OneToMany(mappedBy: 'auteur', targetEntity: Recette::class)]
     private Collection $recettes;
 
 
-    // ================= CONSTRUCTOR =================
 
     public function __construct()
     {
@@ -57,7 +56,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->roles = ['ROLE_USER'];
     }
 
-    // ================= BASIC GETTERS / SETTERS =================
 
     public function getId(): ?int
     {
@@ -86,7 +84,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    // ================= SECURITY =================
 
     public function getUserIdentifier(): string
     {
@@ -119,7 +116,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     public function eraseCredentials(): void {}
 
-    // ================= RECETTES =================
 
     public function getRecettes(): Collection
     {

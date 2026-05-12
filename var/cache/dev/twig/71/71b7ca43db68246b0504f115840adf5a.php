@@ -607,6 +607,6 @@ class __TwigTemplate_ea54b14cb3344297b0bc54b51e27f759 extends Template
 
 </body>
 </html>
-", "@ApiPlatform/SwaggerUi/index.html.twig", "/home/vboxuser/Documents/miniprojet2026-ines_maram/vendor/api-platform/symfony/Bundle/Resources/views/SwaggerUi/index.html.twig");
+", "@ApiPlatform/SwaggerUi/index.html.twig", "/home/useradm/miniprojet2026-ines_maram/vendor/api-platform/symfony/Bundle/Resources/views/SwaggerUi/index.html.twig");
     }
 }

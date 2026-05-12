@@ -16,7 +16,6 @@ class CategorieRecetteFixtures extends Fixture
             $category->setNom($name);
             $manager->persist($category);
 
-            // N-khabbiou reference bech n-asta3mlouha f-el-Recette
             $this->addReference('cat_' . $key, $category);
         }
 

@@ -2,6 +2,17 @@
 
 All notable changes of the PHPUnit 13.1 release series are documented in this file using the [Keep a CHANGELOG](https://keepachangelog.com/) principles.
 
+## [13.1.8] - 2026-05-01
+
+### Fixed
+
+* [#6595](https://github.com/sebastianbergmann/phpunit/issues/6595): Crash when before-class or after-class method fails with assertion failure
+* [#6599](https://github.com/sebastianbergmann/phpunit/issues/6599): TeamCity logger does not wrap failures in before-test methods with `testStarted` and `testFinished`
+* [#6601](https://github.com/sebastianbergmann/phpunit/issues/6601): Anonymous classes are not rejected with a clear error when creating a test double
+* [#6603](https://github.com/sebastianbergmann/phpunit/issues/6603): `assertArrays*IgnoringOrder()` fails on mixed scalar types and on reordered nested associative arrays
+* `MockBuilder::setMockClassName()` and `TestStubBuilder::setStubClassName()` now reject values that are not valid unqualified PHP class identifiers, throwing the new `InvalidClassNameException`
+* The regular expression used by `Generator::ensureValidMethods()` to validate method names passed to `MockBuilder::onlyMethods()` and `addMethods()` was not anchored, so any string containing a valid identifier substring (including strings with parentheses, braces, comments, or newlines) was accepted
+
 ## [13.1.7] - 2026-04-18
 
 ### Changed
@@ -96,6 +107,7 @@ All notable changes of the PHPUnit 13.1 release series are documented in this fi
 * [#6433](https://github.com/sebastianbergmann/phpunit/issues/6433): Logic in `TestSuiteLoader` is brittle and causes "Class FooTest not found" even for valid tests in valid filenames
 * [#6463](https://github.com/sebastianbergmann/phpunit/issues/6463): Process Isolation fails on non-serializable globals and quietly ignore closures
 
+[13.1.8]: https://github.com/sebastianbergmann/phpunit/compare/13.1.7...13.1.8
 [13.1.7]: https://github.com/sebastianbergmann/phpunit/compare/13.1.6...13.1.7
 [13.1.6]: https://github.com/sebastianbergmann/phpunit/compare/13.1.5...13.1.6
 [13.1.5]: https://github.com/sebastianbergmann/phpunit/compare/13.1.4...13.1.5

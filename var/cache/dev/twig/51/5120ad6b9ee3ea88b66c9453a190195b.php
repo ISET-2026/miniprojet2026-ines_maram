@@ -300,6 +300,6 @@ class __TwigTemplate_ee09f8dcd956cf5141de27d566136766 extends Template
 
 </body>
 </html>
-", "@ApiPlatform/Graphiql/index.html.twig", "/home/vboxuser/Documents/miniprojet2026-ines_maram/vendor/api-platform/symfony/Bundle/Resources/views/Graphiql/index.html.twig");
+", "@ApiPlatform/Graphiql/index.html.twig", "/home/useradm/miniprojet2026-ines_maram/vendor/api-platform/symfony/Bundle/Resources/views/Graphiql/index.html.twig");
     }
 }
